@@ -53,7 +53,8 @@ const defaultTasks: Task[] = [
 ]
 
 export default function TaskApp({tasks}: TaskAppProps) {
-  const taskList = tasks && tasks.length > 0 ? tasks : defaultTasks
+  const validTasks = Array.isArray(tasks) ? tasks : []
+  const taskList = validTasks.length > 0 ? validTasks : defaultTasks
   return(
     <div>
       <div id="task-count">
