@@ -18,35 +18,35 @@ const defaultTasks: Task[] = [
   {
     id: 1,
     title: 'Task One',
-    description: 'first hardcoded task',
+    description: 'first task',
     priority: 'High',
     completed: false
   },
   {
     id: 2,
     title: 'Task Two',
-    description: 'second hardcoded task',
+    description: 'second task',
     priority: 'Medium',
     completed: false
   },
   {
     id: 3,
     title: 'Task Three',
-    description: 'third hardcoded task',
+    description: 'third task',
     priority: 'Low',
     completed: false
   },
   {
     id: 4,
     title: 'Task Four',
-    description: 'fourth hardcoded task',
+    description: 'fourth task',
     priority: 'High',
     completed: false
   },
   {
     id: 5,
     title: 'Task Five',
-    description: 'fifth hardcoded task',
+    description: 'fifth task',
     priority: 'Medium',
     completed: false
   },

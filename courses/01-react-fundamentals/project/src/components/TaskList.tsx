@@ -18,25 +18,39 @@ interface TaskListProps {
   linkToTaskDetail?: boolean
 }
 
+const HARDCODED_TASKS: Task[] = [
+  {
+    id: 1,
+    title: "Task One",
+    description: "First hardcoded task",
+    priority: "High",
+    completed: false,
+  },
+  {
+    id: 2,
+    title: "Task Two",
+    description: "Second hardcoded task",
+    priority: "Medium",
+    completed: false,
+  },
+  {
+    id: 3,
+    title: "Task Three",
+    description: "Third hardcoded task",
+    priority: "Low",
+    completed: false,
+  },
+]
 
-export default function TaskList({tasks=[]}: TaskListProps) {
+
+
+export default function TaskList({tasks}: TaskListProps) {
+  
+  const list = tasks ?? HARDCODED_TASKS
   return(
   <section id="task-list">
-      <TaskCard title="Task One"
-       description="first hardcoded task"
-        priority="High"
-        />
-        <TaskCard 
-        title="Task Two"
-        description="second hardcoded task"
-        priority="Medium"
-        />
-        <TaskCard 
-        title="Task Three"
-        description="third hardcoded task"
-        priority="Low"
-        />
-        {tasks.map((task) => (
+
+        {list.map((task) => (
           <TaskCard 
           key={task.id}
           title={task.title}
