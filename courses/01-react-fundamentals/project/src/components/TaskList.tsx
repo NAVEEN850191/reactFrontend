@@ -22,17 +22,17 @@ interface TaskListProps {
 export default function TaskList(_props: TaskListProps) {
   return(
   <section id="task-list">
-      <TaskCard title="Task one"
+      <TaskCard title="Task One"
        description="first hardcoded task"
         priority="High"
         />
         <TaskCard 
-        title="Task two"
+        title="Task Two"
         description="second hardcoded task"
         priority="Medium"
         />
         <TaskCard 
-        title="Task three"
+        title="Task Three"
         description="third hardcoded task"
         priority="Low"
         />
