@@ -1,28 +1,5 @@
 [
   {
-    "challengeId": "01-static-task-display",
-    "challengeName": "Static Task Display",
-    "aiReview": {
-      "challengeId": "01-static-task-display",
-      "timestamp": "2026-06-06T09:41:59.846Z",
-      "score": 88,
-      "feedback": [],
-      "strengths": [
-        "The code is well-structured and follows a consistent naming convention.",
-        "The use of TypeScript interfaces and props typing is excellent for maintainability and readability.",
-        "The code is free of console.log statements and adheres to ESLint rules."
-      ],
-      "improvements": [
-        "In the TaskCard component, the priority prop is not validated to ensure it's one of the allowed values (Low, Medium, High). Consider adding a type guard or a validation function.",
-        "In the TaskList component, the tasks prop is not validated to ensure it's an array of Task objects. Consider adding a type guard or a validation function.",
-        "The TaskList component uses a hardcoded array of tasks. Consider fetching tasks from an API or a data storage mechanism to make the component more dynamic and realistic."
-      ],
-      "readability": 85,
-      "maintainability": 90,
-      "overall": "The code is well-structured, readable, and maintainable. It demonstrates a good understanding of React, TypeScript, and semantic HTML. However, there are some areas for improvement, such as adding validation and making the TaskList component more dynamic."
-    }
-  },
-  {
     "challengeId": "02-dynamic-task-rendering",
     "challengeName": "Dynamic Task Rendering",
     "aiReview": {
@@ -43,6 +20,29 @@
       "readability": 85,
       "maintainability": 90,
       "overall": "The code is well-structured and maintainable, but there are some areas that could be improved to make it more robust and scalable. With some additional testing and error handling, this code could be a great foundation for a complex task management application."
+    }
+  },
+  {
+    "challengeId": "01-static-task-display",
+    "challengeName": "Static Task Display",
+    "aiReview": {
+      "challengeId": "01-static-task-display",
+      "timestamp": "2026-06-06T17:21:52.186Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript interfaces and props typing is excellent for ensuring data integrity and reducing errors.",
+        "The code is free of console logs and follows ESLint best practices."
+      ],
+      "improvements": [
+        "Consider adding JSDoc comments to explain the purpose and behavior of each function and component.",
+        "Some of the variable names could be more descriptive, such as `title` and `description` in the `TaskCard` component.",
+        "In the `TaskList` component, the hardcoded tasks could be extracted into a separate constant or function to improve maintainability."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "Overall, the code is well-written and follows best practices. However, there are a few areas where improvements can be made to enhance readability and maintainability. With some minor tweaks, this code can be even more robust and efficient."
     }
   }
 ]

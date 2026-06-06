@@ -68,16 +68,16 @@ npm run review -- --challenge=01-static-task-display
 
 ## 📊 Progress Evidence
 
-*Auto-updated when you run review. Last run: 6/6/2026, 10:41:31 pm*
+*Auto-updated when you run review. Last run: 6/6/2026, 10:51:54 pm*
 
 | Metric | Value |
 |--------|-------|
-| Challenges completed | 1 / 23 (4.3%) |
-| Average score | 78.1% |
+| Challenges completed | 0 / 23 (0%) |
+| Average score | 75.2% |
 
 | Challenge | Skills covered | Status |
 |-----------|----------------|--------|
-| Static Task Display | JSX, Functional components, Props, Component composition, Semantic HTML | Passed |
+| Static Task Display | JSX, Functional components, Props, Component composition, Semantic HTML | Not passed |
 | Dynamic Task Rendering | useState, map(), key prop, Lists in JSX | Not passed |
 | Adding New Tasks | Controlled inputs, Event handlers, Form validation, Form handling, Immutable state | — |
 | Task Completion Toggle | Updating array state, Event handlers with params, Conditional styling | — |
