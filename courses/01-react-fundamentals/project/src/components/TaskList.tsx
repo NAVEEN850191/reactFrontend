@@ -19,7 +19,7 @@ interface TaskListProps {
 }
 
 
-export default function TaskList(_props: TaskListProps) {
+export default function TaskList({tasks=[]}: TaskListProps) {
   return(
   <section id="task-list">
       <TaskCard title="Task One"
@@ -36,6 +36,14 @@ export default function TaskList(_props: TaskListProps) {
         description="third hardcoded task"
         priority="Low"
         />
+        {tasks.map((task) => (
+          <TaskCard 
+          key={task.id}
+          title={task.title}
+          description={task.description}
+          priority={task.priority}
+          />
+        ))}
   </section>
   )
 }
