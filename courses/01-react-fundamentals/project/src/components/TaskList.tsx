@@ -1,5 +1,4 @@
 import TaskCard from './TaskCard'
-import { HARDCODED_TASKS } from '../components/tasks'
 
 export interface Task {
   id: string | number
@@ -20,12 +19,42 @@ interface TaskListProps {
   linkToTaskDetail?: boolean
 }
 
+const HARDCODED_TASKS: Task[] = [
+  {
+    id: 1,
+    title: 'Task One',
+    description: 'First hardcoded task',
+    priority: 'High',
+    completed: false,
+  },
+  {
+    id: 2,
+    title: 'Task Two',
+    description: 'Second hardcoded task',
+    priority: 'Medium',
+    completed: false,
+  },
+  {
+    id: 3,
+    title: 'Task Three',
+    description: 'Third hardcoded task',
+    priority: 'Low',
+    completed: false,
+  },
+]
+
 export default function TaskList({ tasks }: TaskListProps) {
-  const displayTasks = tasks ?? HARDCODED_TASKS
+  const tasksToDisplay = Array.isArray(tasks)
+    ? tasks
+    : HARDCODED_TASKS
+
+  if (tasksToDisplay.length === 0) {
+    return <section id="task-list" />
+  }
 
   return (
     <section id="task-list">
-      {displayTasks.map((task) => (
+      {tasksToDisplay.map((task) => (
         <TaskCard
           key={task.id}
           title={task.title}
