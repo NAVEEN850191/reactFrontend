@@ -14,7 +14,7 @@ interface TaskAppProps {
   linkToTaskDetail?: boolean
 }
 
-const defaultTasks: Task[] = [
+const DEFAULT_TASKS: Task[] = [
   {
     id: 1,
     title: 'Task One',
@@ -53,14 +53,14 @@ const defaultTasks: Task[] = [
 ]
 
 export default function TaskApp({tasks}: TaskAppProps) {
-  const validTasks = Array.isArray(tasks) ? tasks : []
-  const taskList = validTasks.length > 0 ? validTasks : defaultTasks
+  const validedTasks = Array.isArray(tasks) ? tasks : []
+  const tasksToDisplay = validedTasks.length > 0 ? validedTasks : DEFAULT_TASKS
   return(
     <div>
       <div id="task-count">
-        {taskList.length} Tasks
+        {tasksToDisplay.length} Tasks
       </div>
-      <TaskList tasks={taskList} />
+      <TaskList tasks={tasksToDisplay} />
     </div>
   )
 }
