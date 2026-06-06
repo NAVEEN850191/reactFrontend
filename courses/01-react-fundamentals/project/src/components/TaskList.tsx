@@ -20,21 +20,44 @@ interface TaskListProps {
 }
 
 
-export default function TaskList({tasks}: TaskListProps) {
-  
-  const tasksToRender = tasks ?? HARDCODED_TASKS
-  return(
-  <section id="task-list">
+export default function TaskList({ tasks }: TaskListProps) {
+  if (tasks === undefined) {
+    return (
+      <section id="task-list">
+        <p>No tasks provided. Showing default tasks.</p>
 
-        {tasksToRender.map((task) => (
-          <TaskCard 
+        {HARDCODED_TASKS.map((task) => (
+          <TaskCard
+            key={task.id}
+            title={task.title}
+            description={task.description}
+            priority={task.priority}
+            completed={task.completed}
+          />
+        ))}
+      </section>
+    )
+  }
+
+  if (tasks.length === 0) {
+    return (
+      <section id="task-list">
+        <p>No tasks available.</p>
+      </section>
+    )
+  }
+
+  return (
+    <section id="task-list">
+      {tasks.map((task) => (
+        <TaskCard
           key={task.id}
           title={task.title}
           description={task.description}
           priority={task.priority}
           completed={task.completed}
-          />
-        ))}
-  </section>
+        />
+      ))}
+    </section>
   )
 }

@@ -17,49 +17,55 @@ interface TaskAppProps {
 const DEFAULT_TASKS: Task[] = [
   {
     id: 1,
-    title: 'Task One',
-    description: 'first task',
+    title: 'First Task',
+    description: 'First task description',
     priority: 'High',
-    completed: false
+    completed: false,
   },
   {
     id: 2,
-    title: 'Task Two',
-    description: 'second task',
+    title: 'Second Task',
+    description: 'Second task description',
     priority: 'Medium',
-    completed: false
+    completed: false,
   },
   {
     id: 3,
-    title: 'Task Three',
-    description: 'third task',
+    title: 'Third Task',
+    description: 'Third task description',
     priority: 'Low',
-    completed: false
+    completed: false,
   },
   {
     id: 4,
-    title: 'Task Four',
-    description: 'fourth task',
+    title: 'Fourth Task',
+    description: 'Fourth task description',
     priority: 'High',
-    completed: false
+    completed: false,
   },
   {
     id: 5,
-    title: 'Task Five',
-    description: 'fifth task',
+    title: 'Fifth Task',
+    description: 'Fifth task description',
     priority: 'Medium',
-    completed: false
+    completed: false,
   },
 ]
 
-export default function TaskApp({tasks}: TaskAppProps) {
-  const validedTasks = Array.isArray(tasks) ? tasks : []
-  const tasksToDisplay = validedTasks.length > 0 ? validedTasks : DEFAULT_TASKS
-  return(
+export default function TaskApp({ tasks }: TaskAppProps) {
+  const validatedTasks = Array.isArray(tasks) ? tasks : []
+
+  const tasksToDisplay =
+    validatedTasks.length > 0
+      ? validatedTasks
+      : DEFAULT_TASKS
+
+  return (
     <div>
       <div id="task-count">
         {tasksToDisplay.length} Tasks
       </div>
+
       <TaskList tasks={tasksToDisplay} />
     </div>
   )
