@@ -9,7 +9,7 @@ Create the foundation of your task app: a **TaskCard** component, a **TaskList**
 ## What to do
 
 1. **TaskCard** — Create `src/components/TaskCard.tsx`.  
-   Props: `title`, `description`, `priority` (Low/Medium/High). Root: `<article id="task-card">`. Title in `<h2>`, description in `<p>`, priority as text. Use a TypeScript interface.
+   Props: `title`, `description`, `priority` (Low/Medium/High). Root: `<article id="task-card">`. Title in `<h2>`, description in `<p>`, priority as text.Use a TypeScript interface.
 
 2. **TaskList** — Create `src/components/TaskList.tsx`.  
    Render 3 hardcoded TaskCard components. Root: `<section id="task-list">`. Use titles **Task One**, **Task Two**, **Task Three** and include a description with **First hardcoded task** and priority **Priority: High** so automated tests can find them. Export a `Task` interface from this file (e.g. `id`, `title`, `description`, `priority`, `completed`) — App uses it for state in later challenges.
