@@ -3,15 +3,13 @@ interface TaskCardProps {
   description: string
   priority: string
   completed?: boolean
-  onToggle?: (id: string | number) => void
-  taskId?: string | number
 }
 
 export default function TaskCard({
   title,
   description,
   priority,
-}:TaskCardProps){
+}: TaskCardProps) {
   return (
     <article id="task-card">
       <h2>{title}</h2>

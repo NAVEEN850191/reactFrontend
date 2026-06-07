@@ -1,18 +1,23 @@
 import type { Dispatch, SetStateAction } from 'react'
 import type { Task } from './TaskList'
+import TaskList from './TaskList'
 
 interface TaskAppProps {
   tasks?: Task[]
   setTasks?: Dispatch<SetStateAction<Task[]>>
-  dispatch?: (action: { type: string; payload?: unknown }) => void
-  showForm?: boolean
-  countFormat?: string
-  showFilterBar?: boolean
-  showStatsPanel?: boolean
-  onDelete?: (id: string | number) => void
-  linkToTaskDetail?: boolean
 }
 
-export default function TaskApp(_props: TaskAppProps) {
-  return null
+export default function TaskApp({ tasks }: TaskAppProps) {
+  // ensure safe fallback
+  const taskList = Array.isArray(tasks) ? tasks : []
+
+  return (
+    <div>
+      <div id="task-count">
+        {taskList.length} Tasks
+      </div>
+
+      <TaskList tasks={taskList} />
+    </div>
+  )
 }
