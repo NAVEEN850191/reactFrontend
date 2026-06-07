@@ -11,10 +11,10 @@ export default function TaskCard({
   priority,
 }: TaskCardProps) {
   return (
-    <article data-testid="task-card">
+    <article id="task-card">
       <h2>{title}</h2>
       <p>{description}</p>
-      <p>Priority: {priority}</p>
+      <p>Priority:{priority}</p>
     </article>
   )
 }
