@@ -47,7 +47,6 @@ export default function TaskList({ tasks }: TaskListProps) {
           title={task.title}
           description={task.description}
           priority={task.priority}
-          completed={task.completed}
         />
       ))}
     </section>
