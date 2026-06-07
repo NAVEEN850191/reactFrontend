@@ -1,28 +1,5 @@
 [
   {
-    "challengeId": "01-static-task-display",
-    "challengeName": "Static Task Display",
-    "aiReview": {
-      "challengeId": "01-static-task-display",
-      "timestamp": "2026-06-07T13:24:38.470Z",
-      "score": 90,
-      "feedback": [],
-      "strengths": [
-        "The code is well-structured and follows a consistent naming convention.",
-        "The use of TypeScript interfaces and types is excellent, making the code more maintainable and self-documenting.",
-        "The code is free of console.log statements, which is a good practice for production code."
-      ],
-      "improvements": [
-        "Some of the variable names could be more descriptive. For example, 'list' in TaskList.tsx could be renamed to 'tasks' to make its purpose clearer.",
-        "The use of hardcoded tasks in TaskList.tsx could be avoided by fetching tasks from an API or a data store. This would make the code more flexible and easier to test.",
-        "The TaskCard component could benefit from a more robust styling system, such as CSS-in-JS or a CSS framework, to make it easier to customize its appearance."
-      ],
-      "readability": 92,
-      "maintainability": 88,
-      "overall": "The code is well-structured and maintainable, but there are opportunities for improvement in terms of variable naming and the use of hardcoded data. With some refinements, this code could be even more robust and scalable."
-    }
-  },
-  {
     "challengeId": "02-dynamic-task-rendering",
     "challengeName": "Dynamic Task Rendering",
     "aiReview": {
@@ -43,6 +20,29 @@
       "readability": 85,
       "maintainability": 90,
       "overall": "The code is well-structured and maintainable, with a good separation of concerns between components. However, there are some areas for improvement to make it even more scalable and efficient."
+    }
+  },
+  {
+    "challengeId": "01-static-task-display",
+    "challengeName": "Static Task Display",
+    "aiReview": {
+      "challengeId": "01-static-task-display",
+      "timestamp": "2026-06-07T13:37:07.512Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript interfaces and props typing is excellent.",
+        "The code is well-organized and easy to navigate."
+      ],
+      "improvements": [
+        "In the `TaskCard` component, consider using a more descriptive variable name instead of `title`, `description`, and `priority` to make the code more readable.",
+        "In the `TaskList` component, the `countText` prop is not being used. Consider removing it or using it to display a count of tasks.",
+        "In the `App.tsx` file, the `INITIAL_TASKS` array is not being used. Consider removing it or using it to initialize the state."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-written and follows best practices. However, there are a few minor improvements that can be made to make the code even more readable and maintainable."
     }
   }
 ]

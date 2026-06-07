@@ -1,17 +1,17 @@
 {
   "courseId": "01-react-fundamentals",
   "courseName": "React Fundamentals",
-  "lastUpdated": "2026-06-07T13:25:49.186Z",
+  "lastUpdated": "2026-06-07T13:37:08.633Z",
   "totalChallenges": 23,
   "completedChallenges": 1,
-  "averageScore": 77.5,
+  "averageScore": 80.3,
   "completionPercentage": 4.3,
   "badgeLevel": "none",
   "challengeResults": [
     {
       "challengeId": "01-static-task-display",
       "challengeName": "Static Task Display",
-      "score": 71.845,
+      "score": 77.355,
       "passed": false
     },
     {
