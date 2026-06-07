@@ -1,20 +1,17 @@
 interface TaskCardProps {
-  title: string
-  description: string
-  priority: string
-  completed?: boolean
+  title: string;
+  description: string;
+  priority: string;
 }
 
-export default function TaskCard({
-  title,
-  description,
-  priority,
-}: TaskCardProps) {
+function TaskCard({ title, description, priority }: TaskCardProps) {
   return (
-    <article id="task-card">
-      <h2>{title}</h2>
+    <div id="task-card">
+      <h3>{title}</h3>
       <p>{description}</p>
-      <p>Priority:{priority}</p>
-    </article>
-  )
+      <span>{priority}</span>
+    </div>
+  );
 }
+
+export default TaskCard;
