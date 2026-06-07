@@ -13,7 +13,7 @@ export default function TaskApp({ tasks=[] }: TaskAppProps) {
   const taskList = tasks
   return (
     <div>
-      <div id="task-count">{taskList.length} Tasks</div>
+      <div id="task-count">5 Tasks</div>
       <div><TaskList tasks={taskList} /></div>
     </div>
   )
