@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-06-07T07:00:47.829Z",
+  "lastUpdated": "2026-06-07T07:24:00.970Z",
   "pathway": {
     "name": "Modern React Engineer",
     "version": "1.0.0",
-    "overallScore": 25.6,
+    "overallScore": 25.8,
     "completionPercentage": 1.9,
     "badgeLevel": "none",
     "totalChallenges": 53,
@@ -13,7 +13,7 @@
     "01-react-fundamentals": {
       "courseId": "01-react-fundamentals",
       "courseName": "React Fundamentals",
-      "averageScore": 77.7,
+      "averageScore": 78.1,
       "completionPercentage": 4.3,
       "badgeLevel": "none",
       "totalChallenges": 23,
@@ -38,15 +38,15 @@
           "challengeId": "02-dynamic-task-rendering",
           "challengeName": "Dynamic Task Rendering",
           "passed": false,
-          "score": 73.7,
-          "lastRun": "2026-06-07T07:00:17.757Z",
+          "score": 74.45,
+          "lastRun": "2026-06-07T07:23:29.878Z",
           "scores": {
             "functionalTests": 75,
             "codeQuality": 100,
             "architecture": 100,
             "bestPractices": 100,
             "e2eTests": 0,
-            "aiReview": 83
+            "aiReview": 88
           }
         }
       }
