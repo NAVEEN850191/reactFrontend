@@ -10,6 +10,9 @@ export interface Task {
 
 interface TaskListProps {
   tasks?: Task[]
+  countText?: string
+  onToggle?: (id: string | number) => void
+  onDelete?: (id: string | number) => void
 }
 
 const HARDCODED_TASKS: Task[] = [
@@ -39,6 +42,10 @@ const HARDCODED_TASKS: Task[] = [
 export default function TaskList({ tasks }: TaskListProps) {
   const taskList = tasks ?? HARDCODED_TASKS
 
+  if (taskList.length === 0) {
+    return <section id="task-list" />
+  }
+
   return (
     <section id="task-list">
       {taskList.map((task) => (
@@ -47,6 +54,7 @@ export default function TaskList({ tasks }: TaskListProps) {
           title={task.title}
           description={task.description}
           priority={task.priority}
+          completed={task.completed}
         />
       ))}
     </section>
