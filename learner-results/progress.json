@@ -1,47 +1,47 @@
 {
-  "lastUpdated": "2026-06-07T13:12:33.146Z",
+  "lastUpdated": "2026-06-07T13:25:50.266Z",
   "pathway": {
     "name": "Modern React Engineer",
     "version": "1.0.0",
-    "overallScore": 22.2,
-    "completionPercentage": 0,
+    "overallScore": 25.6,
+    "completionPercentage": 1.9,
     "badgeLevel": "none",
     "totalChallenges": 53,
-    "completedChallenges": 0
+    "completedChallenges": 1
   },
   "courses": {
     "01-react-fundamentals": {
       "courseId": "01-react-fundamentals",
       "courseName": "React Fundamentals",
-      "averageScore": 67.2,
-      "completionPercentage": 0,
+      "averageScore": 77.5,
+      "completionPercentage": 4.3,
       "badgeLevel": "none",
       "totalChallenges": 23,
-      "completedChallenges": 0,
+      "completedChallenges": 1,
       "challenges": {
         "01-static-task-display": {
           "challengeId": "01-static-task-display",
           "challengeName": "Static Task Display",
           "passed": false,
-          "score": 59.855000000000004,
-          "lastRun": "2026-06-07T13:11:53.766Z",
+          "score": 71.845,
+          "lastRun": "2026-06-07T13:24:04.294Z",
           "scores": {
-            "functionalTests": 33.3,
+            "functionalTests": 66.7,
             "codeQuality": 100,
             "architecture": 100,
             "bestPractices": 100,
             "e2eTests": 0,
-            "aiReview": 88
+            "aiReview": 90
           }
         },
         "02-dynamic-task-rendering": {
           "challengeId": "02-dynamic-task-rendering",
           "challengeName": "Dynamic Task Rendering",
-          "passed": false,
-          "score": 74.45,
-          "lastRun": "2026-06-07T12:58:30.701Z",
+          "passed": true,
+          "score": 83.2,
+          "lastRun": "2026-06-07T13:25:12.868Z",
           "scores": {
-            "functionalTests": 75,
+            "functionalTests": 100,
             "codeQuality": 100,
             "architecture": 100,
             "bestPractices": 100,
