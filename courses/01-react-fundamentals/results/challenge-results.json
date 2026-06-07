@@ -749,16 +749,16 @@
   {
     "challengeId": "02-dynamic-task-rendering",
     "challengeName": "Dynamic Task Rendering",
-    "timestamp": "2026-06-07T05:17:53.902Z",
+    "timestamp": "2026-06-07T05:28:58.452Z",
     "scores": {
       "functionalTests": 75,
       "codeQuality": 100,
       "architecture": 100,
       "bestPractices": 100,
       "e2eTests": 0,
-      "aiReview": 0
+      "aiReview": 88
     },
-    "totalScore": 61.25,
+    "totalScore": 74.45,
     "passed": false,
     "errors": [],
     "warnings": [],
@@ -792,7 +792,7 @@
               "title": "should display task count with id task-count",
               "duration": 10,
               "failureMessages": [
-                "Unable to find an element with the text: 5 Tasks. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n\nIgnored nodes: comments, script, style\n\u001b[36m<body>\u001b[39m\n  \u001b[36m<div>\u001b[39m\n    \u001b[36m<section\u001b[39m\n      \u001b[33mid\u001b[39m=\u001b[32m\"task-list\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[36m<article\u001b[39m\n        \u001b[33mid\u001b[39m=\u001b[32m\"task-card\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<h2>\u001b[39m\n          \u001b[0mA\u001b[0m\n        \u001b[36m</h2>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mD1\u001b[0m\n        \u001b[36m</p>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mPriority: \u001b[0m\n          \u001b[0mHigh\u001b[0m\n        \u001b[36m</p>\u001b[39m\n      \u001b[36m</article>\u001b[39m\n      \u001b[36m<article\u001b[39m\n        \u001b[33mid\u001b[39m=\u001b[32m\"task-card\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<h2>\u001b[39m\n          \u001b[0mB\u001b[0m\n        \u001b[36m</h2>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mD2\u001b[0m\n        \u001b[36m</p>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mPriority: \u001b[0m\n          \u001b[0mMedium\u001b[0m\n        \u001b[36m</p>\u001b[39m\n      \u001b[36m</article>\u001b[39m\n      \u001b[36m<article\u001b[39m\n        \u001b[33mid\u001b[39m=\u001b[32m\"task-card\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<h2>\u001b[39m\n          \u001b[0mC\u001b[0m\n        \u001b[36m</h2>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mD3\u001b[0m\n        \u001b[36m</p>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mPriority: \u001b[0m\n          \u001b[0mLow\u001b[0m\n        \u001b[36m</p>\u001b[39m\n      \u001b[36m</article>\u001b[39m\n      \u001b[36m<article\u001b[39m\n        \u001b[33mid\u001b[39m=\u001b[32m\"task-card\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<h2>\u001b[39m\n          \u001b[0mD\u001b[0m\n        \u001b[36m</h2>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mD4\u001b[0m\n        \u001b[36m</p>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mPriority: \u001b[0m\n          \u001b[0mHigh\u001b[0m\n        \u001b[36m</p>\u001b[39m\n      \u001b[36m</article>\u001b[39m\n      \u001b[36m<article\u001b[39m\n        \u001b[33mid\u001b[39m=\u001b[32m\"task-card\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<h2>\u001b[39m\n          \u001b[0mE\u001b[0m\n        \u001b[36m</h2>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mD5\u001b[0m\n        \u001b[36m</p>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mPriority: \u001b[0m\n          \u001b[0mMedium\u001b[0m\n        \u001b[36m</p>\u001b[39m\n      \u001b[36m</article>\u001b[39m\n    \u001b[36m</section>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</body>\u001b[39m"
+                "Unable to find an element with the text: 5 Tasks. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n\nIgnored nodes: comments, script, style\n\u001b[36m<body>\u001b[39m\n  \u001b[36m<div>\u001b[39m\n    \u001b[36m<section\u001b[39m\n      \u001b[33mid\u001b[39m=\u001b[32m\"task-list\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[36m<article\u001b[39m\n        \u001b[33mid\u001b[39m=\u001b[32m\"task-card\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<h2>\u001b[39m\n          \u001b[0mA\u001b[0m\n        \u001b[36m</h2>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mD1\u001b[0m\n        \u001b[36m</p>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mPriority:\u001b[0m\n          \u001b[0mHigh\u001b[0m\n        \u001b[36m</p>\u001b[39m\n      \u001b[36m</article>\u001b[39m\n      \u001b[36m<article\u001b[39m\n        \u001b[33mid\u001b[39m=\u001b[32m\"task-card\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<h2>\u001b[39m\n          \u001b[0mB\u001b[0m\n        \u001b[36m</h2>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mD2\u001b[0m\n        \u001b[36m</p>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mPriority:\u001b[0m\n          \u001b[0mMedium\u001b[0m\n        \u001b[36m</p>\u001b[39m\n      \u001b[36m</article>\u001b[39m\n      \u001b[36m<article\u001b[39m\n        \u001b[33mid\u001b[39m=\u001b[32m\"task-card\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<h2>\u001b[39m\n          \u001b[0mC\u001b[0m\n        \u001b[36m</h2>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mD3\u001b[0m\n        \u001b[36m</p>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mPriority:\u001b[0m\n          \u001b[0mLow\u001b[0m\n        \u001b[36m</p>\u001b[39m\n      \u001b[36m</article>\u001b[39m\n      \u001b[36m<article\u001b[39m\n        \u001b[33mid\u001b[39m=\u001b[32m\"task-card\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<h2>\u001b[39m\n          \u001b[0mD\u001b[0m\n        \u001b[36m</h2>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mD4\u001b[0m\n        \u001b[36m</p>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mPriority:\u001b[0m\n          \u001b[0mHigh\u001b[0m\n        \u001b[36m</p>\u001b[39m\n      \u001b[36m</article>\u001b[39m\n      \u001b[36m<article\u001b[39m\n        \u001b[33mid\u001b[39m=\u001b[32m\"task-card\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<h2>\u001b[39m\n          \u001b[0mE\u001b[0m\n        \u001b[36m</h2>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mD5\u001b[0m\n        \u001b[36m</p>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mPriority:\u001b[0m\n          \u001b[0mMedium\u001b[0m\n        \u001b[36m</p>\u001b[39m\n      \u001b[36m</article>\u001b[39m\n    \u001b[36m</section>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</body>\u001b[39m"
               ],
               "location": {
                 "line": 37,
@@ -818,12 +818,12 @@
               "fullName": " Challenge 02: Dynamic Task Rendering should use map in TaskList",
               "status": "passed",
               "title": "should use map in TaskList",
-              "duration": 0,
+              "duration": 1,
               "failureMessages": []
             }
           ],
-          "startTime": 1780809475921,
-          "endTime": 1780809475962,
+          "startTime": 1780810140490,
+          "endTime": 1780810140532,
           "status": "failed",
           "message": "",
           "name": "C:/Users/DELL/OneDrive/Desktop/frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-02.test.tsx"
@@ -1001,7 +1001,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T05:18:03.392Z",
+                          "startTime": "2026-06-07T05:29:08.700Z",
                           "annotations": [],
                           "attachments": []
                         },
@@ -1009,7 +1009,7 @@
                           "workerIndex": 1,
                           "parallelIndex": 0,
                           "status": "failed",
-                          "duration": 2,
+                          "duration": 1,
                           "error": {
                             "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
                             "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
@@ -1022,7 +1022,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 1,
-                          "startTime": "2026-06-07T05:18:04.558Z",
+                          "startTime": "2026-06-07T05:29:09.891Z",
                           "annotations": [],
                           "attachments": [
                             {
@@ -1049,7 +1049,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 2,
-                          "startTime": "2026-06-07T05:18:05.736Z",
+                          "startTime": "2026-06-07T05:29:11.078Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1091,7 +1091,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T05:18:06.862Z",
+                          "startTime": "2026-06-07T05:29:12.222Z",
                           "annotations": [],
                           "attachments": []
                         },
@@ -1112,7 +1112,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 1,
-                          "startTime": "2026-06-07T05:18:07.992Z",
+                          "startTime": "2026-06-07T05:29:13.365Z",
                           "annotations": [],
                           "attachments": [
                             {
@@ -1139,7 +1139,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 2,
-                          "startTime": "2026-06-07T05:18:09.199Z",
+                          "startTime": "2026-06-07T05:29:14.491Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1181,7 +1181,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T05:18:10.341Z",
+                          "startTime": "2026-06-07T05:29:15.633Z",
                           "annotations": [],
                           "attachments": []
                         },
@@ -1202,7 +1202,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 1,
-                          "startTime": "2026-06-07T05:18:11.466Z",
+                          "startTime": "2026-06-07T05:29:16.763Z",
                           "annotations": [],
                           "attachments": [
                             {
@@ -1229,7 +1229,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 2,
-                          "startTime": "2026-06-07T05:18:12.615Z",
+                          "startTime": "2026-06-07T05:29:17.896Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1271,7 +1271,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T05:18:13.755Z",
+                          "startTime": "2026-06-07T05:29:19.061Z",
                           "annotations": [],
                           "attachments": []
                         },
@@ -1292,7 +1292,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 1,
-                          "startTime": "2026-06-07T05:18:14.941Z",
+                          "startTime": "2026-06-07T05:29:20.208Z",
                           "annotations": [],
                           "attachments": [
                             {
@@ -1319,7 +1319,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 2,
-                          "startTime": "2026-06-07T05:18:16.540Z",
+                          "startTime": "2026-06-07T05:29:21.348Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1361,7 +1361,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T05:18:17.889Z",
+                          "startTime": "2026-06-07T05:29:22.505Z",
                           "annotations": [],
                           "attachments": []
                         },
@@ -1382,7 +1382,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 1,
-                          "startTime": "2026-06-07T05:18:19.240Z",
+                          "startTime": "2026-06-07T05:29:23.664Z",
                           "annotations": [],
                           "attachments": [
                             {
@@ -1396,7 +1396,7 @@
                           "workerIndex": 14,
                           "parallelIndex": 0,
                           "status": "failed",
-                          "duration": 2,
+                          "duration": 1,
                           "error": {
                             "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
                             "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
@@ -1409,7 +1409,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 2,
-                          "startTime": "2026-06-07T05:18:20.795Z",
+                          "startTime": "2026-06-07T05:29:24.834Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1432,27 +1432,41 @@
     },
     "aiReviewResults": {
       "challengeId": "02-dynamic-task-rendering",
-      "timestamp": "2026-06-07T05:18:21.455Z",
-      "score": 0,
+      "timestamp": "2026-06-07T05:29:25.513Z",
+      "score": 88,
       "feedback": [],
-      "strengths": [],
-      "improvements": [],
-      "readability": 0,
-      "maintainability": 0,
-      "overall": "",
-      "error": "fetch failed"
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and functional components is a good practice.",
+        "The code is well-commented and easy to understand."
+      ],
+      "improvements": [
+        "The `HARDCODED_TASKS` array can be moved to a separate file or a constant to avoid polluting the global namespace.",
+        "The `TaskList` component can be improved by adding a loading state or an error boundary to handle cases where the `tasks` prop is not provided or is empty.",
+        "The `TaskApp` component can be simplified by removing the unnecessary `showForm` prop and instead using a separate component for the form."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and follows good practices, but there are some areas for improvement to make it more maintainable and efficient."
     },
     "aiResults": {
       "challengeId": "02-dynamic-task-rendering",
-      "timestamp": "2026-06-07T05:18:21.455Z",
-      "score": 0,
+      "timestamp": "2026-06-07T05:29:25.513Z",
+      "score": 88,
       "feedback": [],
-      "strengths": [],
-      "improvements": [],
-      "readability": 0,
-      "maintainability": 0,
-      "overall": "",
-      "error": "fetch failed"
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and functional components is a good practice.",
+        "The code is well-commented and easy to understand."
+      ],
+      "improvements": [
+        "The `HARDCODED_TASKS` array can be moved to a separate file or a constant to avoid polluting the global namespace.",
+        "The `TaskList` component can be improved by adding a loading state or an error boundary to handle cases where the `tasks` prop is not provided or is empty.",
+        "The `TaskApp` component can be simplified by removing the unnecessary `showForm` prop and instead using a separate component for the form."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and follows good practices, but there are some areas for improvement to make it more maintainable and efficient."
     }
   }
 ]
