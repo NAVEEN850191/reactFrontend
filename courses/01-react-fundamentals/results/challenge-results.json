@@ -2,25 +2,25 @@
   {
     "challengeId": "01-static-task-display",
     "challengeName": "Static Task Display",
-    "timestamp": "2026-06-06T17:27:36.167Z",
+    "timestamp": "2026-06-07T13:11:53.766Z",
     "scores": {
-      "functionalTests": 100,
-      "codeQuality": 90,
+      "functionalTests": 33.3,
+      "codeQuality": 100,
       "architecture": 100,
       "bestPractices": 100,
       "e2eTests": 0,
       "aiReview": 88
     },
-    "totalScore": 81.7,
-    "passed": true,
+    "totalScore": 59.855000000000004,
+    "passed": false,
     "errors": [],
     "warnings": [],
     "testResults": {
-      "score": 100,
-      "passed": true,
+      "score": 33.3,
+      "passed": false,
       "totalTests": 6,
-      "passedTests": 6,
-      "failedTests": 0,
+      "passedTests": 2,
+      "failedTests": 4,
       "details": [
         {
           "assertionResults": [
@@ -31,10 +31,16 @@
                 "TaskCard"
               ],
               "fullName": " Challenge 01: Static Task Display TaskCard should render title, description, and priority",
-              "status": "passed",
+              "status": "failed",
               "title": "should render title, description, and priority",
-              "duration": 19,
-              "failureMessages": []
+              "duration": 36,
+              "failureMessages": [
+                "Unable to find an element with the text: /Priority: High/. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n\nIgnored nodes: comments, script, style\n\u001b[36m<body>\u001b[39m\n  \u001b[36m<div>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mid\u001b[39m=\u001b[32m\"task-card\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[36m<h3>\u001b[39m\n        \u001b[0mTest Task\u001b[0m\n      \u001b[36m</h3>\u001b[39m\n      \u001b[36m<p>\u001b[39m\n        \u001b[0mTest description\u001b[0m\n      \u001b[36m</p>\u001b[39m\n      \u001b[36m<span>\u001b[39m\n        \u001b[0mHigh\u001b[0m\n      \u001b[36m</span>\u001b[39m\n    \u001b[36m</div>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</body>\u001b[39m"
+              ],
+              "location": {
+                "line": 37,
+                "column": 19
+              }
             },
             {
               "ancestorTitles": [
@@ -43,10 +49,16 @@
                 "TaskCard"
               ],
               "fullName": " Challenge 01: Static Task Display TaskCard should use article with id task-card",
-              "status": "passed",
+              "status": "failed",
               "title": "should use article with id task-card",
-              "duration": 2,
-              "failureMessages": []
+              "duration": 6,
+              "failureMessages": [
+                "expected 'div' to be 'article' // Object.is equality"
+              ],
+              "location": {
+                "line": 23,
+                "column": 46
+              }
             },
             {
               "ancestorTitles": [
@@ -55,10 +67,16 @@
                 "TaskCard"
               ],
               "fullName": " Challenge 01: Static Task Display TaskCard should use semantic HTML (h2 for title)",
-              "status": "passed",
+              "status": "failed",
               "title": "should use semantic HTML (h2 for title)",
-              "duration": 2,
-              "failureMessages": []
+              "duration": 4,
+              "failureMessages": [
+                "\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).toHaveTextContent()\u001b[22m\n\n\u001b[31mreceived\u001b[39m value must be a Node.\n"
+              ],
+              "location": {
+                "line": 31,
+                "column": 18
+              }
             },
             {
               "ancestorTitles": [
@@ -69,7 +87,7 @@
               "fullName": " Challenge 01: Static Task Display TaskList should render 3 TaskCards when no tasks prop",
               "status": "passed",
               "title": "should render 3 TaskCards when no tasks prop",
-              "duration": 2,
+              "duration": 3,
               "failureMessages": []
             },
             {
@@ -79,10 +97,16 @@
                 "TaskList"
               ],
               "fullName": " Challenge 01: Static Task Display TaskList should have section with id task-list",
-              "status": "passed",
+              "status": "failed",
               "title": "should have section with id task-list",
-              "duration": 2,
-              "failureMessages": []
+              "duration": 3,
+              "failureMessages": [
+                "\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).toBeInTheDocument()\u001b[22m\n\n\u001b[31mreceived\u001b[39m value must be an HTMLElement or an SVGElement.\n"
+              ],
+              "location": {
+                "line": 45,
+                "column": 23
+              }
             },
             {
               "ancestorTitles": [
@@ -93,23 +117,24 @@
               "fullName": " Challenge 01: Static Task Display TaskList should display three different tasks",
               "status": "passed",
               "title": "should display three different tasks",
-              "duration": 6,
+              "duration": 9,
               "failureMessages": []
             }
           ],
-          "startTime": 1780766858307,
-          "endTime": 1780766858340,
-          "status": "passed",
+          "startTime": 1780837916759,
+          "endTime": 1780837916820,
+          "status": "failed",
           "message": "",
           "name": "C:/Users/DELL/OneDrive/Desktop/frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-01.test.tsx"
         }
-      ]
+      ],
+      "error": "Command failed: npm test -- C:\\Users\\DELL\\OneDrive\\Desktop\\frontend\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\tests\\challenge-01.test.tsx --run --reporter=json"
     },
     "lintResults": {
-      "score": 90,
-      "passed": false,
-      "totalIssues": 1,
-      "errors": 1,
+      "score": 100,
+      "passed": true,
+      "totalIssues": 0,
+      "errors": 0,
       "warnings": 0,
       "details": [
         {
@@ -154,26 +179,13 @@
         },
         {
           "filePath": "C:\\Users\\DELL\\OneDrive\\Desktop\\frontend\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\src\\components\\TaskList.tsx",
-          "messages": [
-            {
-              "ruleId": "@typescript-eslint/no-unused-vars",
-              "severity": 2,
-              "message": "'TaskListProps' is defined but never used.",
-              "line": 13,
-              "column": 11,
-              "nodeType": "Identifier",
-              "messageId": "unusedVar",
-              "endLine": 13,
-              "endColumn": 24
-            }
-          ],
+          "messages": [],
           "suppressedMessages": [],
-          "errorCount": 1,
+          "errorCount": 0,
           "fatalErrorCount": 0,
           "warningCount": 0,
           "fixableErrorCount": 0,
           "fixableWarningCount": 0,
-          "source": "import TaskCard from \"./TaskCard\"\r\nexport interface Task {\r\n  id: string | number\r\n  title: string\r\n  description: string\r\n  priority: string\r\n  completed: boolean\r\n  category?: string\r\n  tags?: string[]\r\n  dueDate?: string | number\r\n}\r\n\r\ninterface TaskListProps {\r\n  tasks?: Task[]\r\n  countText?: string\r\n  onToggle?: (id: string | number) => void\r\n  onDelete?: (id: string | number) => void\r\n  linkToTaskDetail?: boolean\r\n}\r\n\r\n\r\nexport default function TaskList() {\r\n  return(\r\n  <section id=\"task-list\">\r\n      <TaskCard title=\"Task One\"\r\n       description=\"First hardcoded task\"\r\n        priority=\"High\"\r\n        />\r\n        <TaskCard \r\n        title=\"Task Two\"\r\n        description=\"Second hardcoded task\"\r\n        priority=\"Medium\"\r\n        />\r\n        <TaskCard \r\n        title=\"Task Three\"\r\n        description=\"Third hardcoded task\"\r\n        priority=\"Low\"\r\n        />\r\n  </section>\r\n  )\r\n}",
           "usedDeprecatedRules": [
             {
               "ruleId": "no-extra-semi",
@@ -265,7 +277,7 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "failed",
-                          "duration": 1,
+                          "duration": 2,
                           "error": {
                             "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
                             "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
@@ -278,7 +290,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-06T17:27:45.994Z",
+                          "startTime": "2026-06-07T13:12:05.600Z",
                           "annotations": [],
                           "attachments": []
                         },
@@ -286,7 +298,7 @@
                           "workerIndex": 1,
                           "parallelIndex": 0,
                           "status": "failed",
-                          "duration": 1,
+                          "duration": 2,
                           "error": {
                             "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
                             "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
@@ -299,7 +311,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 1,
-                          "startTime": "2026-06-06T17:27:47.180Z",
+                          "startTime": "2026-06-07T13:12:07.155Z",
                           "annotations": [],
                           "attachments": [
                             {
@@ -313,7 +325,7 @@
                           "workerIndex": 2,
                           "parallelIndex": 0,
                           "status": "failed",
-                          "duration": 1,
+                          "duration": 2,
                           "error": {
                             "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
                             "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
@@ -326,7 +338,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 2,
-                          "startTime": "2026-06-06T17:27:48.326Z",
+                          "startTime": "2026-06-07T13:12:09.013Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -355,7 +367,7 @@
                           "workerIndex": 3,
                           "parallelIndex": 0,
                           "status": "failed",
-                          "duration": 1,
+                          "duration": 3,
                           "error": {
                             "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
                             "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
@@ -368,7 +380,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-06T17:27:49.457Z",
+                          "startTime": "2026-06-07T13:12:10.596Z",
                           "annotations": [],
                           "attachments": []
                         },
@@ -376,7 +388,7 @@
                           "workerIndex": 4,
                           "parallelIndex": 0,
                           "status": "failed",
-                          "duration": 1,
+                          "duration": 2,
                           "error": {
                             "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
                             "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
@@ -389,7 +401,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 1,
-                          "startTime": "2026-06-06T17:27:50.602Z",
+                          "startTime": "2026-06-07T13:12:12.270Z",
                           "annotations": [],
                           "attachments": [
                             {
@@ -403,7 +415,7 @@
                           "workerIndex": 5,
                           "parallelIndex": 0,
                           "status": "failed",
-                          "duration": 1,
+                          "duration": 2,
                           "error": {
                             "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
                             "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
@@ -416,7 +428,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 2,
-                          "startTime": "2026-06-06T17:27:51.856Z",
+                          "startTime": "2026-06-07T13:12:14.103Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -445,7 +457,7 @@
                           "workerIndex": 6,
                           "parallelIndex": 0,
                           "status": "failed",
-                          "duration": 1,
+                          "duration": 2,
                           "error": {
                             "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
                             "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
@@ -458,7 +470,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-06T17:27:53.205Z",
+                          "startTime": "2026-06-07T13:12:15.720Z",
                           "annotations": [],
                           "attachments": []
                         },
@@ -479,7 +491,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 1,
-                          "startTime": "2026-06-06T17:27:54.541Z",
+                          "startTime": "2026-06-07T13:12:17.290Z",
                           "annotations": [],
                           "attachments": [
                             {
@@ -493,7 +505,7 @@
                           "workerIndex": 8,
                           "parallelIndex": 0,
                           "status": "failed",
-                          "duration": 1,
+                          "duration": 2,
                           "error": {
                             "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
                             "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
@@ -506,7 +518,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 2,
-                          "startTime": "2026-06-06T17:27:55.953Z",
+                          "startTime": "2026-06-07T13:12:19.123Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -548,7 +560,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-06T17:27:57.243Z",
+                          "startTime": "2026-06-07T13:12:21.176Z",
                           "annotations": [],
                           "attachments": []
                         },
@@ -569,7 +581,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 1,
-                          "startTime": "2026-06-06T17:27:58.563Z",
+                          "startTime": "2026-06-07T13:12:22.709Z",
                           "annotations": [],
                           "attachments": [
                             {
@@ -583,7 +595,7 @@
                           "workerIndex": 11,
                           "parallelIndex": 0,
                           "status": "failed",
-                          "duration": 2,
+                          "duration": 1,
                           "error": {
                             "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
                             "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
@@ -596,7 +608,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 2,
-                          "startTime": "2026-06-06T17:27:59.990Z",
+                          "startTime": "2026-06-07T13:12:24.278Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -638,7 +650,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-06T17:28:01.432Z",
+                          "startTime": "2026-06-07T13:12:25.906Z",
                           "annotations": [],
                           "attachments": []
                         },
@@ -646,7 +658,7 @@
                           "workerIndex": 13,
                           "parallelIndex": 0,
                           "status": "failed",
-                          "duration": 1,
+                          "duration": 2,
                           "error": {
                             "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
                             "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
@@ -659,7 +671,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 1,
-                          "startTime": "2026-06-06T17:28:02.866Z",
+                          "startTime": "2026-06-07T13:12:27.873Z",
                           "annotations": [],
                           "attachments": [
                             {
@@ -686,7 +698,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 2,
-                          "startTime": "2026-06-06T17:28:04.286Z",
+                          "startTime": "2026-06-07T13:12:29.580Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -709,41 +721,41 @@
     },
     "aiReviewResults": {
       "challengeId": "01-static-task-display",
-      "timestamp": "2026-06-06T17:28:04.714Z",
+      "timestamp": "2026-06-07T13:12:30.059Z",
       "score": 88,
       "feedback": [],
       "strengths": [
-        "The code is well-organized, with clear separation of concerns between components.",
-        "The use of TypeScript interfaces and props typing is excellent, making the code more maintainable and self-documenting.",
-        "The component structure is logical, with each component having a single responsibility."
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript interfaces and props is excellent for maintaining code organization and preventing type errors.",
+        "The code is well-documented with clear and concise comments."
       ],
       "improvements": [
-        "Some of the component props could be more descriptive. For example, in `TaskCard`, the `taskId` prop is not clearly explained.",
-        "In `TaskList`, the hardcoded tasks could be extracted into a separate constant or function to make the code more maintainable.",
-        "The CSS styles could be extracted into a separate file to improve code organization and reusability."
+        "The TaskCard component uses a div as its root element instead of an article. It would be better to use the correct semantic HTML element for the task card.",
+        "The TaskList component uses a hardcoded array of tasks. It would be better to fetch tasks from an API or a data storage system for a more realistic application.",
+        "The App component has a lot of repeated code for rendering routes. It would be better to extract a separate component for rendering routes to make the code more maintainable."
       ],
       "readability": 85,
       "maintainability": 90,
-      "overall": "The code is well-structured, maintainable, and follows good practices. However, there are some minor improvements that can be made to make the code even better."
+      "overall": "The code is well-structured and follows good practices. However, there are some areas that can be improved for better maintainability and realism. With some adjustments, this code can be even more robust and efficient."
     },
     "aiResults": {
       "challengeId": "01-static-task-display",
-      "timestamp": "2026-06-06T17:28:04.714Z",
+      "timestamp": "2026-06-07T13:12:30.059Z",
       "score": 88,
       "feedback": [],
       "strengths": [
-        "The code is well-organized, with clear separation of concerns between components.",
-        "The use of TypeScript interfaces and props typing is excellent, making the code more maintainable and self-documenting.",
-        "The component structure is logical, with each component having a single responsibility."
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript interfaces and props is excellent for maintaining code organization and preventing type errors.",
+        "The code is well-documented with clear and concise comments."
       ],
       "improvements": [
-        "Some of the component props could be more descriptive. For example, in `TaskCard`, the `taskId` prop is not clearly explained.",
-        "In `TaskList`, the hardcoded tasks could be extracted into a separate constant or function to make the code more maintainable.",
-        "The CSS styles could be extracted into a separate file to improve code organization and reusability."
+        "The TaskCard component uses a div as its root element instead of an article. It would be better to use the correct semantic HTML element for the task card.",
+        "The TaskList component uses a hardcoded array of tasks. It would be better to fetch tasks from an API or a data storage system for a more realistic application.",
+        "The App component has a lot of repeated code for rendering routes. It would be better to extract a separate component for rendering routes to make the code more maintainable."
       ],
       "readability": 85,
       "maintainability": 90,
-      "overall": "The code is well-structured, maintainable, and follows good practices. However, there are some minor improvements that can be made to make the code even better."
+      "overall": "The code is well-structured and follows good practices. However, there are some areas that can be improved for better maintainability and realism. With some adjustments, this code can be even more robust and efficient."
     }
   },
   {

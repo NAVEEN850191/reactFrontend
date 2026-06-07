@@ -6,11 +6,11 @@ interface TaskCardProps {
 
 function TaskCard({ title, description, priority }: TaskCardProps) {
   return (
-    <div id="task-card">
+    <article id="task-card">
       <h3>{title}</h3>
       <p>{description}</p>
-      <span>{priority}</span>
-    </div>
+      <p>{priority}</p>
+    </article>
   );
 }
 

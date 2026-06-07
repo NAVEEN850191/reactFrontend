@@ -1,28 +1,5 @@
 [
   {
-    "challengeId": "01-static-task-display",
-    "challengeName": "Static Task Display",
-    "aiReview": {
-      "challengeId": "01-static-task-display",
-      "timestamp": "2026-06-06T17:28:04.714Z",
-      "score": 88,
-      "feedback": [],
-      "strengths": [
-        "The code is well-organized, with clear separation of concerns between components.",
-        "The use of TypeScript interfaces and props typing is excellent, making the code more maintainable and self-documenting.",
-        "The component structure is logical, with each component having a single responsibility."
-      ],
-      "improvements": [
-        "Some of the component props could be more descriptive. For example, in `TaskCard`, the `taskId` prop is not clearly explained.",
-        "In `TaskList`, the hardcoded tasks could be extracted into a separate constant or function to make the code more maintainable.",
-        "The CSS styles could be extracted into a separate file to improve code organization and reusability."
-      ],
-      "readability": 85,
-      "maintainability": 90,
-      "overall": "The code is well-structured, maintainable, and follows good practices. However, there are some minor improvements that can be made to make the code even better."
-    }
-  },
-  {
     "challengeId": "02-dynamic-task-rendering",
     "challengeName": "Dynamic Task Rendering",
     "aiReview": {
@@ -43,6 +20,29 @@
       "readability": 85,
       "maintainability": 90,
       "overall": "The code is well-structured and follows good practices. However, there are some areas for improvement, such as making the `HARDCODED_TASKS` array more manageable and making the `TaskList` and `TaskCard` components more reusable."
+    }
+  },
+  {
+    "challengeId": "01-static-task-display",
+    "challengeName": "Static Task Display",
+    "aiReview": {
+      "challengeId": "01-static-task-display",
+      "timestamp": "2026-06-07T13:12:30.059Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript interfaces and props is excellent for maintaining code organization and preventing type errors.",
+        "The code is well-documented with clear and concise comments."
+      ],
+      "improvements": [
+        "The TaskCard component uses a div as its root element instead of an article. It would be better to use the correct semantic HTML element for the task card.",
+        "The TaskList component uses a hardcoded array of tasks. It would be better to fetch tasks from an API or a data storage system for a more realistic application.",
+        "The App component has a lot of repeated code for rendering routes. It would be better to extract a separate component for rendering routes to make the code more maintainable."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and follows good practices. However, there are some areas that can be improved for better maintainability and realism. With some adjustments, this code can be even more robust and efficient."
     }
   }
 ]
