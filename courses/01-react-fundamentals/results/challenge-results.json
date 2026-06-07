@@ -749,7 +749,7 @@
   {
     "challengeId": "02-dynamic-task-rendering",
     "challengeName": "Dynamic Task Rendering",
-    "timestamp": "2026-06-07T05:28:58.452Z",
+    "timestamp": "2026-06-07T05:36:11.214Z",
     "scores": {
       "functionalTests": 75,
       "codeQuality": 100,
@@ -779,7 +779,7 @@
               "fullName": " Challenge 02: Dynamic Task Rendering should render tasks from tasks prop",
               "status": "passed",
               "title": "should render tasks from tasks prop",
-              "duration": 29,
+              "duration": 31,
               "failureMessages": []
             },
             {
@@ -807,7 +807,7 @@
               "fullName": " Challenge 02: Dynamic Task Rendering should use unique keys when mapping (no duplicate keys)",
               "status": "passed",
               "title": "should use unique keys when mapping (no duplicate keys)",
-              "duration": 2,
+              "duration": 3,
               "failureMessages": []
             },
             {
@@ -818,12 +818,12 @@
               "fullName": " Challenge 02: Dynamic Task Rendering should use map in TaskList",
               "status": "passed",
               "title": "should use map in TaskList",
-              "duration": 1,
+              "duration": 0,
               "failureMessages": []
             }
           ],
-          "startTime": 1780810140490,
-          "endTime": 1780810140532,
+          "startTime": 1780810573314,
+          "endTime": 1780810573358,
           "status": "failed",
           "message": "",
           "name": "C:/Users/DELL/OneDrive/Desktop/frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-02.test.tsx"
@@ -1001,7 +1001,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T05:29:08.700Z",
+                          "startTime": "2026-06-07T05:36:21.936Z",
                           "annotations": [],
                           "attachments": []
                         },
@@ -1009,7 +1009,7 @@
                           "workerIndex": 1,
                           "parallelIndex": 0,
                           "status": "failed",
-                          "duration": 1,
+                          "duration": 3,
                           "error": {
                             "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
                             "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
@@ -1022,7 +1022,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 1,
-                          "startTime": "2026-06-07T05:29:09.891Z",
+                          "startTime": "2026-06-07T05:36:23.135Z",
                           "annotations": [],
                           "attachments": [
                             {
@@ -1049,7 +1049,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 2,
-                          "startTime": "2026-06-07T05:29:11.078Z",
+                          "startTime": "2026-06-07T05:36:24.428Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1091,7 +1091,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T05:29:12.222Z",
+                          "startTime": "2026-06-07T05:36:25.559Z",
                           "annotations": [],
                           "attachments": []
                         },
@@ -1112,7 +1112,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 1,
-                          "startTime": "2026-06-07T05:29:13.365Z",
+                          "startTime": "2026-06-07T05:36:26.701Z",
                           "annotations": [],
                           "attachments": [
                             {
@@ -1139,7 +1139,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 2,
-                          "startTime": "2026-06-07T05:29:14.491Z",
+                          "startTime": "2026-06-07T05:36:27.843Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1181,7 +1181,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T05:29:15.633Z",
+                          "startTime": "2026-06-07T05:36:29.001Z",
                           "annotations": [],
                           "attachments": []
                         },
@@ -1202,7 +1202,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 1,
-                          "startTime": "2026-06-07T05:29:16.763Z",
+                          "startTime": "2026-06-07T05:36:30.129Z",
                           "annotations": [],
                           "attachments": [
                             {
@@ -1229,7 +1229,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 2,
-                          "startTime": "2026-06-07T05:29:17.896Z",
+                          "startTime": "2026-06-07T05:36:31.291Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1271,7 +1271,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T05:29:19.061Z",
+                          "startTime": "2026-06-07T05:36:32.419Z",
                           "annotations": [],
                           "attachments": []
                         },
@@ -1292,7 +1292,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 1,
-                          "startTime": "2026-06-07T05:29:20.208Z",
+                          "startTime": "2026-06-07T05:36:33.547Z",
                           "annotations": [],
                           "attachments": [
                             {
@@ -1319,7 +1319,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 2,
-                          "startTime": "2026-06-07T05:29:21.348Z",
+                          "startTime": "2026-06-07T05:36:34.767Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1361,7 +1361,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T05:29:22.505Z",
+                          "startTime": "2026-06-07T05:36:36.083Z",
                           "annotations": [],
                           "attachments": []
                         },
@@ -1382,7 +1382,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 1,
-                          "startTime": "2026-06-07T05:29:23.664Z",
+                          "startTime": "2026-06-07T05:36:37.445Z",
                           "annotations": [],
                           "attachments": [
                             {
@@ -1409,7 +1409,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 2,
-                          "startTime": "2026-06-07T05:29:24.834Z",
+                          "startTime": "2026-06-07T05:36:38.762Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1432,41 +1432,41 @@
     },
     "aiReviewResults": {
       "challengeId": "02-dynamic-task-rendering",
-      "timestamp": "2026-06-07T05:29:25.513Z",
+      "timestamp": "2026-06-07T05:36:39.296Z",
       "score": 88,
       "feedback": [],
       "strengths": [
-        "The code is well-structured and follows a consistent naming convention.",
-        "The use of TypeScript and functional components is a good practice.",
-        "The code is well-commented and easy to understand."
+        "The code is well-structured and easy to follow, with clear separation of concerns between components.",
+        "The use of TypeScript and functional components is a good choice for a React application.",
+        "The code is well-documented with clear and concise comments."
       ],
       "improvements": [
-        "The `HARDCODED_TASKS` array can be moved to a separate file or a constant to avoid polluting the global namespace.",
-        "The `TaskList` component can be improved by adding a loading state or an error boundary to handle cases where the `tasks` prop is not provided or is empty.",
-        "The `TaskApp` component can be simplified by removing the unnecessary `showForm` prop and instead using a separate component for the form."
+        "The `TaskList` component could be improved by adding a loading state or an error boundary to handle cases where the `tasks` prop is not provided or is empty.",
+        "The `TaskCard` component could be improved by adding a way to toggle the `completed` state of the task, as mentioned in the instructions.",
+        "The `TaskApp` component is quite large and complex, and could be broken down into smaller, more manageable components."
       ],
       "readability": 85,
       "maintainability": 90,
-      "overall": "The code is well-structured and follows good practices, but there are some areas for improvement to make it more maintainable and efficient."
+      "overall": "The code is well-structured and maintainable, but could benefit from some improvements to make it more robust and scalable."
     },
     "aiResults": {
       "challengeId": "02-dynamic-task-rendering",
-      "timestamp": "2026-06-07T05:29:25.513Z",
+      "timestamp": "2026-06-07T05:36:39.296Z",
       "score": 88,
       "feedback": [],
       "strengths": [
-        "The code is well-structured and follows a consistent naming convention.",
-        "The use of TypeScript and functional components is a good practice.",
-        "The code is well-commented and easy to understand."
+        "The code is well-structured and easy to follow, with clear separation of concerns between components.",
+        "The use of TypeScript and functional components is a good choice for a React application.",
+        "The code is well-documented with clear and concise comments."
       ],
       "improvements": [
-        "The `HARDCODED_TASKS` array can be moved to a separate file or a constant to avoid polluting the global namespace.",
-        "The `TaskList` component can be improved by adding a loading state or an error boundary to handle cases where the `tasks` prop is not provided or is empty.",
-        "The `TaskApp` component can be simplified by removing the unnecessary `showForm` prop and instead using a separate component for the form."
+        "The `TaskList` component could be improved by adding a loading state or an error boundary to handle cases where the `tasks` prop is not provided or is empty.",
+        "The `TaskCard` component could be improved by adding a way to toggle the `completed` state of the task, as mentioned in the instructions.",
+        "The `TaskApp` component is quite large and complex, and could be broken down into smaller, more manageable components."
       ],
       "readability": 85,
       "maintainability": 90,
-      "overall": "The code is well-structured and follows good practices, but there are some areas for improvement to make it more maintainable and efficient."
+      "overall": "The code is well-structured and maintainable, but could benefit from some improvements to make it more robust and scalable."
     }
   }
 ]
