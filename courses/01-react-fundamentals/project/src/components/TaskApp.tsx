@@ -1,24 +1,24 @@
-import type { Dispatch, SetStateAction } from 'react'
-import type { Task } from './TaskList'
-import TaskList from './TaskList'
+import TaskList, { Task } from "./TaskList";
 
 interface TaskAppProps {
-  tasks?: Task[]
-  setTasks?: Dispatch<SetStateAction<Task[]>>
-  showForm?: boolean
-  countFormat?: string
+  tasks: Task[];
+  setTasks?: React.Dispatch<React.SetStateAction<Task[]>>;
+  showForm?: boolean;
+  countFormat?: string;
 }
 
-export default function TaskApp({ tasks, countFormat }: TaskAppProps) {
-  const taskList = tasks ?? []
+const TaskApp = ({
+  tasks,
+}: TaskAppProps) => {
+  const countText = `${tasks.length} Tasks`;
 
   return (
     <div>
-      <div id="task-count">
-        {taskList.length} Tasks
-      </div>
+      <h2 id="task-count">{countText}</h2>
 
-      <TaskList tasks={taskList} />
+      <TaskList tasks={tasks} />
     </div>
-  )
-}
+  );
+};
+
+export default TaskApp;
