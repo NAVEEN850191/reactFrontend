@@ -9,14 +9,14 @@ interface TaskAppProps {
   countFormat?: string
 }
 
-export default function TaskApp({ tasks=[] }: TaskAppProps) {
-  const taskList = tasks
+export default function TaskApp({tasks,countFormat}: TaskAppProps) {
+  const taskList = tasks ?? []
   return (
     <div>
       <div id="task-count">
         {taskList.length} Tasks
       </div>
-      <div><TaskList tasks={taskList} /></div>
+      <TaskList tasks={taskList} />
     </div>
   )
 }
