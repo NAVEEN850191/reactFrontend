@@ -749,16 +749,16 @@
   {
     "challengeId": "02-dynamic-task-rendering",
     "challengeName": "Dynamic Task Rendering",
-    "timestamp": "2026-06-07T05:12:23.065Z",
+    "timestamp": "2026-06-07T05:17:53.902Z",
     "scores": {
       "functionalTests": 75,
       "codeQuality": 100,
       "architecture": 100,
       "bestPractices": 100,
       "e2eTests": 0,
-      "aiReview": 88
+      "aiReview": 0
     },
-    "totalScore": 74.45,
+    "totalScore": 61.25,
     "passed": false,
     "errors": [],
     "warnings": [],
@@ -779,7 +779,7 @@
               "fullName": " Challenge 02: Dynamic Task Rendering should render tasks from tasks prop",
               "status": "passed",
               "title": "should render tasks from tasks prop",
-              "duration": 31,
+              "duration": 29,
               "failureMessages": []
             },
             {
@@ -818,12 +818,12 @@
               "fullName": " Challenge 02: Dynamic Task Rendering should use map in TaskList",
               "status": "passed",
               "title": "should use map in TaskList",
-              "duration": 1,
+              "duration": 0,
               "failureMessages": []
             }
           ],
-          "startTime": 1780809145804,
-          "endTime": 1780809145849,
+          "startTime": 1780809475921,
+          "endTime": 1780809475962,
           "status": "failed",
           "message": "",
           "name": "C:/Users/DELL/OneDrive/Desktop/frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-02.test.tsx"
@@ -1001,7 +1001,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T05:12:34.543Z",
+                          "startTime": "2026-06-07T05:18:03.392Z",
                           "annotations": [],
                           "attachments": []
                         },
@@ -1009,7 +1009,7 @@
                           "workerIndex": 1,
                           "parallelIndex": 0,
                           "status": "failed",
-                          "duration": 1,
+                          "duration": 2,
                           "error": {
                             "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
                             "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
@@ -1022,7 +1022,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 1,
-                          "startTime": "2026-06-07T05:12:35.749Z",
+                          "startTime": "2026-06-07T05:18:04.558Z",
                           "annotations": [],
                           "attachments": [
                             {
@@ -1049,7 +1049,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 2,
-                          "startTime": "2026-06-07T05:12:36.879Z",
+                          "startTime": "2026-06-07T05:18:05.736Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1091,7 +1091,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T05:12:38.020Z",
+                          "startTime": "2026-06-07T05:18:06.862Z",
                           "annotations": [],
                           "attachments": []
                         },
@@ -1112,7 +1112,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 1,
-                          "startTime": "2026-06-07T05:12:39.195Z",
+                          "startTime": "2026-06-07T05:18:07.992Z",
                           "annotations": [],
                           "attachments": [
                             {
@@ -1139,7 +1139,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 2,
-                          "startTime": "2026-06-07T05:12:40.352Z",
+                          "startTime": "2026-06-07T05:18:09.199Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1181,7 +1181,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T05:12:41.515Z",
+                          "startTime": "2026-06-07T05:18:10.341Z",
                           "annotations": [],
                           "attachments": []
                         },
@@ -1202,7 +1202,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 1,
-                          "startTime": "2026-06-07T05:12:42.785Z",
+                          "startTime": "2026-06-07T05:18:11.466Z",
                           "annotations": [],
                           "attachments": [
                             {
@@ -1229,7 +1229,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 2,
-                          "startTime": "2026-06-07T05:12:44.269Z",
+                          "startTime": "2026-06-07T05:18:12.615Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1271,7 +1271,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T05:12:45.654Z",
+                          "startTime": "2026-06-07T05:18:13.755Z",
                           "annotations": [],
                           "attachments": []
                         },
@@ -1292,7 +1292,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 1,
-                          "startTime": "2026-06-07T05:12:46.965Z",
+                          "startTime": "2026-06-07T05:18:14.941Z",
                           "annotations": [],
                           "attachments": [
                             {
@@ -1319,7 +1319,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 2,
-                          "startTime": "2026-06-07T05:12:48.255Z",
+                          "startTime": "2026-06-07T05:18:16.540Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1361,7 +1361,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-07T05:12:49.526Z",
+                          "startTime": "2026-06-07T05:18:17.889Z",
                           "annotations": [],
                           "attachments": []
                         },
@@ -1382,7 +1382,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 1,
-                          "startTime": "2026-06-07T05:12:50.817Z",
+                          "startTime": "2026-06-07T05:18:19.240Z",
                           "annotations": [],
                           "attachments": [
                             {
@@ -1396,7 +1396,7 @@
                           "workerIndex": 14,
                           "parallelIndex": 0,
                           "status": "failed",
-                          "duration": 1,
+                          "duration": 2,
                           "error": {
                             "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
                             "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
@@ -1409,7 +1409,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 2,
-                          "startTime": "2026-06-07T05:12:52.082Z",
+                          "startTime": "2026-06-07T05:18:20.795Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1432,41 +1432,27 @@
     },
     "aiReviewResults": {
       "challengeId": "02-dynamic-task-rendering",
-      "timestamp": "2026-06-07T05:12:52.769Z",
-      "score": 88,
+      "timestamp": "2026-06-07T05:18:21.455Z",
+      "score": 0,
       "feedback": [],
-      "strengths": [
-        "The code is well-structured and easy to follow, with clear separation of concerns between components.",
-        "The use of TypeScript and functional components is a good practice for maintainability and scalability.",
-        "The code is well-documented with clear and concise comments."
-      ],
-      "improvements": [
-        "The `TaskList` component can be improved by adding a loading state to handle empty or null `tasks` prop.",
-        "The `TaskApp` component can be improved by adding a more robust error handling mechanism to handle potential errors when rendering the task list.",
-        "The code can benefit from the use of a more robust state management solution, such as Redux or MobX, to handle complex state changes and side effects."
-      ],
-      "readability": 85,
-      "maintainability": 90,
-      "overall": "The code is well-structured and maintainable, but can benefit from some improvements to handle edge cases and complex state changes. With some additional attention to error handling and state management, this code can be even more robust and scalable."
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "fetch failed"
     },
     "aiResults": {
       "challengeId": "02-dynamic-task-rendering",
-      "timestamp": "2026-06-07T05:12:52.769Z",
-      "score": 88,
+      "timestamp": "2026-06-07T05:18:21.455Z",
+      "score": 0,
       "feedback": [],
-      "strengths": [
-        "The code is well-structured and easy to follow, with clear separation of concerns between components.",
-        "The use of TypeScript and functional components is a good practice for maintainability and scalability.",
-        "The code is well-documented with clear and concise comments."
-      ],
-      "improvements": [
-        "The `TaskList` component can be improved by adding a loading state to handle empty or null `tasks` prop.",
-        "The `TaskApp` component can be improved by adding a more robust error handling mechanism to handle potential errors when rendering the task list.",
-        "The code can benefit from the use of a more robust state management solution, such as Redux or MobX, to handle complex state changes and side effects."
-      ],
-      "readability": 85,
-      "maintainability": 90,
-      "overall": "The code is well-structured and maintainable, but can benefit from some improvements to handle edge cases and complex state changes. With some additional attention to error handling and state management, this code can be even more robust and scalable."
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "fetch failed"
     }
   }
 ]

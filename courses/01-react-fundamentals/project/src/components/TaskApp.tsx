@@ -3,11 +3,11 @@ import type { Task } from './TaskList'
 import TaskList from './TaskList'
 
 interface TaskAppProps {
-  tasks: Task[]
+  tasks?: Task[]
   setTasks?: Dispatch<SetStateAction<Task[]>>
 }
 
-export default function TaskApp({ tasks }: TaskAppProps) {
+export default function TaskApp({ tasks = [] }: TaskAppProps) {
   return (
     <div>
       <div id="task-count">
