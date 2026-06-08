@@ -1,4 +1,5 @@
 import TaskList, { Task } from "./TaskList";
+import TaskForm from "./TaskForm";
 
 interface TaskAppProps {
   tasks: Task[];
@@ -7,14 +8,30 @@ interface TaskAppProps {
   countFormat?: string;
 }
 
-function TaskApp({ tasks }: TaskAppProps) {
+function TaskApp({
+  tasks,
+  setTasks,
+  showForm,
+}: TaskAppProps) {
   const countText = `${tasks.length} Tasks`;
 
+  const handleAddTask = (task: Task) => {
+    if (setTasks) {
+      setTasks((prev) => [...prev, task]);
+    }
+  };
+
   return (
-    <TaskList
-      tasks={tasks}
-      countText={countText}
-    />
+    <>
+      {showForm && (
+        <TaskForm onAddTask={handleAddTask} />
+      )}
+
+      <TaskList
+        tasks={tasks}
+        countText={countText}
+      />
+    </>
   );
 }
 
