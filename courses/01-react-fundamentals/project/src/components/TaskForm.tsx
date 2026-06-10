@@ -7,7 +7,7 @@ interface TaskFormProps {
 export default function TaskForm({ onAddTask }: TaskFormProps) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [priority, setPriority] = useState("Low");
+  const [priority, setPriority] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -32,7 +32,7 @@ export default function TaskForm({ onAddTask }: TaskFormProps) {
 
     setTitle("");
     setDescription("");
-    setPriority("Low");
+    setPriority("");
   };
 
   return (

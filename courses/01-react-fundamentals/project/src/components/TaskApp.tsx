@@ -8,7 +8,7 @@ interface TaskAppProps {
   countFormat?: string;
 }
 
-function TaskApp({
+ function TaskApp({
   tasks,
   setTasks,
   showForm,
@@ -22,16 +22,16 @@ function TaskApp({
   };
 
   return (
-    <>
+    <div>
       {showForm && (
         <TaskForm onAddTask={handleAddTask} />
       )}
 
       <TaskList
         tasks={tasks}
-        countText={countText}
-      />
-    </>
+        countText={countText}></TaskList>
+      
+    </div>
   );
 }
 
