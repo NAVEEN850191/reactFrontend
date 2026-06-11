@@ -11,6 +11,7 @@ export interface Task {
 interface TaskListProps {
   tasks?: Task[];
   countText?: string;
+  onToggle?: (id: number | string) => void;
 }
 
 const HARDCODED_TASKS: Task[] = [
@@ -37,7 +38,7 @@ const HARDCODED_TASKS: Task[] = [
   },
 ];
 
-function TaskList({ tasks, countText }: TaskListProps) {
+function TaskList({ tasks, countText, onToggle }: TaskListProps) {
   const list = tasks ?? HARDCODED_TASKS;
 
   return (
@@ -45,6 +46,7 @@ function TaskList({ tasks, countText }: TaskListProps) {
       {countText && (
         <h2 id="task-count">
           {countText}
+
         </h2>
       )}
     <section id="task-list">
@@ -54,6 +56,8 @@ function TaskList({ tasks, countText }: TaskListProps) {
           title={task.title}
           description={task.description}
           priority={task.priority}
+          completed={task.completed}
+          onToggle={onToggle ? () => onToggle(task.id) : undefined}
         />
       ))}
     </section>

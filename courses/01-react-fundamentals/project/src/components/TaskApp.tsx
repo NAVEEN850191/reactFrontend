@@ -13,11 +13,17 @@ interface TaskAppProps {
   setTasks,
   showForm,
 }: TaskAppProps) {
-  const countText = `${tasks.length} Tasks`;
+  const completedCount = tasks.filter((task) => task.completed).length;
+  const countText = `${completedCount} of ${tasks.length} completed`;
 
   const handleAddTask = (task: Task) => {
     if (setTasks) {
       setTasks((prev) => [...prev, task]);
+    }
+  };
+  const handleToggle=(id: number | string) => {
+    if (setTasks) {
+      setTasks((prev) => prev.map((task) => task.id === id ? { ...task, completed: !task.completed } : task));
     }
   };
 
@@ -29,7 +35,9 @@ interface TaskAppProps {
 
       <TaskList
         tasks={tasks}
-        countText={countText}></TaskList>
+        countText={countText}
+        onToggle={handleToggle}
+      />
       
     </div>
   );
