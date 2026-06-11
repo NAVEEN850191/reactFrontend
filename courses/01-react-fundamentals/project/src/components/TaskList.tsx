@@ -12,6 +12,7 @@ interface TaskListProps {
   tasks?: Task[];
   countText?: string;
   onToggle?: (id: number | string) => void;
+  onDelete?: (id: number | string) => void;
 }
 
 const HARDCODED_TASKS: Task[] = [
@@ -38,7 +39,7 @@ const HARDCODED_TASKS: Task[] = [
   },
 ];
 
-function TaskList({ tasks, countText, onToggle }: TaskListProps) {
+function TaskList({ tasks, countText, onToggle, onDelete }: TaskListProps) {
   const list = tasks ?? HARDCODED_TASKS;
 
   return (
@@ -58,6 +59,7 @@ function TaskList({ tasks, countText, onToggle }: TaskListProps) {
           priority={task.priority}
           completed={task.completed}
           onToggle={onToggle ? () => onToggle(task.id) : undefined}
+          onDelete={onDelete}
         />
       ))}
     </section>

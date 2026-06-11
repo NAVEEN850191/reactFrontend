@@ -12,9 +12,11 @@ interface TaskAppProps {
   tasks,
   setTasks,
   showForm,
+  countFormat,
 }: TaskAppProps) {
   const completedCount = tasks.filter((task) => task.completed).length;
-  const countText = `${completedCount} of ${tasks.length} completed`;
+  const countText = 
+    countFormat === "completed" ? `${completedCount} of ${tasks.length} completed` : `${tasks.length} Tasks`;
 
   const handleAddTask = (task: Task) => {
     if (setTasks) {
@@ -24,6 +26,12 @@ interface TaskAppProps {
   const handleToggle=(id: number | string) => {
     if (setTasks) {
       setTasks((prev) => prev.map((task) => task.id === id ? { ...task, completed: !task.completed } : task));
+    }
+  };
+
+  const handleDelete=(id: number | string) => {
+    if (setTasks) {
+      setTasks((prev) => prev.filter((task) => task.id !== id));
     }
   };
 
@@ -37,6 +45,7 @@ interface TaskAppProps {
         tasks={tasks}
         countText={countText}
         onToggle={handleToggle}
+        onDelete={handleDelete}
       />
       
     </div>

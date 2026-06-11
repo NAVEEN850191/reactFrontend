@@ -1,23 +1,23 @@
 {
-  "lastUpdated": "2026-06-10T08:58:56.866Z",
+  "lastUpdated": "2026-06-11T07:26:12.628Z",
   "pathway": {
     "name": "Modern React Engineer",
     "version": "1.0.0",
-    "overallScore": 25.5,
-    "completionPercentage": 3.8,
+    "overallScore": 27.4,
+    "completionPercentage": 9.4,
     "badgeLevel": "none",
     "totalChallenges": 53,
-    "completedChallenges": 2
+    "completedChallenges": 5
   },
   "courses": {
     "01-react-fundamentals": {
       "courseId": "01-react-fundamentals",
       "courseName": "React Fundamentals",
-      "averageScore": 77.2,
-      "completionPercentage": 8.7,
+      "averageScore": 83.1,
+      "completionPercentage": 21.7,
       "badgeLevel": "none",
       "totalChallenges": 23,
-      "completedChallenges": 2,
+      "completedChallenges": 5,
       "challenges": {
         "01-static-task-display": {
           "challengeId": "01-static-task-display",
@@ -37,12 +37,12 @@
         "02-dynamic-task-rendering": {
           "challengeId": "02-dynamic-task-rendering",
           "challengeName": "Dynamic Task Rendering",
-          "passed": false,
-          "score": 72.95,
-          "lastRun": "2026-06-10T08:58:18.842Z",
+          "passed": true,
+          "score": 83.2,
+          "lastRun": "2026-06-11T07:23:40.759Z",
           "scores": {
-            "functionalTests": 75,
-            "codeQuality": 90,
+            "functionalTests": 100,
+            "codeQuality": 100,
             "architecture": 100,
             "bestPractices": 100,
             "e2eTests": 0,
@@ -67,12 +67,27 @@
         "04-task-completion-toggle": {
           "challengeId": "04-task-completion-toggle",
           "challengeName": "Task Completion Toggle",
-          "passed": false,
-          "score": 70.045,
-          "lastRun": "2026-06-10T08:56:55.953Z",
+          "passed": true,
+          "score": 83.2,
+          "lastRun": "2026-06-11T07:25:40.673Z",
           "scores": {
-            "functionalTests": 66.7,
-            "codeQuality": 90,
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 0,
+            "aiReview": 88
+          }
+        },
+        "05-task-deletion": {
+          "challengeId": "05-task-deletion",
+          "challengeName": "Task Deletion",
+          "passed": true,
+          "score": 83.2,
+          "lastRun": "2026-06-11T07:24:24.108Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
             "architecture": 100,
             "bestPractices": 100,
             "e2eTests": 0,
