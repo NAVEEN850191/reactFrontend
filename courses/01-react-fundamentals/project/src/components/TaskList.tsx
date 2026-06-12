@@ -54,6 +54,7 @@ function TaskList({ tasks, countText, onToggle, onDelete }: TaskListProps) {
       {list.map((task) => (
         <TaskCard
           key={task.id}
+          id={task.id}
           title={task.title}
           description={task.description}
           priority={task.priority}

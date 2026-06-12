@@ -11,7 +11,7 @@ interface TaskCardProps {
 function TaskCard({ id, title, description, priority, completed=false, onToggle, onDelete }: TaskCardProps) {
   const handleDelete =() => {
     if(id!== undefined && onDelete){
-      const confirmed=window.confirm("are you sure?");
+      const confirmed=window.confirm("Are you sure?");
       if(confirmed){
         onDelete(id);
       }
