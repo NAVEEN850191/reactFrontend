@@ -1,11 +1,11 @@
 {
   "courseId": "01-react-fundamentals",
   "courseName": "React Fundamentals",
-  "lastUpdated": "2026-06-11T07:26:11.742Z",
+  "lastUpdated": "2026-06-12T09:03:51.048Z",
   "totalChallenges": 23,
-  "completedChallenges": 5,
-  "averageScore": 83.1,
-  "completionPercentage": 21.7,
+  "completedChallenges": 6,
+  "averageScore": 83,
+  "completionPercentage": 26.1,
   "badgeLevel": "none",
   "challengeResults": [
     {
@@ -29,12 +29,18 @@
     {
       "challengeId": "04-task-completion-toggle",
       "challengeName": "Task Completion Toggle",
-      "score": 83.2,
+      "score": 82.45,
       "passed": true
     },
     {
       "challengeId": "05-task-deletion",
       "challengeName": "Task Deletion",
+      "score": 83.2,
+      "passed": true
+    },
+    {
+      "challengeId": "06-task-filtering",
+      "challengeName": "Task Filtering",
       "score": 83.2,
       "passed": true
     }
@@ -44,7 +50,8 @@
     "Dynamic Task Rendering",
     "Adding New Tasks",
     "Task Completion Toggle",
-    "Task Deletion"
+    "Task Deletion",
+    "Task Filtering"
   ],
   "improvementAreas": []
 }
