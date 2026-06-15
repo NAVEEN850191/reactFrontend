@@ -182,5 +182,28 @@
       "maintainability": 80,
       "overall": "The code is well-structured and follows good practices, but there are some areas for improvement to make it more maintainable and efficient."
     }
+  },
+  {
+    "challengeId": "10-useeffect-local-storage",
+    "challengeName": "useEffect - Local Storage Persistence",
+    "aiReview": {
+      "challengeId": "10-useeffect-local-storage",
+      "timestamp": "2026-06-15T08:49:03.750Z",
+      "score": 83,
+      "feedback": [],
+      "strengths": [
+        "The code uses a clear and consistent naming convention, making it easy to understand and follow.",
+        "The use of `useEffect` for handling side effects is a good practice and makes the code more predictable and easier to maintain.",
+        "The code is well-structured and organized, with each `useEffect` hook having a clear and specific responsibility."
+      ],
+      "improvements": [
+        "The `try-catch` block in the first `useEffect` hook is not necessary, as the `JSON.parse` function will throw an error if the data is not a valid JSON. Instead, you can use a simple `if` statement to check if the data is an array before trying to parse it.",
+        "The second `useEffect` hook is missing a dependency on `tasks`. This means that the effect will not be re-run when the `tasks` array changes, which could lead to unexpected behavior. You should add `tasks` as a dependency to ensure that the effect is re-run when the `tasks` array changes.",
+        "The `handleDelete` function is not necessary, as you can use the `filter` method directly in the `setTasks` callback. This would make the code more concise and easier to read."
+      ],
+      "readability": 80,
+      "maintainability": 85,
+      "overall": "The code is well-structured and follows good practices, but there are a few areas that need improvement. With some minor adjustments, the code can be even more maintainable and efficient."
+    }
   }
 ]
