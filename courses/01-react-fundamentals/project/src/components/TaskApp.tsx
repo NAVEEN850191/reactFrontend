@@ -19,7 +19,7 @@ interface TaskAppProps {
 }: TaskAppProps) {
 
   const [filter, setFilter] = useState<"all" | "active" | "completed">("all");
-
+  const [sort,setSort]=useState("recent");
   const handleAddTask = (task: Task) => {
     if (setTasks) {
       setTasks((prev) => [...prev, task]);
@@ -39,6 +39,24 @@ interface TaskAppProps {
 
   const filteredTasks=filter==="active"? tasks.filter((task) => !task.completed) : filter==="completed" ? tasks.filter((task) => task.completed) : tasks;
   
+  const priorityOrder:Record<string,number>={
+    High:3,
+    Medium:2,
+    Low:1
+  };
+
+  const sortedTasks=[...filteredTasks];
+
+  if (sort==="high-low"){
+    sortedTasks.sort((a,b)=>priorityOrder[b.priority]-priorityOrder[a.priority]);
+  }else if(sort==="low-high"){
+    sortedTasks.sort((a,b)=>priorityOrder[a.priority]-priorityOrder[b.priority]);
+  }else if(sort==="alphabetical"){
+    sortedTasks.sort((a,b)=>a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
+  }
+
+
+
   const completedCount = tasks.filter((task) => task.completed).length;
   let countText=`${tasks.length} Tasks`;
   if(countFormat==="completed"){
@@ -54,11 +72,15 @@ interface TaskAppProps {
         <TaskForm onAddTask={handleAddTask} />
       )}
       {showFilterBar && (
-        <FilterBar filter={filter} onFilterChange={setFilter} />
+        <FilterBar 
+        filter={filter} 
+        onFilterChange={setFilter}
+        sort={sort}
+        onSortChange={setSort} />
       )}
 
       <TaskList
-        tasks={tasks}
+        tasks={sortedTasks}
         countText={countText}
         onToggle={handleToggle}
         onDelete={handleDelete}

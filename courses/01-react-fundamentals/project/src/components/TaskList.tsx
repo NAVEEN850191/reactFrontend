@@ -45,10 +45,10 @@ function TaskList({ tasks, countText, onToggle, onDelete }: TaskListProps) {
   return (
     <div>
       {countText && (
-        <h2 id="task-count">
+        <p id="task-count">
           {countText}
 
-        </h2>
+        </p>
       )}
     <section id="task-list">
       {list.map((task) => (

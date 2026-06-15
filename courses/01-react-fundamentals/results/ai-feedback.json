@@ -1,28 +1,5 @@
 [
   {
-    "challengeId": "03-adding-new-tasks",
-    "challengeName": "Adding New Tasks",
-    "aiReview": {
-      "challengeId": "03-adding-new-tasks",
-      "timestamp": "2026-06-09T05:15:23.105Z",
-      "score": 88,
-      "feedback": [],
-      "strengths": [
-        "The code is well-structured and easy to follow, with clear and concise variable names and function definitions.",
-        "The use of TypeScript and React functional components makes the code maintainable and scalable.",
-        "The code includes proper error handling and validation for the form inputs."
-      ],
-      "improvements": [
-        "The code could benefit from more descriptive variable names in the `handleSubmit` function. For example, `newTask` could be renamed to `newTaskObject` for clarity.",
-        "The `error` state could be improved by adding a more informative error message when the title is empty. For example, 'Please enter a title' instead of just 'Title is required'.",
-        "The code could use a more robust way to handle the form submission, such as using a library like React Hook Form or Formik to handle form validation and submission."
-      ],
-      "readability": 85,
-      "maintainability": 90,
-      "overall": "The code is well-structured and maintainable, with clear and concise variable names and function definitions. However, there are a few areas for improvement, such as more descriptive variable names and a more robust way to handle form submission. Overall, the code is a good starting point for a React application, and with a few tweaks, it can be even more efficient and scalable."
-    }
-  },
-  {
     "challengeId": "01-static-task-display",
     "challengeName": "Static Task Display",
     "aiReview": {
@@ -135,6 +112,52 @@
       "readability": 85,
       "maintainability": 90,
       "overall": "The code is well-structured and maintainable, with a good balance of readability and efficiency. However, there are a few areas where improvements could be made to make the code even more robust and error-free."
+    }
+  },
+  {
+    "challengeId": "07-priority-based-sorting",
+    "challengeName": "Priority-Based Sorting",
+    "aiReview": {
+      "challengeId": "07-priority-based-sorting",
+      "timestamp": "2026-06-13T09:35:55.102Z",
+      "score": 83,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and organized, with clear separation of concerns between components.",
+        "The use of TypeScript and functional components is a good practice.",
+        "The code is relatively free of bugs and errors."
+      ],
+      "improvements": [
+        "The `TaskApp` component is quite large and complex. Consider breaking it down into smaller, more manageable components.",
+        "The sorting logic in `TaskApp` can be improved by using a more robust sorting algorithm, such as a stable sort.",
+        "The use of magic strings in the `FilterBar` component can be replaced with enum values for better maintainability."
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code is well-organized and follows good practices, but there are some areas for improvement to make it more maintainable and efficient."
+    }
+  },
+  {
+    "challengeId": "03-adding-new-tasks",
+    "challengeName": "Adding New Tasks",
+    "aiReview": {
+      "challengeId": "03-adding-new-tasks",
+      "timestamp": "2026-06-13T09:57:53.649Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and easy to follow, with clear separation of concerns between components.",
+        "The use of TypeScript and functional components is a good practice for maintainability and scalability.",
+        "The code is well-documented with clear and concise comments."
+      ],
+      "improvements": [
+        "The `TaskForm` component has a lot of repeated code for handling form submission and validation. Consider extracting this logic into a separate utility function or a higher-order component.",
+        "The `TaskForm` component uses a lot of inline styles. Consider moving these styles to a separate CSS file or using a CSS-in-JS solution like styled-components.",
+        "The `TaskList` component has a hardcoded list of tasks. Consider fetching this data from an API or a database instead of hardcoding it."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and maintainable, but there are some areas for improvement to make it more scalable and efficient. With some refactoring and optimization, this code can be even better."
     }
   }
 ]

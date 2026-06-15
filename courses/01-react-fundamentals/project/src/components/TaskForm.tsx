@@ -8,7 +8,7 @@ export default function TaskForm({ onAddTask }: TaskFormProps) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState("Low");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,7 +36,7 @@ export default function TaskForm({ onAddTask }: TaskFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form id="tasl-form" onSubmit={handleSubmit}>
       <div>
         <label htmlFor="task-title">Title</label>
         <input
