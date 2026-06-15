@@ -21,6 +21,7 @@ interface TaskAppProps {
   const [filter, setFilter] = useState<"all" | "active" | "completed">("all");
   const [sort,setSort]=useState("recent");
   const [editingId,setEditingId]=useState<number|string|null>(null);
+  const [search,setSearch]=useState("");
   const handleAddTask = (task: Task) => {
     if (setTasks) {
       setTasks((prev) => [...prev, task]);
@@ -51,7 +52,9 @@ interface TaskAppProps {
     }
   };
 
-  const filteredTasks=filter==="active"? tasks.filter((task) => !task.completed) : filter==="completed" ? tasks.filter((task) => task.completed) : tasks;
+  const statusFilteredTasks=filter==="active"? tasks.filter((task) => !task.completed) : filter==="completed" ? tasks.filter((task) => task.completed) : tasks;
+
+  const searchFilteredTasks=statusFilteredTasks.filter((task)=>task.title.toLowerCase().includes(search.toLowerCase())||task.description.toLowerCase().includes(search.toLowerCase()));
   
   const priorityOrder:Record<string,number>={
     High:3,
@@ -59,7 +62,7 @@ interface TaskAppProps {
     Low:1
   };
 
-  const sortedTasks=[...filteredTasks];
+  const sortedTasks=[...searchFilteredTasks];
 
   if (sort==="high-low"){
     sortedTasks.sort((a,b)=>priorityOrder[b.priority]-priorityOrder[a.priority]);
@@ -78,7 +81,7 @@ interface TaskAppProps {
   }
 
   if(showFilterBar){
-    countText=`showing ${filteredTasks.length} of ${tasks.length} tasks`;
+    countText=`showing ${searchFilteredTasks.length} of ${tasks.length} tasks`;
   }
   return (
     <div>
@@ -90,7 +93,11 @@ interface TaskAppProps {
         filter={filter} 
         onFilterChange={setFilter}
         sort={sort}
-        onSortChange={setSort} />
+        onSortChange={setSort}
+        search={search}
+        onSearchChange={setSearch}
+        onClearSearch={()=>setSearch("")}
+         />
       )}
 
       <TaskList
@@ -102,7 +109,7 @@ interface TaskAppProps {
         editingId={editingId}
         setEditingId={setEditingId}
       />
-      {showFilterBar && filteredTasks.length === 0 && (
+      {showFilterBar && searchFilteredTasks.length === 0 && (
         <p id="filter-empty-message">No tasks match this filter</p>
       )}
     </div>

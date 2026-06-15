@@ -1,12 +1,14 @@
 interface FilterBarProps{
   filter: "all" | "active" | "completed";
   onFilterChange: (filter: "all" | "active" | "completed") => void;
-
-  sort:string;
+   sort:string;
   onSortChange:(sort:string)=>void;
+  search:string;
+  onSearchChange:(value:string)=>void;
+  onClearSearch:()=>void;
 }
 
-export default function FilterBar({ filter, onFilterChange,sort,onSortChange}: FilterBarProps){
+export default function FilterBar({ filter, onFilterChange,sort,onSortChange,search,onSearchChange,onClearSearch}: FilterBarProps){
   return(
     <div id="filter-bar">
       <button
@@ -34,6 +36,17 @@ export default function FilterBar({ filter, onFilterChange,sort,onSortChange}: F
         <option value="low-high">Priority: Low to High</option>
         <option value="alphabetical">Alphabetical</option>
       </select>
+
+      <input
+         id="search-input"
+         type="text"
+         placeholder="Search tasks"
+         value={search}
+         onChange={(e)=>onSearchChange(e.target.value)}
+      />
+
+      {search &&(<button id="clear-search" onClick={onClearSearch
+      }></button>)}
     
     </div>
   );
