@@ -115,29 +115,6 @@
     }
   },
   {
-    "challengeId": "07-priority-based-sorting",
-    "challengeName": "Priority-Based Sorting",
-    "aiReview": {
-      "challengeId": "07-priority-based-sorting",
-      "timestamp": "2026-06-13T09:35:55.102Z",
-      "score": 83,
-      "feedback": [],
-      "strengths": [
-        "The code is well-structured and organized, with clear separation of concerns between components.",
-        "The use of TypeScript and functional components is a good practice.",
-        "The code is relatively free of bugs and errors."
-      ],
-      "improvements": [
-        "The `TaskApp` component is quite large and complex. Consider breaking it down into smaller, more manageable components.",
-        "The sorting logic in `TaskApp` can be improved by using a more robust sorting algorithm, such as a stable sort.",
-        "The use of magic strings in the `FilterBar` component can be replaced with enum values for better maintainability."
-      ],
-      "readability": 85,
-      "maintainability": 80,
-      "overall": "The code is well-organized and follows good practices, but there are some areas for improvement to make it more maintainable and efficient."
-    }
-  },
-  {
     "challengeId": "03-adding-new-tasks",
     "challengeName": "Adding New Tasks",
     "aiReview": {
@@ -158,6 +135,52 @@
       "readability": 85,
       "maintainability": 90,
       "overall": "The code is well-structured and maintainable, but there are some areas for improvement to make it more scalable and efficient. With some refactoring and optimization, this code can be even better."
+    }
+  },
+  {
+    "challengeId": "07-priority-based-sorting",
+    "challengeName": "Priority-Based Sorting",
+    "aiReview": {
+      "challengeId": "07-priority-based-sorting",
+      "timestamp": "2026-06-15T05:10:42.081Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and functional components is a good practice.",
+        "The code is well-organized and easy to follow."
+      ],
+      "improvements": [
+        "The `priorityOrder` object can be simplified by using an enum or a more concise data structure.",
+        "The `handleDelete` function in `App.tsx` can be refactored to use a more modern approach, such as using the `useCallback` hook.",
+        "Some of the variable names, such as `countText`, can be more descriptive and follow a consistent naming convention."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured, maintainable, and follows good practices. However, there are some minor improvements that can be made to enhance readability and performance."
+    }
+  },
+  {
+    "challengeId": "08-task-editing",
+    "challengeName": "Task Editing",
+    "aiReview": {
+      "challengeId": "08-task-editing",
+      "timestamp": "2026-06-15T05:20:09.261Z",
+      "score": 83,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and functional components is a good practice.",
+        "The code is well-commented, making it easier to understand the functionality."
+      ],
+      "improvements": [
+        "Some of the functions are too long and complex. Consider breaking them down into smaller, more manageable functions.",
+        "The use of `useState` and `useEffect` hooks can be improved by using the `useCallback` hook to memoize the functions.",
+        "The code can benefit from more type annotations and interfaces to improve code readability and maintainability."
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code is well-structured and follows good practices, but there are some areas for improvement to make it more maintainable and efficient."
     }
   }
 ]

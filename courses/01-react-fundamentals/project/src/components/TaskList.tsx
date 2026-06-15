@@ -13,6 +13,10 @@ interface TaskListProps {
   countText?: string;
   onToggle?: (id: number | string) => void;
   onDelete?: (id: number | string) => void;
+  onUpdateTask?:(id:number|string,updates:{title:string;description:string;priority:string;})=>void;
+  editingId?:number|string|null;
+  setEditingId?:React.Dispatch<React.SetStateAction<number|string|null>>;
+
 }
 
 const HARDCODED_TASKS: Task[] = [
@@ -39,7 +43,7 @@ const HARDCODED_TASKS: Task[] = [
   },
 ];
 
-function TaskList({ tasks, countText, onToggle, onDelete }: TaskListProps) {
+function TaskList({ tasks, countText, onToggle, onDelete,onUpdateTask,editingId,setEditingId, }: TaskListProps) {
   const list = tasks ?? HARDCODED_TASKS;
 
   return (
@@ -61,6 +65,9 @@ function TaskList({ tasks, countText, onToggle, onDelete }: TaskListProps) {
           completed={task.completed}
           onToggle={onToggle ? () => onToggle(task.id) : undefined}
           onDelete={onDelete}
+          onUpdateTask={onUpdateTask}
+          editingId={editingId}
+          setEditingId={setEditingId}
         />
       ))}
     </section>

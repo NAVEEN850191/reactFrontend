@@ -20,6 +20,7 @@ interface TaskAppProps {
 
   const [filter, setFilter] = useState<"all" | "active" | "completed">("all");
   const [sort,setSort]=useState("recent");
+  const [editingId,setEditingId]=useState<number|string|null>(null);
   const handleAddTask = (task: Task) => {
     if (setTasks) {
       setTasks((prev) => [...prev, task]);
@@ -34,6 +35,19 @@ interface TaskAppProps {
   const handleDelete=(id: number | string) => {
     if (setTasks) {
       setTasks((prev) => prev.filter((task) => task.id !== id));
+    }
+  };
+
+  const handleUpdateTask=(
+    id:number|string,
+    updates:{
+      title:string;
+      description:string;
+      priority:string;
+    }
+  )=>{
+    if(setTasks){
+      setTasks((prev)=>prev.map((task)=>task.id===id?{...task,...updates}:task));
     }
   };
 
@@ -84,6 +98,9 @@ interface TaskAppProps {
         countText={countText}
         onToggle={handleToggle}
         onDelete={handleDelete}
+        onUpdateTask={handleUpdateTask}
+        editingId={editingId}
+        setEditingId={setEditingId}
       />
       {showFilterBar && filteredTasks.length === 0 && (
         <p id="filter-empty-message">No tasks match this filter</p>
