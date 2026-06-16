@@ -10,11 +10,11 @@ import { ThemeProvider } from './contexts/ThemeContext'
 import type { Task } from './components/TaskList'
 
 const INITIAL_TASKS: Task[] = [
-  { id: 1, title: 'First Task', description: 'Description one', priority: 'High', completed: false },
-  { id: 2, title: 'Second Task', description: 'Description two', priority: 'Medium', completed: false },
-  { id: 3, title: 'Third Task', description: 'Description three', priority: 'Low', completed: false },
-  { id: 4, title: 'Fourth Task', description: 'Description four', priority: 'Medium', completed: false },
-  { id: 5, title: 'Fifth Task', description: 'Description five', priority: 'High', completed: false },
+  { id: 1, title: 'First Task', description: 'Description one', priority: 'High', completed: false,},
+  { id: 2, title: 'Second Task', description: 'Description two', priority: 'Medium', completed: false,},
+  { id: 3, title: 'Third Task', description: 'Description three', priority: 'Low', completed: false,},
+  { id: 4, title: 'Fourth Task', description: 'Description four', priority: 'Medium', completed: false,},
+  { id: 5, title: 'Fifth Task', description: 'Description five', priority: 'High', completed: false,},
 ]
 
 const STORAGE_KEY = 'task-app-tasks';

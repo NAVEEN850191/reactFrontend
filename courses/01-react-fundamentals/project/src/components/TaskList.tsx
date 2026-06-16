@@ -6,8 +6,6 @@ export interface Task {
   description: string;
   priority: string;
   completed: boolean;
-  category:string;
-  tags:string[];
 }
 
 interface TaskListProps {
@@ -27,8 +25,7 @@ const HARDCODED_TASKS: Task[] = [
     description: "Description One",
     priority: "High",
     completed: false,
-    category:"General",
-    tags:["react"],
+  
   },
   {
     id: 2,
@@ -36,8 +33,7 @@ const HARDCODED_TASKS: Task[] = [
     description: "Description Two",
     priority: "Medium",
     completed: false,
-    category:"Work",
-    tags:["typescript"],
+   
   },
   {
     id: 3,
@@ -45,8 +41,7 @@ const HARDCODED_TASKS: Task[] = [
     description: "Description Three",
     priority: "Low",
     completed: false,
-    category:"Personal",
-    tags:["practice"],
+
   },
 ];
 
@@ -69,8 +64,6 @@ function TaskList({ tasks, countText, onToggle, onDelete,onUpdateTask,editingId,
           title={task.title}
           description={task.description}
           priority={task.priority}
-          category={task.category}
-          tags={task.tags}
           completed={task.completed}
           onToggle={onToggle ? () => onToggle(task.id) : undefined}
           onDelete={onDelete}

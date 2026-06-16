@@ -68,11 +68,11 @@ npm run review -- --challenge=01-static-task-display
 
 ## 📊 Progress Evidence
 
-*Auto-updated when you run review. Last run: 16/6/2026, 12:17:11 pm*
+*Auto-updated when you run review. Last run: 16/6/2026, 1:30:04 pm*
 
 | Metric | Value |
 |--------|-------|
-| Challenges completed | 10 / 23 (43.5%) |
+| Challenges completed | 12 / 23 (52.2%) |
 | Average score | 82.9% |
 
 | Challenge | Skills covered | Status |
@@ -85,10 +85,10 @@ npm run review -- --challenge=01-static-task-display
 | Task Filtering | Derived state, Conditional rendering, Filter logic composition | Passed |
 | Priority-Based Sorting | Array sort, Sort stability, Multiple sort criteria, Select dropdowns | Passed |
 | Task Editing | Inline editing, Conditional rendering, Edit mode state, Controlled inputs, Form handling, State synchronization | Passed |
-| Search Functionality | Text search, Combining filters, String methods, Search UI patterns | — |
+| Search Functionality | Text search, Combining filters, String methods, Search UI patterns | Passed |
 | useEffect - Local Storage Persistence | useEffect, Side effects, localStorage, JSON serialization, Effect dependencies | Passed |
 | useEffect - Debounced Search | useEffect cleanup, setTimeout, Debouncing, Memory leak prevention | Passed |
-| Categories and Tags | Complex state, Array fields, Multi-select/tags input, Nested data, Filtering by array membership | — |
+| Categories and Tags | Complex state, Array fields, Multi-select/tags input, Nested data, Filtering by array membership | Passed |
 | Due Dates and Sorting | Date handling, Date objects and formatting, Date comparison, Overdue detection | — |
 | Task Statistics Dashboard | Computed statistics, useMemo, Performance optimization, Data aggregation | — |
 | Component Organization with Props | Component extraction, Props interface design, Single Responsibility, Reusability, Props destructuring | — |

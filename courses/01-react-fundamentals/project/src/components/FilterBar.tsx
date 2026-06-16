@@ -6,14 +6,9 @@ interface FilterBarProps{
   search:string;
   onSearchChange:(value:string)=>void;
   onClearSearch:()=>void;
-  categories:string[];
-  selectedCategory:string;
-  onCategoryChange:(value:string)=>void;
 }
 
-export default function FilterBar({ filter, onFilterChange,sort,onSortChange,search,onSearchChange,onClearSearch,
-                                    categories,selectedCategory,onCategoryChange,
-}: FilterBarProps){
+export default function FilterBar({ filter, onFilterChange,sort,onSortChange,search,onSearchChange,onClearSearch}: FilterBarProps){
   return(
     <div id="filter-bar">
       <button
@@ -51,24 +46,7 @@ export default function FilterBar({ filter, onFilterChange,sort,onSortChange,sea
       />
 
       {search &&(<button id="clear-search" onClick={onClearSearch
-      }>Clear Search</button>)}
-
-      <select
-        id="category-filter"
-        value={selectedCategory}
-        onChange={(e)=>onCategoryChange(e.target.value)}
-      >
-        <option value="all">All Categories</option>
-
-        {categories.map((category)=>(
-          <option
-            key={category}
-            value={category}
-          >
-            {category}
-          </option>
-        ))}
-      </select>
+      }></button>)}
     
     </div>
   );

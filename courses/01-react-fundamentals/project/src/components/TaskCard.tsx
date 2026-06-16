@@ -11,13 +11,9 @@ interface TaskCardProps {
   onUpdateTask?:(id:number|string,updates:{title:string;description:string;priority:string;})=>void;
   editingId?:number|string|null;
   setEditingId?:React.Dispatch<React.SetStateAction<number|string|null>>;
-  category?:string;
-  tags?:string[];
 }
 
-function TaskCard({ id, title, description, priority, completed=false, onToggle, onDelete,onUpdateTask,editingId,setEditingId,
-                    category,tags=[]
- }: TaskCardProps) {
+function TaskCard({ id, title, description, priority, completed=false, onToggle, onDelete,onUpdateTask,editingId,setEditingId }: TaskCardProps) {
   const isEditing=editingId!==null && editingId!==undefined && editingId===id;
   const[editTitle,setEditTitle]=useState(title);
   const [editDescription,setEditDescription]=useState(description);
@@ -114,25 +110,6 @@ function TaskCard({ id, title, description, priority, completed=false, onToggle,
       {onUpdateTask &&(<button onClick={()=>setEditingId?.(id??null)}>Edit</button>)}
       
       {onDelete && (<button onClick={handleDelete}>Delete</button>)}
-
-      <p id="task-category">
-            Category: {category}
-          </p>
-
-          <div id="task-tags">
-            {tags.map((tag) => (
-              <span
-                key={tag}
-                data-tag={tag}
-                style={{
-                  marginRight: "5px",
-                  padding: "2px 6px",
-                  border: "1px solid #ccc",
-                }}
-              >{tag}
-              </span>
-            ))}
-          </div>
     </article>
   );
 }
