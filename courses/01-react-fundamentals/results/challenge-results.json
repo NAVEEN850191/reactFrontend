@@ -5181,5 +5181,353 @@
       "maintainability": 85,
       "overall": "The code is well-structured and follows good practices, but there are a few areas that need improvement. With some minor adjustments, the code can be even more maintainable and efficient."
     }
+  },
+  {
+    "challengeId": "11-useeffect-debounced-search",
+    "challengeName": "useEffect - Debounced Search",
+    "timestamp": "2026-06-16T05:02:25.778Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 98,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 88
+    },
+    "totalScore": 82.9,
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 2,
+      "passedTests": 2,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 11: useEffect - Debounced Search"
+              ],
+              "fullName": " Challenge 11: useEffect - Debounced Search FilterBar should exist for search/debounce integration",
+              "status": "passed",
+              "title": "FilterBar should exist for search/debounce integration",
+              "duration": 19,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 11: useEffect - Debounced Search"
+              ],
+              "fullName": " Challenge 11: useEffect - Debounced Search TaskList should render tasks",
+              "status": "passed",
+              "title": "TaskList should render tasks",
+              "duration": 17,
+              "failureMessages": []
+            }
+          ],
+          "startTime": 1781586149000,
+          "endTime": 1781586149036,
+          "status": "passed",
+          "message": "",
+          "name": "C:/Users/DELL/OneDrive/Desktop/frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-11.test.tsx"
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 98,
+      "passed": true,
+      "totalIssues": 1,
+      "errors": 0,
+      "warnings": 1,
+      "details": [
+        {
+          "filePath": "C:\\Users\\DELL\\OneDrive\\Desktop\\frontend\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\src\\App.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "C:\\Users\\DELL\\OneDrive\\Desktop\\frontend\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\src\\components\\FilterBar.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "C:\\Users\\DELL\\OneDrive\\Desktop\\frontend\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\src\\components\\TaskApp.tsx",
+          "messages": [
+            {
+              "ruleId": "react-hooks/exhaustive-deps",
+              "severity": 1,
+              "message": "React Hook useEffect has a missing dependency: 'debouncedSearch'. Either include it or remove the dependency array.",
+              "line": 41,
+              "column": 5,
+              "nodeType": "ArrayExpression",
+              "endLine": 41,
+              "endColumn": 13,
+              "suggestions": [
+                {
+                  "desc": "Update the dependencies array to be: [debouncedSearch, search]",
+                  "fix": {
+                    "range": [
+                      1077,
+                      1085
+                    ],
+                    "text": "[debouncedSearch, search]"
+                  }
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 1,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import TaskList, { Task } from \"./TaskList\";\r\nimport TaskForm from \"./TaskForm\";\r\nimport { useState,useEffect} from \"react\";\r\nimport FilterBar from \"./FilterBar\";\r\ninterface TaskAppProps {\r\n  tasks: Task[];\r\n  setTasks?: React.Dispatch<React.SetStateAction<Task[]>>;\r\n  showForm?: boolean;\r\n  countFormat?: string;\r\n  showFilterBar?: boolean;\r\n}\r\n\r\n function TaskApp({\r\n  tasks,\r\n  setTasks,\r\n  showForm,\r\n  countFormat,\r\n  showFilterBar\r\n}: TaskAppProps) {\r\n\r\n  const [filter, setFilter] = useState<\"all\" | \"active\" | \"completed\">(\"all\");\r\n  const [sort,setSort]=useState(\"recent\");\r\n  const [editingId,setEditingId]=useState<number|string|null>(null);\r\n  const [search,setSearch]=useState(\"\");\r\n  const[debouncedSearch,setDebouncedSearch]=useState(\"\");\r\n  const [isSearching,setIsSearching]=useState(false);\r\n\r\n  useEffect(()=>{\r\n    if(search!==debouncedSearch){\r\n      setIsSearching(true);\r\n    }\r\n\r\n    const timer=setTimeout(()=>{\r\n      setDebouncedSearch(search);\r\n      setIsSearching(false);\r\n    },300);\r\n\r\n    return ()=>{\r\n      clearTimeout(timer);\r\n    };\r\n  },[search]);\r\n\r\n\r\n  const handleAddTask = (task: Task) => {\r\n    if (setTasks) {\r\n      setTasks((prev) => [...prev, task]);\r\n    }\r\n  };\r\n  const handleToggle=(id: number | string) => {\r\n    if (setTasks) {\r\n      setTasks((prev) => prev.map((task) => task.id === id ? { ...task, completed: !task.completed } : task));\r\n    }\r\n  };\r\n\r\n  const handleDelete=(id: number | string) => {\r\n    if (setTasks) {\r\n      setTasks((prev) => prev.filter((task) => task.id !== id));\r\n    }\r\n  };\r\n\r\n  const handleUpdateTask=(\r\n    id:number|string,\r\n    updates:{\r\n      title:string;\r\n      description:string;\r\n      priority:string;\r\n    }\r\n  )=>{\r\n    if(setTasks){\r\n      setTasks((prev)=>prev.map((task)=>task.id===id?{...task,...updates}:task));\r\n    }\r\n  };\r\n\r\n  const statusFilteredTasks=filter===\"active\"? tasks.filter((task) => !task.completed) : filter===\"completed\" ? tasks.filter((task) => task.completed) : tasks;\r\n\r\n  const searchFilteredTasks=statusFilteredTasks.filter((task)=>task.title.toLowerCase().includes(debouncedSearch.toLowerCase())||task.description.toLowerCase().includes(debouncedSearch.toLowerCase()));\r\n  \r\n  const priorityOrder:Record<string,number>={\r\n    High:3,\r\n    Medium:2,\r\n    Low:1\r\n  };\r\n\r\n  const sortedTasks=[...searchFilteredTasks];\r\n\r\n  if (sort===\"high-low\"){\r\n    sortedTasks.sort((a,b)=>priorityOrder[b.priority]-priorityOrder[a.priority]);\r\n  }else if(sort===\"low-high\"){\r\n    sortedTasks.sort((a,b)=>priorityOrder[a.priority]-priorityOrder[b.priority]);\r\n  }else if(sort===\"alphabetical\"){\r\n    sortedTasks.sort((a,b)=>a.title.toLowerCase().localeCompare(b.title.toLowerCase()));\r\n  }\r\n\r\n\r\n\r\n  const completedCount = tasks.filter((task) => task.completed).length;\r\n  let countText=`${tasks.length} Tasks`;\r\n  if(countFormat===\"completed\"){\r\n    countText=`${completedCount} of ${tasks.length} completed`;\r\n  }\r\n\r\n  if(showFilterBar){\r\n    countText=`showing ${searchFilteredTasks.length} of ${tasks.length} tasks`;\r\n  }\r\n  return (\r\n    <div>\r\n      {showForm && (\r\n        <TaskForm onAddTask={handleAddTask} />\r\n      )}\r\n      {showFilterBar && (\r\n        <FilterBar \r\n        filter={filter} \r\n        onFilterChange={setFilter}\r\n        sort={sort}\r\n        onSortChange={setSort}\r\n        search={search}\r\n        onSearchChange={setSearch}\r\n        onClearSearch={()=>setSearch(\"\")}\r\n         />\r\n      )}\r\n\r\n      {isSearching &&(<p id=\"searching-indicator\">Searching...</p>)}\r\n\r\n      <TaskList\r\n        tasks={sortedTasks}\r\n        countText={countText}\r\n        onToggle={handleToggle}\r\n        onDelete={handleDelete}\r\n        onUpdateTask={handleUpdateTask}\r\n        editingId={editingId}\r\n        setEditingId={setEditingId}\r\n      />\r\n      {showFilterBar && searchFilteredTasks.length === 0 && (\r\n        <p id=\"filter-empty-message\">No tasks match this filter</p>\r\n      )}\r\n    </div>\r\n  );\r\n}\r\nexport default TaskApp;",
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "functionalComponent",
+        "useEffect"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "src/components/FilterBar.tsx",
+          "patternsFound": [
+            "functionalComponent"
+          ],
+          "patternsMissing": [
+            "useEffect"
+          ]
+        },
+        {
+          "file": "src/components/TaskApp.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "useEffect"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/App.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "useEffect"
+          ],
+          "patternsMissing": []
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "totalTests": 1,
+      "passedTests": 0,
+      "failedTests": 1,
+      "details": [
+        {
+          "title": "challenge-11.spec.ts",
+          "file": "challenge-11.spec.ts",
+          "column": 0,
+          "line": 0,
+          "specs": [],
+          "suites": [
+            {
+              "title": "Challenge 11: useEffect Debounced Search - E2E",
+              "file": "challenge-11.spec.ts",
+              "line": 3,
+              "column": 6,
+              "specs": [
+                {
+                  "title": "should display task list",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 1,
+                          "error": {
+                            "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+                            "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                          },
+                          "errors": [
+                            {
+                              "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-16T05:02:36.378Z",
+                          "annotations": [],
+                          "attachments": []
+                        },
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 1,
+                          "error": {
+                            "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+                            "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                          },
+                          "errors": [
+                            {
+                              "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 1,
+                          "startTime": "2026-06-16T05:02:37.514Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "trace",
+                              "contentType": "application/zip",
+                              "path": "C:\\Users\\DELL\\OneDrive\\Desktop\\frontend\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\test-results\\challenge-11-Challenge-11--766f3-2E-should-display-task-list-chromium-retry1\\trace.zip"
+                            }
+                          ]
+                        },
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 1,
+                          "error": {
+                            "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+                            "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                          },
+                          "errors": [
+                            {
+                              "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 2,
+                          "startTime": "2026-06-16T05:02:38.658Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "1017095ef2170c8a8deb-e3db42bbbc868bb5cc60",
+                  "file": "challenge-11.spec.ts",
+                  "line": 8,
+                  "column": 3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "error": "Command failed: npx playwright test \"tests/e2e/challenge-11.spec.ts\" --reporter=json",
+      "passed": false
+    },
+    "aiReviewResults": {
+      "challengeId": "11-useeffect-debounced-search",
+      "timestamp": "2026-06-16T05:02:39.208Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "Effective use of React hooks, including `useState` and `useEffect` to manage state and side effects.",
+        "Clear separation of concerns between components, with each component responsible for its own logic and rendering.",
+        "Use of TypeScript to ensure type safety and catch errors at compile-time."
+      ],
+      "improvements": [
+        "Some of the state variables and functions in `TaskApp` are not clearly named, making it difficult to understand their purpose. Consider using more descriptive names to improve code readability.",
+        "The `useEffect` hook in `TaskApp` has a complex cleanup function that clears the timeout. Consider breaking this into a separate function to improve code organization and maintainability.",
+        "The `debouncedSearch` state variable is not clearly explained in the code. Consider adding a comment to explain its purpose and how it is used."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and follows good practices for React development. However, there are some areas for improvement to make the code even more readable and maintainable. With some minor adjustments, the code can be even more effective and efficient."
+    },
+    "aiResults": {
+      "challengeId": "11-useeffect-debounced-search",
+      "timestamp": "2026-06-16T05:02:39.208Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "Effective use of React hooks, including `useState` and `useEffect` to manage state and side effects.",
+        "Clear separation of concerns between components, with each component responsible for its own logic and rendering.",
+        "Use of TypeScript to ensure type safety and catch errors at compile-time."
+      ],
+      "improvements": [
+        "Some of the state variables and functions in `TaskApp` are not clearly named, making it difficult to understand their purpose. Consider using more descriptive names to improve code readability.",
+        "The `useEffect` hook in `TaskApp` has a complex cleanup function that clears the timeout. Consider breaking this into a separate function to improve code organization and maintainability.",
+        "The `debouncedSearch` state variable is not clearly explained in the code. Consider adding a comment to explain its purpose and how it is used."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and follows good practices for React development. However, there are some areas for improvement to make the code even more readable and maintainable. With some minor adjustments, the code can be even more effective and efficient."
+    }
   }
 ]

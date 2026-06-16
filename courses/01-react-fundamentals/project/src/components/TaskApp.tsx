@@ -1,6 +1,6 @@
 import TaskList, { Task } from "./TaskList";
 import TaskForm from "./TaskForm";
-import { useState } from "react";
+import { useState,useEffect} from "react";
 import FilterBar from "./FilterBar";
 interface TaskAppProps {
   tasks: Task[];
@@ -22,6 +22,25 @@ interface TaskAppProps {
   const [sort,setSort]=useState("recent");
   const [editingId,setEditingId]=useState<number|string|null>(null);
   const [search,setSearch]=useState("");
+  const[debouncedSearch,setDebouncedSearch]=useState("");
+  const [isSearching,setIsSearching]=useState(false);
+
+  useEffect(()=>{
+    if(search!==debouncedSearch){
+      setIsSearching(true);
+    }
+
+    const timer=setTimeout(()=>{
+      setDebouncedSearch(search);
+      setIsSearching(false);
+    },300);
+
+    return ()=>{
+      clearTimeout(timer);
+    };
+  },[search]);
+
+
   const handleAddTask = (task: Task) => {
     if (setTasks) {
       setTasks((prev) => [...prev, task]);
@@ -54,7 +73,7 @@ interface TaskAppProps {
 
   const statusFilteredTasks=filter==="active"? tasks.filter((task) => !task.completed) : filter==="completed" ? tasks.filter((task) => task.completed) : tasks;
 
-  const searchFilteredTasks=statusFilteredTasks.filter((task)=>task.title.toLowerCase().includes(search.toLowerCase())||task.description.toLowerCase().includes(search.toLowerCase()));
+  const searchFilteredTasks=statusFilteredTasks.filter((task)=>task.title.toLowerCase().includes(debouncedSearch.toLowerCase())||task.description.toLowerCase().includes(debouncedSearch.toLowerCase()));
   
   const priorityOrder:Record<string,number>={
     High:3,
@@ -99,6 +118,8 @@ interface TaskAppProps {
         onClearSearch={()=>setSearch("")}
          />
       )}
+
+      {isSearching &&(<p id="searching-indicator">Searching...</p>)}
 
       <TaskList
         tasks={sortedTasks}

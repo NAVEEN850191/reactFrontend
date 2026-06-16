@@ -205,5 +205,28 @@
       "maintainability": 85,
       "overall": "The code is well-structured and follows good practices, but there are a few areas that need improvement. With some minor adjustments, the code can be even more maintainable and efficient."
     }
+  },
+  {
+    "challengeId": "11-useeffect-debounced-search",
+    "challengeName": "useEffect - Debounced Search",
+    "aiReview": {
+      "challengeId": "11-useeffect-debounced-search",
+      "timestamp": "2026-06-16T05:02:39.208Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "Effective use of React hooks, including `useState` and `useEffect` to manage state and side effects.",
+        "Clear separation of concerns between components, with each component responsible for its own logic and rendering.",
+        "Use of TypeScript to ensure type safety and catch errors at compile-time."
+      ],
+      "improvements": [
+        "Some of the state variables and functions in `TaskApp` are not clearly named, making it difficult to understand their purpose. Consider using more descriptive names to improve code readability.",
+        "The `useEffect` hook in `TaskApp` has a complex cleanup function that clears the timeout. Consider breaking this into a separate function to improve code organization and maintainability.",
+        "The `debouncedSearch` state variable is not clearly explained in the code. Consider adding a comment to explain its purpose and how it is used."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and follows good practices for React development. However, there are some areas for improvement to make the code even more readable and maintainable. With some minor adjustments, the code can be even more effective and efficient."
+    }
   }
 ]
