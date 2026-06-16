@@ -92,7 +92,6 @@ interface TaskAppProps {
   }
 
 
-
   const completedCount = tasks.filter((task) => task.completed).length;
   let countText=`${tasks.length} Tasks`;
   if(countFormat==="completed"){
@@ -130,6 +129,7 @@ interface TaskAppProps {
         editingId={editingId}
         setEditingId={setEditingId}
       />
+      
       {showFilterBar && searchFilteredTasks.length === 0 && (
         <p id="filter-empty-message">No tasks match this filter</p>
       )}
