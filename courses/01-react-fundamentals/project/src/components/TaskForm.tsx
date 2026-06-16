@@ -7,8 +7,11 @@ interface TaskFormProps {
 export default function TaskForm({ onAddTask }: TaskFormProps) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [priority, setPriority] = useState("");
-  const [error, setError] = useState("Low");
+  const [priority, setPriority] = useState("Low");
+  const [error, setError] = useState("");
+
+  const [category, setCategory] = useState("General");
+  const [tags, setTags] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,6 +29,11 @@ export default function TaskForm({ onAddTask }: TaskFormProps) {
       description,
       priority,
       completed: false,
+      category,
+      tags: tags
+        .split(",")
+        .map((tag) => tag.trim())
+        .filter(Boolean),
     };
 
     onAddTask?.(newTask);
@@ -33,10 +41,12 @@ export default function TaskForm({ onAddTask }: TaskFormProps) {
     setTitle("");
     setDescription("");
     setPriority("");
+    setCategory("General");
+    setTags("");
   };
 
   return (
-    <form id="tasl-form" onSubmit={handleSubmit}>
+    <form id="task-form" onSubmit={handleSubmit}>
       <div>
         <label htmlFor="task-title">Title</label>
         <input
@@ -74,6 +84,30 @@ export default function TaskForm({ onAddTask }: TaskFormProps) {
           {error}
         </p>
       )}
+
+      <div>
+  <label htmlFor="task-category">Category</label>
+  <select
+    id="task-category"
+    value={category}
+    onChange={(e) => setCategory(e.target.value)}
+  >
+    <option value="General">General</option>
+    <option value="Work">Work</option>
+    <option value="Personal">Personal</option>
+  </select>
+</div>
+
+<div>
+  <label htmlFor="task-tags">Tags</label>
+  <input
+    id="task-tags"
+    type="text"
+    value={tags}
+    onChange={(e) => setTags(e.target.value)}
+    placeholder="react,typescript"
+  />
+</div>
 
       <button type="submit">Add Task</button>
     </form>

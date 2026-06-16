@@ -24,6 +24,8 @@ interface TaskAppProps {
   const [search,setSearch]=useState("");
   const[debouncedSearch,setDebouncedSearch]=useState("");
   const [isSearching,setIsSearching]=useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const categories = [...new Set(tasks.map((task) => task.category).filter(Boolean)),];
 
   useEffect(()=>{
     if(search!==debouncedSearch){
@@ -73,7 +75,14 @@ interface TaskAppProps {
 
   const statusFilteredTasks=filter==="active"? tasks.filter((task) => !task.completed) : filter==="completed" ? tasks.filter((task) => task.completed) : tasks;
 
-  const searchFilteredTasks=statusFilteredTasks.filter((task)=>task.title.toLowerCase().includes(debouncedSearch.toLowerCase())||task.description.toLowerCase().includes(debouncedSearch.toLowerCase()));
+  const categoryFilteredTasks =
+    selectedCategory === "all"
+      ? statusFilteredTasks
+      : statusFilteredTasks.filter(
+          (task) => task.category === selectedCategory
+        );
+
+  const searchFilteredTasks=categoryFilteredTasks.filter((task)=>task.title.toLowerCase().includes(debouncedSearch.toLowerCase())||task.description.toLowerCase().includes(debouncedSearch.toLowerCase()));
   
   const priorityOrder:Record<string,number>={
     High:3,
@@ -115,6 +124,9 @@ interface TaskAppProps {
         search={search}
         onSearchChange={setSearch}
         onClearSearch={()=>setSearch("")}
+        categories={categories}
+        selectedCategory={selectedCategory}
+        onCategoryChange={setSelectedCategory}
          />
       )}
 
@@ -128,8 +140,9 @@ interface TaskAppProps {
         onUpdateTask={handleUpdateTask}
         editingId={editingId}
         setEditingId={setEditingId}
+        
       />
-      
+
       {showFilterBar && searchFilteredTasks.length === 0 && (
         <p id="filter-empty-message">No tasks match this filter</p>
       )}
