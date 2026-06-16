@@ -22,7 +22,7 @@ interface TaskAppProps {
   const [sort,setSort]=useState("recent");
   const [editingId,setEditingId]=useState<number|string|null>(null);
   const [search,setSearch]=useState("");
-  const[debouncedSearch,setDebouncedSearch]=useState("");
+  const[debouncedSearch,setDebouncedSearch]=useState("false");
   const [isSearching,setIsSearching]=useState(false);
 
   useEffect(()=>{
