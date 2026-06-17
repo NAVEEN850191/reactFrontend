@@ -1,11 +1,11 @@
 {
   "courseId": "01-react-fundamentals",
   "courseName": "React Fundamentals",
-  "lastUpdated": "2026-06-16T08:24:55.905Z",
+  "lastUpdated": "2026-06-17T09:05:01.682Z",
   "totalChallenges": 23,
-  "completedChallenges": 12,
-  "averageScore": 82.8,
-  "completionPercentage": 52.2,
+  "completedChallenges": 13,
+  "averageScore": 82.7,
+  "completionPercentage": 56.5,
   "badgeLevel": "bronze",
   "challengeResults": [
     {
@@ -35,13 +35,13 @@
     {
       "challengeId": "05-task-deletion",
       "challengeName": "Task Deletion",
-      "score": 83.2,
+      "score": 82.45,
       "passed": true
     },
     {
       "challengeId": "06-task-filtering",
       "challengeName": "Task Filtering",
-      "score": 82.45,
+      "score": 82.9,
       "passed": true
     },
     {
@@ -71,13 +71,19 @@
     {
       "challengeId": "11-useeffect-debounced-search",
       "challengeName": "useEffect - Debounced Search",
-      "score": 83.2,
+      "score": 82.9,
       "passed": true
     },
     {
       "challengeId": "12-categories-and-tags",
       "challengeName": "Categories and Tags",
-      "score": 83.2,
+      "score": 82.45,
+      "passed": true
+    },
+    {
+      "challengeId": "13-due-dates-and-sorting",
+      "challengeName": "Due Dates and Sorting",
+      "score": 82.9,
       "passed": true
     }
   ],
@@ -93,7 +99,8 @@
     "Search Functionality",
     "useEffect - Local Storage Persistence",
     "useEffect - Debounced Search",
-    "Categories and Tags"
+    "Categories and Tags",
+    "Due Dates and Sorting"
   ],
   "improvementAreas": []
 }

@@ -1,14 +1,21 @@
 interface FilterBarProps{
   filter: "all" | "active" | "completed";
   onFilterChange: (filter: "all" | "active" | "completed") => void;
-   sort:string;
+
+  sort:string;
   onSortChange:(sort:string)=>void;
+  
   search:string;
   onSearchChange:(value:string)=>void;
   onClearSearch:()=>void;
+  categories?: string[];
+  selectedCategory?: string;
+  onCategoryChange?: (value: string)=>void;
 }
 
-export default function FilterBar({ filter, onFilterChange,sort,onSortChange,search,onSearchChange,onClearSearch}: FilterBarProps){
+export default function FilterBar({ filter, onFilterChange,sort,onSortChange,search,onSearchChange,onClearSearch,
+                                    categories,selectedCategory,onCategoryChange,
+}: FilterBarProps){
   return(
     <div id="filter-bar">
       <button
@@ -35,6 +42,7 @@ export default function FilterBar({ filter, onFilterChange,sort,onSortChange,sea
         <option value="high-low">Priority: High to Low</option>
         <option value="low-high">Priority: Low to High</option>
         <option value="alphabetical">Alphabetical</option>
+        <option value="due-date">Due Date (Soonest First)</option>
       </select>
 
       <input
@@ -45,8 +53,24 @@ export default function FilterBar({ filter, onFilterChange,sort,onSortChange,sea
          onChange={(e)=>onSearchChange(e.target.value)}
       />
 
+      {categories && onCategoryChange && (
+          <select
+            id="category-filter"
+            value={selectedCategory}
+            onChange={(e) => onCategoryChange(e.target.value)}
+          >
+            <option value="all">All Categories</option>
+
+            {categories.map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+        )}
+
       {search &&(<button id="clear-search" onClick={onClearSearch
-      }></button>)}
+      }>Clear Search</button>)}
     
     </div>
   );

@@ -11,9 +11,16 @@ interface TaskCardProps {
   onUpdateTask?:(id:number|string,updates:{title:string;description:string;priority:string;})=>void;
   editingId?:number|string|null;
   setEditingId?:React.Dispatch<React.SetStateAction<number|string|null>>;
+  category?: string;
+  tags?: string[];
+  dueDate?: string;
+
 }
 
-function TaskCard({ id, title, description, priority, completed=false, onToggle, onDelete,onUpdateTask,editingId,setEditingId }: TaskCardProps) {
+function TaskCard({ id, title, description, priority,category,tags=[], completed=false, onToggle, onDelete,onUpdateTask,editingId,setEditingId,
+                    dueDate,
+
+ }: TaskCardProps) {
   const isEditing=editingId!==null && editingId!==undefined && editingId===id;
   const[editTitle,setEditTitle]=useState(title);
   const [editDescription,setEditDescription]=useState(description);
@@ -93,8 +100,24 @@ function TaskCard({ id, title, description, priority, completed=false, onToggle,
       </article>
     );
   }
+
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const due =dueDate?new Date(dueDate): null;
+    if (due) {
+        due.setHours(0, 0, 0, 0);
+      }
+  const diffDays = due? Math.ceil((due.getTime() -today.getTime()) /(1000 * 60 * 60 * 24)): null;
+
+  const isOverdue = !!due &&diffDays! < 0 && !completed;
+
+  const isDueToday =diffDays === 0;
+
+  const isDueSoon =diffDays !== null && diffDays > 0 && diffDays <= 3;
+
   return (
-    <article id="task-card" data-completed={completed} style={{backgroundColor: completed ? "#e5e7eb" :"white"}}>
+    <article id="task-card" data-completed={completed} date-overdue={isOverdue} style={{backgroundColor: isOverdue?"#fecaca":completed ? "#e5e7eb" :"white"}}>
       
       {onToggle && (<input
        type="checkbox"
@@ -106,6 +129,40 @@ function TaskCard({ id, title, description, priority, completed=false, onToggle,
       <p style={{textDecoration: completed ? "line-through" : "none"}}>{description}</p>
       
       <p>Priority: {priority}</p>
+
+      {dueDate && (
+        <div>
+          <p id="task-due-date">
+            Due:{" "}{new Date(dueDate).toLocaleDateString()}
+          </p>
+
+          {isOverdue && (<span>Overdue</span>)}
+
+          {isDueToday && (<span>Due Today</span> )}
+
+          {isDueSoon && (<span>Due Soon</span>)}
+        </div>
+)}
+
+      <p id="task-category">
+          Category: {category}
+        </p>
+
+        <div id="task-tags">
+          {tags.map((tag) => (
+            <span
+              key={tag}
+              data-tag={tag}
+              style={{
+                marginRight: "6px",
+                padding: "2px 6px",
+                border: "1px solid #ccc",
+              }}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
       
       {onUpdateTask &&(<button onClick={()=>setEditingId?.(id??null)}>Edit</button>)}
       
@@ -114,4 +171,4 @@ function TaskCard({ id, title, description, priority, completed=false, onToggle,
   );
 }
 
-export default TaskCard;
+export default TaskCard

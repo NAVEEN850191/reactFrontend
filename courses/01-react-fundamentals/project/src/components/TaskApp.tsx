@@ -22,8 +22,9 @@ interface TaskAppProps {
   const [sort,setSort]=useState("recent");
   const [editingId,setEditingId]=useState<number|string|null>(null);
   const [search,setSearch]=useState("");
-  const[debouncedSearch,setDebouncedSearch]=useState("false");
+  const[debouncedSearch,setDebouncedSearch]=useState("");
   const [isSearching,setIsSearching]=useState(false);
+  const [selectedCategory, setSelectedCategory] =useState("all");
 
   useEffect(()=>{
     if(search!==debouncedSearch){
@@ -37,7 +38,7 @@ interface TaskAppProps {
 
     return ()=>
       clearTimeout(timer);  
-  },[search,debouncedSearch]);
+  },[search]);
 
 
   const handleAddTask = (task: Task) => {
@@ -70,10 +71,15 @@ interface TaskAppProps {
     }
   };
 
+
   const statusFilteredTasks=filter==="active"? tasks.filter((task) => !task.completed) : filter==="completed" ? tasks.filter((task) => task.completed) : tasks;
 
-  const searchFilteredTasks=statusFilteredTasks.filter((task)=>task.title.toLowerCase().includes(debouncedSearch.toLowerCase())||task.description.toLowerCase().includes(debouncedSearch.toLowerCase()));
-  
+  const categories=[...new Set(tasks.map((task) => task.category).filter(Boolean)),
+  ] as string[];
+
+  const categoryFilteredTasks =selectedCategory === "all"? statusFilteredTasks: statusFilteredTasks.filter((task) =>task.category === selectedCategory);
+
+  const searchFilteredTasks=categoryFilteredTasks.filter((task)=>task.title.toLowerCase().includes(debouncedSearch.toLowerCase())||task.description.toLowerCase().includes(debouncedSearch.toLowerCase()));
   const priorityOrder:Record<string,number>={
     High:3,
     Medium:2,
@@ -90,7 +96,20 @@ interface TaskAppProps {
     sortedTasks.sort((a,b)=>a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
   }
 
-
+  if (sort === "due-date") {
+    sortedTasks.sort((a, b) => {
+      if (!a.dueDate && !b.dueDate)
+        return 0;
+      if (!a.dueDate)
+        return 1;
+      if (!b.dueDate)
+        return -1;
+      return (
+        new Date(a.dueDate).getTime() -
+        new Date(b.dueDate).getTime()
+      );
+    });
+  }
   const completedCount = tasks.filter((task) => task.completed).length;
   let countText=`${tasks.length} Tasks`;
   if(countFormat==="completed"){
@@ -114,6 +133,9 @@ interface TaskAppProps {
         search={search}
         onSearchChange={setSearch}
         onClearSearch={()=>setSearch("")}
+        categories={categories}
+        selectedCategory={selectedCategory}
+        onCategoryChange={setSelectedCategory}
          />
       )}
 
@@ -129,7 +151,7 @@ interface TaskAppProps {
         setEditingId={setEditingId}
       />
       
-      {showFilterBar && searchFilteredTasks.length === 0 && (
+      {showFilterBar && sortedTasks.length === 0 && (
         <p id="filter-empty-message">No tasks match this filter</p>
       )}
     </div>

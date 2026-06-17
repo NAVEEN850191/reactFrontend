@@ -6,6 +6,9 @@ export interface Task {
   description: string;
   priority: string;
   completed: boolean;
+  category?: string;
+  tags?: string[];
+  dueDate?:string;
 }
 
 interface TaskListProps {
@@ -25,7 +28,7 @@ const HARDCODED_TASKS: Task[] = [
     description: "Description One",
     priority: "High",
     completed: false,
-  
+   
   },
   {
     id: 2,
@@ -33,7 +36,6 @@ const HARDCODED_TASKS: Task[] = [
     description: "Description Two",
     priority: "Medium",
     completed: false,
-   
   },
   {
     id: 3,
@@ -41,7 +43,6 @@ const HARDCODED_TASKS: Task[] = [
     description: "Description Three",
     priority: "Low",
     completed: false,
-
   },
 ];
 
@@ -70,6 +71,9 @@ function TaskList({ tasks, countText, onToggle, onDelete,onUpdateTask,editingId,
           onUpdateTask={onUpdateTask}
           editingId={editingId}
           setEditingId={setEditingId}
+          category={task.category}
+          tags={task.tags}
+          dueDate={task.dueDate}
         />
       ))}
     </section>
