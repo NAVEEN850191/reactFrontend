@@ -1,13 +1,16 @@
 import TaskList, { Task } from "./TaskList";
 import TaskForm from "./TaskForm";
-import { useState,useEffect} from "react";
+import { useState,useEffect,useMemo} from "react";
 import FilterBar from "./FilterBar";
+import StatsPanel from "./StatsPanel";
+
 interface TaskAppProps {
   tasks: Task[];
   setTasks?: React.Dispatch<React.SetStateAction<Task[]>>;
   showForm?: boolean;
   countFormat?: string;
   showFilterBar?: boolean;
+  showStatsPanel?:boolean;
 }
 
  function TaskApp({
@@ -15,14 +18,15 @@ interface TaskAppProps {
   setTasks,
   showForm,
   countFormat,
-  showFilterBar
+  showFilterBar,
+  showStatsPanel,
 }: TaskAppProps) {
 
   const [filter, setFilter] = useState<"all" | "active" | "completed">("all");
   const [sort,setSort]=useState("recent");
   const [editingId,setEditingId]=useState<number|string|null>(null);
   const [search,setSearch]=useState("");
-  const[debouncedSearch,setDebouncedSearch]=useState("");
+  const [debouncedSearch,setDebouncedSearch]=useState("");
   const [isSearching,setIsSearching]=useState(false);
   const [selectedCategory, setSelectedCategory] =useState("all");
 
@@ -38,7 +42,7 @@ interface TaskAppProps {
 
     return ()=>
       clearTimeout(timer);  
-  },[search]);
+  },[search,debouncedSearch]);
 
 
   const handleAddTask = (task: Task) => {
@@ -119,6 +123,37 @@ interface TaskAppProps {
   if(showFilterBar){
     countText=`showing ${searchFilteredTasks.length} of ${tasks.length} tasks`;
   }
+
+
+  const stats = useMemo(() => {
+      const total = tasks.length;
+
+      const completed = tasks.filter(
+        (task) => task.completed
+      ).length;
+
+      const active = total - completed;
+
+      const overdue = tasks.filter((task) => {
+        if (!task.dueDate || task.completed)
+          return false;
+
+        return (
+          new Date(task.dueDate) <new Date());
+      }).length;
+
+      const completedPercentage =total === 0? 0: Math.round((completed / total) * 100);
+
+      return {
+        total,
+        completed,
+        active,
+        overdue,
+        completedPercentage,
+      };
+    }, [tasks]);
+
+
   return (
     <div>
       {showForm && (
@@ -140,6 +175,16 @@ interface TaskAppProps {
       )}
 
       {isSearching &&(<p id="searching-indicator">Searching...</p>)}
+
+      {showStatsPanel && (
+        <StatsPanel
+          total={stats.total}
+          completed={stats.completed}
+          active={stats.active}
+          overdue={stats.overdue}
+          completedPercentage={stats.completedPercentage}
+        />
+      )}
 
       <TaskList
         tasks={sortedTasks}

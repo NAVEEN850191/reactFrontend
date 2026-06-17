@@ -1,11 +1,11 @@
 {
   "courseId": "01-react-fundamentals",
   "courseName": "React Fundamentals",
-  "lastUpdated": "2026-06-17T09:05:01.682Z",
+  "lastUpdated": "2026-06-17T09:44:06.776Z",
   "totalChallenges": 23,
-  "completedChallenges": 13,
+  "completedChallenges": 14,
   "averageScore": 82.7,
-  "completionPercentage": 56.5,
+  "completionPercentage": 60.9,
   "badgeLevel": "bronze",
   "challengeResults": [
     {
@@ -85,6 +85,12 @@
       "challengeName": "Due Dates and Sorting",
       "score": 82.9,
       "passed": true
+    },
+    {
+      "challengeId": "14-task-statistics-dashboard",
+      "challengeName": "Task Statistics Dashboard",
+      "score": 82.45,
+      "passed": true
     }
   ],
   "skillStrengths": [
@@ -100,7 +106,8 @@
     "useEffect - Local Storage Persistence",
     "useEffect - Debounced Search",
     "Categories and Tags",
-    "Due Dates and Sorting"
+    "Due Dates and Sorting",
+    "Task Statistics Dashboard"
   ],
   "improvementAreas": []
 }
