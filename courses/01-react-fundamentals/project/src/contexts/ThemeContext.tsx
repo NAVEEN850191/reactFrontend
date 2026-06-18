@@ -1,4 +1,5 @@
-import { createContext, useContext,useEffect,useState, type ReactNode } from 'react'
+import { createContext, useContext,useEffect, type ReactNode } from 'react'
+import useLocalStorage from "../hooks/useLocalStorage";
 
 export type Theme = 'light' | 'dark'
 
@@ -10,34 +11,33 @@ export interface ThemeContextValue {
 
 export const ThemeContext = createContext<ThemeContextValue | null>(null)
 
-const STORAGE_KEY="task-app-theme";
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
 
-  const [theme,setThemeState]=useState<Theme>(()=>{
-    const saved=localStorage.getItem(STORAGE_KEY);
+  const [theme,setTheme]=useLocalStorage<Theme>("task-app-theme","light");
 
-    return saved==="dark"?"dark":"light"
-  });
-
+  
   useEffect(()=>{
-    localStorage.setItem(STORAGE_KEY,theme);
-
-    document.documentElement.setAttribute("data-theme",theme);
+    document.body.setAttribute("data-theme",theme);
   },[theme]);
 
   const toggleTheme=()=>{
-    setThemeState((prev)=>prev==="light"?"dark":"light");
+    setTheme((prev)=>prev==="light"?"dark":"light");
   };
 
-
-  const value: ThemeContextValue = {
-    theme: 'light',
-    setTheme: () => {},
+  const value:ThemeContextValue={
+    theme,
+    setTheme,
     toggleTheme
-  }
-  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
-}
+  };
+
+  return(<ThemeContext.Provider value={value}>
+            <div data-theme={theme}>
+              {children}
+            </div>
+          </ThemeContext.Provider>
+  );
+}            
 
 export function useTheme(): ThemeContextValue {
   const ctx = useContext(ThemeContext);
