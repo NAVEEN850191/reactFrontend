@@ -3,6 +3,7 @@ import TaskForm from "./TaskForm";
 import { useState,useEffect,useMemo} from "react";
 import FilterBar from "./FilterBar";
 import StatsPanel from "./StatsPanel";
+import{useTheme} from "../contexts/ThemeContext";
 
 interface TaskAppProps {
   tasks: Task[];
@@ -29,6 +30,7 @@ interface TaskAppProps {
   const [debouncedSearch,setDebouncedSearch]=useState("");
   const [isSearching,setIsSearching]=useState(false);
   const [selectedCategory, setSelectedCategory] =useState("all");
+  const {theme,toggleTheme}=useTheme();
 
   useEffect(()=>{
     if(search!==debouncedSearch){
@@ -155,7 +157,15 @@ interface TaskAppProps {
 
 
   return (
+
     <div>
+      <div data-theme={theme}>
+        <button id="theme-toggle" onClick={toggleTheme}>
+          {theme==="light"?"Dark Mode":"light"}
+
+        </button>
+
+      </div>
       {showForm && (
         <TaskForm onAddTask={handleAddTask} />
       )}

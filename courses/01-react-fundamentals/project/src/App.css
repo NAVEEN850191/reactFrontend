@@ -23,3 +23,31 @@
   border-radius: 6px;
   padding: 1rem;
 }
+
+[data-theme="light"]{
+  background-color:white;
+  color:black;
+  min-height:100vh;
+}
+
+[data-theme="dark"] {
+  background-color: #1f2937;
+  color: white;
+  min-height: 100vh;
+}
+
+[data-theme="dark"] #task-card,
+[data-theme="dark"] form,
+[data-theme="dark"] #filter-bar,
+[data-theme="dark"] #stats-panel {
+  background-color: #374151;
+  color: white;
+}
+
+[data-theme="light"] #task-card,
+[data-theme="light"] form,
+[data-theme="light"] #filter-bar,
+[data-theme="light"] #stats-panel {
+  background-color: white;
+  color: black;
+}
