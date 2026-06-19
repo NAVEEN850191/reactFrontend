@@ -389,5 +389,28 @@
       "maintainability": 90,
       "overall": "The code is well-structured, maintainable, and scalable. However, there are some areas for improvement, such as providing more informative error messages and optimizing the useEffect hook. With some minor adjustments, this code can be even more robust and efficient."
     }
+  },
+  {
+    "challengeId": "18-usereducer-complex-state",
+    "challengeName": "useReducer - Complex State Management",
+    "aiReview": {
+      "challengeId": "18-usereducer-complex-state",
+      "timestamp": "2026-06-19T05:40:33.071Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "Effective use of TypeScript and React hooks",
+        "Clear separation of concerns between components and reducers",
+        "Use of memoization for performance optimization"
+      ],
+      "improvements": [
+        "Consider adding type guards for action types to prevent potential errors",
+        "Some reducer cases could be simplified using more concise array methods",
+        "TaskApp component could benefit from a more modular structure to reduce complexity"
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code demonstrates a good understanding of React, TypeScript, and Redux principles. However, there are some areas that could be improved for better maintainability and readability."
+    }
   }
 ]

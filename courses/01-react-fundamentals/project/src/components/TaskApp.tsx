@@ -4,10 +4,12 @@ import { useState,useEffect,useMemo} from "react";
 import FilterBar from "./FilterBar";
 import StatsPanel from "./StatsPanel";
 import{useTheme} from "../contexts/ThemeContext";
+import type {TaskAction} from "../reducers/taskReducer";
+import {ADD_TASK,UPDATE_TASK,DELETE_TASK,TOGGLE_TASK,} from "../reducers/taskReducer";
 
 interface TaskAppProps {
   tasks: Task[];
-  setTasks?: React.Dispatch<React.SetStateAction<Task[]>>;
+  dispatch?:React.Dispatch<TaskAction>;
   showForm?: boolean;
   countFormat?: string;
   showFilterBar?: boolean;
@@ -16,12 +18,12 @@ interface TaskAppProps {
 
  function TaskApp({
   tasks,
-  setTasks,
+  dispatch,
   showForm,
   countFormat,
   showFilterBar,
   showStatsPanel,
-}: TaskAppProps) {
+}: TaskAppProps){
 
   const [filter, setFilter] = useState<"all" | "active" | "completed">("all");
   const [sort,setSort]=useState("recent");
@@ -37,7 +39,7 @@ interface TaskAppProps {
       setIsSearching(true);
     }
 
-    const timer=setTimeout(()=>{
+  const timer=setTimeout(()=>{
       setDebouncedSearch(search);
       setIsSearching(false);
     },300);
@@ -48,33 +50,33 @@ interface TaskAppProps {
 
 
   const handleAddTask = (task: Task) => {
-    if (setTasks) {
-      setTasks((prev) => [...prev, task]);
+    if (dispatch) {
+      dispatch?.({type:ADD_TASK,payload:task});
     }
   };
   const handleToggle=(id: number | string) => {
-    if (setTasks) {
-      setTasks((prev) => prev.map((task) => task.id === id ? { ...task, completed: !task.completed } : task));
+    if (dispatch) {
+      dispatch?.({type: TOGGLE_TASK,payload: id,});
     }
   };
 
   const handleDelete=(id: number | string) => {
-    if (setTasks) {
-      setTasks((prev) => prev.filter((task) => task.id !== id));
+    if (dispatch) {
+      dispatch?.({type: DELETE_TASK,payload: id,});
     }
   };
 
   const handleUpdateTask=(
     id:number|string,
     updates:{
-      title:string;
-      description:string;
-      priority:string;
+     title:string;
+     description:string;
+     priority:string;
     }
   )=>{
-    if(setTasks){
-      setTasks((prev)=>prev.map((task)=>task.id===id?{...task,...updates}:task));
-    }
+    if(dispatch){
+     dispatch?.({type: UPDATE_TASK,payload: {id,updates,},});
+    } 
   };
 
 
