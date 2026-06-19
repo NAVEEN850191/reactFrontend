@@ -1,11 +1,12 @@
 import TaskList, { Task } from "./TaskList";
 import TaskForm from "./TaskForm";
-import { useState,useEffect,useMemo} from "react";
+import { useState,useEffect,useMemo,useCallback} from "react";
 import FilterBar from "./FilterBar";
 import StatsPanel from "./StatsPanel";
 import{useTheme} from "../contexts/ThemeContext";
 import type {TaskAction} from "../reducers/taskReducer";
 import {ADD_TASK,UPDATE_TASK,DELETE_TASK,TOGGLE_TASK,} from "../reducers/taskReducer";
+import ErrorBoundary from "./ErrorBoundary";
 
 interface TaskAppProps {
   tasks: Task[];
@@ -49,24 +50,25 @@ interface TaskAppProps {
   },[search,debouncedSearch]);
 
 
-  const handleAddTask = (task: Task) => {
+  const handleAddTask =useCallback((task: Task) => {
     if (dispatch) {
       dispatch?.({type:ADD_TASK,payload:task});
     }
-  };
-  const handleToggle=(id: number | string) => {
+  },[dispatch]);
+
+  const handleToggle=useCallback((id: number | string) => {
     if (dispatch) {
       dispatch?.({type: TOGGLE_TASK,payload: id,});
     }
-  };
+  },[dispatch]);
 
-  const handleDelete=(id: number | string) => {
+  const handleDelete=useCallback((id: number | string) => {
     if (dispatch) {
       dispatch?.({type: DELETE_TASK,payload: id,});
     }
-  };
+  },[dispatch]);
 
-  const handleUpdateTask=(
+  const handleUpdateTask=useCallback((
     id:number|string,
     updates:{
      title:string;
@@ -77,86 +79,141 @@ interface TaskAppProps {
     if(dispatch){
      dispatch?.({type: UPDATE_TASK,payload: {id,updates,},});
     } 
-  };
+  },[dispatch]);
 
 
-  const statusFilteredTasks=filter==="active"? tasks.filter((task) => !task.completed) : filter==="completed" ? tasks.filter((task) => task.completed) : tasks;
+  const categories=useMemo(()=>[...new Set(tasks.map((task) => task.category).filter(Boolean)),
+  ] as string[],[tasks]);
 
-  const categories=[...new Set(tasks.map((task) => task.category).filter(Boolean)),
-  ] as string[];
 
-  const categoryFilteredTasks =selectedCategory === "all"? statusFilteredTasks: statusFilteredTasks.filter((task) =>task.category === selectedCategory);
+  const sortedTasks = useMemo(() => {
+    const statusFilteredTasks =
+      filter === "active"
+        ? tasks.filter((task) => !task.completed)
+        : filter === "completed"
+        ? tasks.filter((task) => task.completed)
+        : tasks;
 
-  const searchFilteredTasks=categoryFilteredTasks.filter((task)=>task.title.toLowerCase().includes(debouncedSearch.toLowerCase())||task.description.toLowerCase().includes(debouncedSearch.toLowerCase()));
-  const priorityOrder:Record<string,number>={
-    High:3,
-    Medium:2,
-    Low:1
-  };
+    const categoryFilteredTasks =
+      selectedCategory === "all"
+        ? statusFilteredTasks
+        : statusFilteredTasks.filter(
+            (task) =>
+              task.category === selectedCategory
+          );
 
-  const sortedTasks=[...searchFilteredTasks];
-
-  if (sort==="high-low"){
-    sortedTasks.sort((a,b)=>priorityOrder[b.priority]-priorityOrder[a.priority]);
-  }else if(sort==="low-high"){
-    sortedTasks.sort((a,b)=>priorityOrder[a.priority]-priorityOrder[b.priority]);
-  }else if(sort==="alphabetical"){
-    sortedTasks.sort((a,b)=>a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
-  }
-
-  if (sort === "due-date") {
-    sortedTasks.sort((a, b) => {
-      if (!a.dueDate && !b.dueDate)
-        return 0;
-      if (!a.dueDate)
-        return 1;
-      if (!b.dueDate)
-        return -1;
-      return (
-        new Date(a.dueDate).getTime() -
-        new Date(b.dueDate).getTime()
+    const searchFilteredTasks =
+      categoryFilteredTasks.filter(
+        (task) =>
+          task.title
+            .toLowerCase()
+            .includes(
+              debouncedSearch.toLowerCase()
+            ) ||
+          task.description
+            .toLowerCase()
+            .includes(
+              debouncedSearch.toLowerCase()
+            )
       );
-    });
-  }
-  const completedCount = tasks.filter((task) => task.completed).length;
-  let countText=`${tasks.length} Tasks`;
-  if(countFormat==="completed"){
-    countText=`${completedCount} of ${tasks.length} completed`;
-  }
 
-  if(showFilterBar){
-    countText=`showing ${searchFilteredTasks.length} of ${tasks.length} tasks`;
-  }
+    const priorityOrder: Record<string, number> = {
+      High: 3,
+      Medium: 2,
+      Low: 1,
+    };
 
+    const result = [...searchFilteredTasks];
 
-  const stats = useMemo(() => {
-      const total = tasks.length;
-
-      const completed = tasks.filter(
-        (task) => task.completed
-      ).length;
-
-      const active = total - completed;
-
-      const overdue = tasks.filter((task) => {
-        if (!task.dueDate || task.completed)
-          return false;
+    if (sort === "high-low") {
+      result.sort(
+        (a, b) =>
+          priorityOrder[b.priority] -
+          priorityOrder[a.priority]
+      );
+    } else if (sort === "low-high") {
+      result.sort(
+        (a, b) =>
+          priorityOrder[a.priority] -
+          priorityOrder[b.priority]
+      );
+    } else if (sort === "alphabetical") {
+      result.sort((a, b) =>
+        a.title
+          .toLowerCase()
+          .localeCompare(
+            b.title.toLowerCase()
+          )
+      );
+    } else if (sort === "due-date") {
+      result.sort((a, b) => {
+        if (!a.dueDate && !b.dueDate)
+          return 0;
+        if (!a.dueDate)
+          return 1;
+        if (!b.dueDate)
+          return -1;
 
         return (
-          new Date(task.dueDate) <new Date());
-      }).length;
+          new Date(a.dueDate).getTime() -
+          new Date(b.dueDate).getTime()
+        );
+      });
+    }
 
-      const completedPercentage =total === 0? 0: Math.round((completed / total) * 100);
+    return result;
+  }, [
+    tasks,
+    filter,
+    selectedCategory,
+    debouncedSearch,
+    sort,
+  ]);
 
-      return {
-        total,
-        completed,
-        active,
-        overdue,
-        completedPercentage,
-      };
-    }, [tasks]);
+  const completedCount = tasks.filter(
+    (task) => task.completed
+  ).length;
 
+  let countText = `${tasks.length} Tasks`;
+
+  if (countFormat === "completed") {
+    countText = `${completedCount} of ${tasks.length} completed`;
+  }
+
+  if (showFilterBar) {
+    countText = `showing ${sortedTasks.length} of ${tasks.length} tasks`;
+  }
+
+  const stats = useMemo(() => {
+    const total = tasks.length;
+
+    const completed = tasks.filter(
+      (task) => task.completed
+    ).length;
+
+    const active = total - completed;
+
+    const overdue = tasks.filter((task) => {
+      if (!task.dueDate || task.completed) {
+        return false;
+      }
+
+      return new Date(task.dueDate) < new Date();
+    }).length;
+
+    const completedPercentage =
+      total === 0
+        ? 0
+        : Math.round((completed / total) * 100);
+
+    return {
+      total,
+      completed,
+      active,
+      overdue,
+      completedPercentage,
+    };
+  }, [tasks]);
 
   return (
 
@@ -197,17 +254,17 @@ interface TaskAppProps {
           completedPercentage={stats.completedPercentage}
         />
       )}
-
-      <TaskList
-        tasks={sortedTasks}
-        countText={countText}
-        onToggle={handleToggle}
-        onDelete={handleDelete}
-        onUpdateTask={handleUpdateTask}
-        editingId={editingId}
-        setEditingId={setEditingId}
-      />
-      
+      <ErrorBoundary>
+        <TaskList
+          tasks={sortedTasks}
+          countText={countText}
+          onToggle={handleToggle}
+          onDelete={handleDelete}
+          onUpdateTask={handleUpdateTask}
+          editingId={editingId}
+          setEditingId={setEditingId}
+        />
+      </ErrorBoundary>
       {showFilterBar && sortedTasks.length === 0 && (
         <p id="filter-empty-message">No tasks match this filter</p>
       )}

@@ -15,13 +15,16 @@ export default function useLocalStorage<T>(
   });
 
   const setValue: React.Dispatch<React.SetStateAction<T>> = (value) => {
-
+    try{
       const valueToStore =
         value instanceof Function ? value(storedValue) : value;
 
         setStoredValue(valueToStore);
 
         localStorage.setItem(key,JSON.stringify(valueToStore));
+    }catch{
+      return;
+    }    
   };
 
   return [storedValue, setValue];

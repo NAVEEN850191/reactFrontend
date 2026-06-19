@@ -1,11 +1,11 @@
 {
   "courseId": "01-react-fundamentals",
   "courseName": "React Fundamentals",
-  "lastUpdated": "2026-06-19T05:40:34.382Z",
+  "lastUpdated": "2026-06-19T06:18:07.071Z",
   "totalChallenges": 23,
-  "completedChallenges": 18,
+  "completedChallenges": 20,
   "averageScore": 82.8,
-  "completionPercentage": 78.3,
+  "completionPercentage": 87,
   "badgeLevel": "silver",
   "challengeResults": [
     {
@@ -115,6 +115,18 @@
       "challengeName": "useReducer - Complex State Management",
       "score": 83.2,
       "passed": true
+    },
+    {
+      "challengeId": "19-performance-optimization",
+      "challengeName": "Performance Optimization",
+      "score": 82.45,
+      "passed": true
+    },
+    {
+      "challengeId": "20-error-boundaries",
+      "challengeName": "Error Boundaries and Error Handling",
+      "score": 83.2,
+      "passed": true
     }
   ],
   "skillStrengths": [
@@ -135,7 +147,9 @@
     "Component Organization with Props",
     "Context API - Theme Management",
     "Custom Hook - useLocalStorage",
-    "useReducer - Complex State Management"
+    "useReducer - Complex State Management",
+    "Performance Optimization",
+    "Error Boundaries and Error Handling"
   ],
   "improvementAreas": []
 }

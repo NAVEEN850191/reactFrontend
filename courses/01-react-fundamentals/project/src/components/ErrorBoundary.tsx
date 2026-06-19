@@ -9,9 +9,34 @@ interface State {
 }
 
 export default class ErrorBoundary extends Component<Props, State> {
-  state: State = { hasError: false }
+  state: State = { hasError: false };
+
+  static getDerivedStateFromError(): State{
+    return{
+      hasError:true,
+    };
+  }
+
+  componentDidCatch(){
+
+  }
+  handleRetry=()=>{
+    this.setState({
+      hasError:false,
+    });
+  };
 
   render() {
-    return this.props.children
+    if(this.state.hasError){
+      return(
+        <div id="error-boundary-fallback">
+          <h2>Something went wrong</h2>
+          <p>Please try again.</p>
+
+          <button id="error-retry" onClick={this.handleRetry}>Retry</button>
+        </div>
+      );
+    }
+    return this.props.children;
   }
 }

@@ -1,4 +1,4 @@
-import {useState,useEffect} from "react";
+import React, {useState,useEffect} from "react";
 
 interface TaskCardProps {
   id?: number | string;
@@ -171,4 +171,4 @@ function TaskCard({ id, title, description, priority,category,tags=[], completed
   );
 }
 
-export default TaskCard
+export default React.memo(TaskCard);
