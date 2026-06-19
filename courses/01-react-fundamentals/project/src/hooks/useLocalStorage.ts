@@ -12,7 +12,8 @@ export default function useLocalStorage<T>(
       }catch{
         return initialValue;
       }
-  });
+  }
+);
 
   const setValue: React.Dispatch<React.SetStateAction<T>> = (value) => {
     try{
