@@ -474,5 +474,28 @@
       "maintainability": 80,
       "overall": "The code is well-structured and maintainable, but there are some areas for improvement. With some refactoring and attention to detail, this code could be even more efficient and effective."
     }
+  },
+  {
+    "challengeId": "22-data-fetching",
+    "challengeName": "Data Fetching - Loading and Error State",
+    "aiReview": {
+      "challengeId": "22-data-fetching",
+      "timestamp": "2026-06-20T08:18:47.212Z",
+      "score": 94,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and easy to follow, with clear separation of concerns between the effect and the rendering logic.",
+        "The use of TypeScript and type annotations is excellent, making it easy to understand the types and interfaces used in the code.",
+        "The code is well-documented, with clear and concise comments explaining the purpose of each section."
+      ],
+      "improvements": [
+        "Consider adding a loading indicator or a spinner to the loading state, to provide a better user experience.",
+        "In the error handling, consider logging the error message to the console or a logging service, to help with debugging and troubleshooting.",
+        "Consider adding a check for the `AbortError` type in the `catch` block, to handle cases where the fetch is aborted due to a timeout or other reason."
+      ],
+      "readability": 92,
+      "maintainability": 95,
+      "overall": "The code is well-structured, maintainable, and easy to follow. It effectively handles loading, error, and data states, and provides a good user experience. With a few minor improvements, it can be even more robust and efficient."
+    }
   }
 ]
