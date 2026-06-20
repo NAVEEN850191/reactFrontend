@@ -1,3 +1,5 @@
+import {useEffect,useRef} from "react";
+
 interface FilterBarProps{
   filter: "all" | "active" | "completed";
   onFilterChange: (filter: "all" | "active" | "completed") => void;
@@ -16,6 +18,10 @@ interface FilterBarProps{
 export default function FilterBar({ filter, onFilterChange,sort,onSortChange,search,onSearchChange,onClearSearch,
                                     categories,selectedCategory,onCategoryChange,
 }: FilterBarProps){
+
+  const searchInputRef=useRef<HTMLInputElement>(null);
+
+  useEffect(() => {searchInputRef.current?.focus();}, []);
   return(
     <div id="filter-bar">
       <button
@@ -46,11 +52,12 @@ export default function FilterBar({ filter, onFilterChange,sort,onSortChange,sea
       </select>
 
       <input
-         id="search-input"
-         type="text"
-         placeholder="Search tasks"
-         value={search}
-         onChange={(e)=>onSearchChange(e.target.value)}
+        ref={searchInputRef} 
+        id="search-input"
+        type="text"
+        placeholder="Search tasks"
+        value={search}
+        onChange={(e)=>onSearchChange(e.target.value)}
       />
 
       {categories && onCategoryChange && (
