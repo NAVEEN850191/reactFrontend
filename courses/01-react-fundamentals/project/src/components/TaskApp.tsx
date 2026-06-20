@@ -15,6 +15,7 @@ interface TaskAppProps {
   countFormat?: string;
   showFilterBar?: boolean;
   showStatsPanel?:boolean;
+  linkToTaskDetail?:boolean;
 }
 
  function TaskApp({
@@ -24,6 +25,7 @@ interface TaskAppProps {
   countFormat,
   showFilterBar,
   showStatsPanel,
+  linkToTaskDetail,
 }: TaskAppProps){
 
   const [filter, setFilter] = useState<"all" | "active" | "completed">("all");
@@ -263,6 +265,7 @@ interface TaskAppProps {
           onUpdateTask={handleUpdateTask}
           editingId={editingId}
           setEditingId={setEditingId}
+          linkToTaskDetail={linkToTaskDetail}
         />
       </ErrorBoundary>
       {showFilterBar && sortedTasks.length === 0 && (

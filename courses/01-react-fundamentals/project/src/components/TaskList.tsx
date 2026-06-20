@@ -19,6 +19,7 @@ interface TaskListProps {
   onUpdateTask?:(id:number|string,updates:{title:string;description:string;priority:string;})=>void;
   editingId?:number|string|null;
   setEditingId?:React.Dispatch<React.SetStateAction<number|string|null>>;
+  linkToTaskDetail?: boolean;
 }
 
 const HARDCODED_TASKS: Task[] = [
@@ -46,7 +47,9 @@ const HARDCODED_TASKS: Task[] = [
   },
 ];
 
-function TaskList({ tasks, countText, onToggle, onDelete,onUpdateTask,editingId,setEditingId, }: TaskListProps) {
+function TaskList({ tasks, countText, onToggle, onDelete,onUpdateTask,editingId,setEditingId,
+                    linkToTaskDetail,
+ }: TaskListProps) {
   const list = tasks ?? HARDCODED_TASKS;
 
   return (
@@ -74,6 +77,7 @@ function TaskList({ tasks, countText, onToggle, onDelete,onUpdateTask,editingId,
           category={task.category}
           tags={task.tags}
           dueDate={task.dueDate}
+          linkToTaskDetail={linkToTaskDetail}
         />
       ))}
     </section>

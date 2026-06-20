@@ -1,4 +1,5 @@
 import React, {useState,useEffect} from "react";
+import { Link } from "react-router-dom";
 
 interface TaskCardProps {
   id?: number | string;
@@ -14,11 +15,11 @@ interface TaskCardProps {
   category?: string;
   tags?: string[];
   dueDate?: string;
-
+  linkToTaskDetail?:boolean;
 }
 
 function TaskCard({ id, title, description, priority,category,tags=[], completed=false, onToggle, onDelete,onUpdateTask,editingId,setEditingId,
-                    dueDate,
+                    dueDate,linkToTaskDetail,
 
  }: TaskCardProps) {
   const isEditing=editingId!==null && editingId!==undefined && editingId===id;
@@ -124,7 +125,10 @@ function TaskCard({ id, title, description, priority,category,tags=[], completed
        checked={completed}
        onChange={onToggle} />)}
 
-      <h2 style={{textDecoration: completed ? "line-through" : "none"}}>{title}</h2>
+      <h2 style={{textDecoration: completed ? "line-through" : "none"}}>
+        {linkToTaskDetail ?(<Link id={`task-link-${id}`} to={`/challenge/21-react-router/task/${id}`}>
+                              {title}</Link>):(title)}
+      </h2>
       
       <p style={{textDecoration: completed ? "line-through" : "none"}}>{description}</p>
       

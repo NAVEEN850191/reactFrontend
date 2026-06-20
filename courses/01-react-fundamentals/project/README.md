@@ -68,12 +68,12 @@ npm run review -- --challenge=01-static-task-display
 
 ## 📊 Progress Evidence
 
-*Auto-updated when you run review. Last run: 19/6/2026, 11:48:07 am*
+*Auto-updated when you run review. Last run: 20/6/2026, 1:08:42 pm*
 
 | Metric | Value |
 |--------|-------|
-| Challenges completed | 20 / 23 (87%) |
-| Average score | 82.8% |
+| Challenges completed | 21 / 23 (91.3%) |
+| Average score | 83.4% |
 
 | Challenge | Skills covered | Status |
 |-----------|----------------|--------|
@@ -97,7 +97,7 @@ npm run review -- --challenge=01-static-task-display
 | useReducer - Complex State Management | useReducer, Reducer functions, Action objects, Dispatch pattern, Complex state logic | Passed |
 | Performance Optimization | React.memo, useCallback, useMemo, Re-render optimization | Passed |
 | Error Boundaries and Error Handling | Error boundaries, Class component, Error handling, Fallback UI, try-catch | Passed |
-| React Router - Routing and Navigation | React Router, Route, Link, useNavigate, useParams, URL-driven UI, Dynamic segments | — |
+| React Router - Routing and Navigation | React Router, Route, Link, useNavigate, useParams, URL-driven UI, Dynamic segments | Passed |
 | Data Fetching - Loading and Error State | fetch, useEffect, Loading state, Error state, Async data, Conditional rendering | — |
 | useRef - Focus Management | useRef, ref.current, Focus management, DOM access, useEffect with ref | — |
 

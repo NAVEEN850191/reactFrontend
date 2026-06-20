@@ -115,29 +115,6 @@
     }
   },
   {
-    "challengeId": "01-static-task-display",
-    "challengeName": "Static Task Display",
-    "aiReview": {
-      "challengeId": "01-static-task-display",
-      "timestamp": "2026-06-16T08:27:00.039Z",
-      "score": 83,
-      "feedback": [],
-      "strengths": [
-        "The code is well-structured and follows a consistent naming convention.",
-        "The use of TypeScript interfaces and types is excellent for ensuring type safety and maintainability.",
-        "The code is well-commented, making it easier for others to understand the functionality."
-      ],
-      "improvements": [
-        "Some of the function names could be more descriptive. For example, `handleDelete` could be renamed to `handleTaskDeletion`.",
-        "The `TaskCard` component has a lot of props. Consider breaking it down into smaller, more focused components.",
-        "The `TaskList` component uses a hardcoded array of tasks. Consider fetching tasks from an API or a data store instead."
-      ],
-      "readability": 80,
-      "maintainability": 85,
-      "overall": "The code is well-structured and maintainable, but there are some areas for improvement. With some refactoring and optimization, this code could be even more efficient and scalable."
-    }
-  },
-  {
     "challengeId": "02-dynamic-task-rendering",
     "challengeName": "Dynamic Task Rendering",
     "aiReview": {
@@ -457,6 +434,45 @@
       "readability": 85,
       "maintainability": 90,
       "overall": "The code is well-structured, readable, and maintainable. It effectively utilizes TypeScript and React features to manage state and handle errors. With a few minor improvements, this codebase can be even more robust and efficient."
+    }
+  },
+  {
+    "challengeId": "21-react-router",
+    "challengeName": "React Router - Routing and Navigation",
+    "aiReview": {
+      "challengeId": "21-react-router",
+      "timestamp": "2026-06-20T07:37:43.123Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (413): Request too large for model `llama-3.1-8b-instant` in organization `org_01kt9g6ay7f6w91ng0xxmtg50d` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 6289, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+    }
+  },
+  {
+    "challengeId": "01-static-task-display",
+    "challengeName": "Static Task Display",
+    "aiReview": {
+      "challengeId": "01-static-task-display",
+      "timestamp": "2026-06-20T07:38:41.016Z",
+      "score": 83,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and interfaces helps to ensure type safety and maintainability.",
+        "The code is well-commented, making it easier to understand the functionality."
+      ],
+      "improvements": [
+        "Some of the functions in the TaskCard component are quite long and complex. Consider breaking them down into smaller, more manageable functions.",
+        "The use of the useState hook in the TaskCard component is not necessary. Instead, consider using the editingId prop to determine whether the component is in edit mode.",
+        "The code could benefit from more consistent use of whitespace and line breaks. This would make it easier to read and understand."
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code is well-structured and maintainable, but there are some areas for improvement. With some refactoring and attention to detail, this code could be even more efficient and effective."
     }
   }
 ]
