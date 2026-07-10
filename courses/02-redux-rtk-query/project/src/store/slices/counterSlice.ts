@@ -1,5 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit"
 
+// middleware is configured in store.ts
+
 interface CounterState{
     count:number;
 }
