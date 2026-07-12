@@ -1,12 +1,12 @@
 {
   "courseId": "02-redux-rtk-query",
   "courseName": "Redux & RTK Query",
-  "lastUpdated": "2026-07-10T05:58:23.871Z",
+  "lastUpdated": "2026-07-11T09:49:47.889Z",
   "totalChallenges": 13,
-  "completedChallenges": 5,
-  "averageScore": 82.5,
-  "completionPercentage": 38.5,
-  "badgeLevel": "none",
+  "completedChallenges": 8,
+  "averageScore": 82.6,
+  "completionPercentage": 61.5,
+  "badgeLevel": "bronze",
   "challengeResults": [
     {
       "challengeId": "01-store-setup",
@@ -37,6 +37,24 @@
       "challengeName": "Async Logic with createAsyncThunk",
       "score": 83.65,
       "passed": true
+    },
+    {
+      "challengeId": "06-rtk-query-setup",
+      "challengeName": "RTK Query Setup and API Slice",
+      "score": 82.9,
+      "passed": true
+    },
+    {
+      "challengeId": "07-queries",
+      "challengeName": "Query Endpoints and useQuery Hooks",
+      "score": 82.9,
+      "passed": true
+    },
+    {
+      "challengeId": "08-caching-refetch",
+      "challengeName": "Caching and Cache Tags",
+      "score": 82.9,
+      "passed": true
     }
   ],
   "skillStrengths": [
@@ -44,7 +62,10 @@
     "First Slice with createSlice",
     "Reading and Dispatching in Components",
     "Multiple Slices in the Store",
-    "Async Logic with createAsyncThunk"
+    "Async Logic with createAsyncThunk",
+    "RTK Query Setup and API Slice",
+    "Query Endpoints and useQuery Hooks",
+    "Caching and Cache Tags"
   ],
   "improvementAreas": []
 }
