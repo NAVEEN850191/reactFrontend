@@ -76,6 +76,34 @@ export const apiSlice = createApi({
         ],
       }),
 
+      getPostById: builder.query<Post, number>({
+          queryFn: async (id) => {
+            const posts = await mockApi.getPosts()
+
+            const post = posts.find((post) => post.id === id)
+
+            if (!post) {
+              return {
+                error: {
+                  status: 404,
+                  data: 'Post not found',
+                },
+              }
+            }
+
+            return {
+              data: post,
+            }
+          },
+
+          providesTags:(_result, _error, id) => [
+            {
+              type: 'Post',
+              id,
+            },
+          ],
+      }),
+
       addPost: builder.mutation<Post, Omit<Post, 'id'>>({
         queryFn: async (post) => {
           const newPost = await mockApi.createPost(post)
@@ -113,5 +141,4 @@ export const apiSlice = createApi({
     }),
   })
 
-export const { useGetUsersQuery } = apiSlice
-export const {useGetPostsQuery,useAddPostMutation,} = apiSlice
+export const {useGetUsersQuery,useGetPostsQuery,useGetPostByIdQuery,useAddPostMutation,} = apiSlice

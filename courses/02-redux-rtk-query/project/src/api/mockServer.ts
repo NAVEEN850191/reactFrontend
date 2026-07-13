@@ -1,9 +1,4 @@
-/**
- * Mock API Server for RTK Query
- * 
- * This simulates a REST API for development and testing.
- * In a real app, you would use a real backend API.
- */
+
 
 export interface User {
   id: number
@@ -20,7 +15,6 @@ export interface Post {
   body: string
 }
 
-// Mock data
 let users: User[] = [
   { id: 1, name: 'John Doe', email: 'john@example.com', username: 'johndoe', phone: '123-456-7890' },
   { id: 2, name: 'Jane Smith', email: 'jane@example.com', username: 'janesmith', phone: '234-567-8901' },
@@ -33,11 +27,11 @@ let posts: Post[] = [
   { id: 3, userId: 2, title: 'Third Post', body: 'This is the third post' },
 ]
 
-// Simulate network delay
+
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 
 export const mockApi = {
-  // Users API
+
   async getUsers(): Promise<User[]> {
     await delay(500)
     return [...users]
@@ -70,7 +64,7 @@ export const mockApi = {
     users = users.filter(u => u.id !== id)
   },
 
-  // Posts API
+
   async getPosts(): Promise<Post[]> {
     await delay(500)
     return [...posts]

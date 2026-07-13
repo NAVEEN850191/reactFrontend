@@ -13,14 +13,14 @@ const initialState: UsersState = {
   list: [],
   loading: false,
   error: null,
-};
+}
 
 export const fetchUsers = createAsyncThunk(
   "users/fetchUsers",
   async () => {
     return await mockApi.getUsers();
   }
-);
+)
 
  export const usersSlice = createSlice({
   name: "users",
@@ -40,8 +40,8 @@ export const fetchUsers = createAsyncThunk(
         state.loading = false;
         state.error =
           action.error.message || "Failed to fetch users";
-      });
-  },
-});
+      })
+  }
+})
 
-export default usersSlice.reducer;
+export default usersSlice.reducer

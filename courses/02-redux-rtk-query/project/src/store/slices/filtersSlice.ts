@@ -1,7 +1,5 @@
 import {createSlice,PayloadAction} from '@reduxjs/toolkit'
-
 // middleware is configured in store.ts
-
 type SortBy = 'newest' | 'oldest'
 
 interface FiltersState{
@@ -18,9 +16,8 @@ const filtersSlice=createSlice({
     reducers:{
         setSortBy:(state,action:PayloadAction<SortBy>) => {
             state.sortBy=action.payload
-        },
-    },
-
+        }
+    }
 })
 
 export const {setSortBy} =filtersSlice.actions

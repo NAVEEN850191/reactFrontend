@@ -1,4 +1,4 @@
-/** Stub: Complete Challenge 11 (API and Local State) per README. */
+
 import {useAppSelector, useAppDispatch} from '../store/hooks'
 import {useGetPostsQuery} from '../api/apiSlice'
 import {setSortBy} from '../store/slices/filtersSlice'

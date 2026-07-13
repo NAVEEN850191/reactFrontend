@@ -1,4 +1,29 @@
-/** Stub: Complete Challenge 13 (Query with Parameters) per README. */
+import { useGetPostByIdQuery } from '../api/apiSlice'
+
 export default function PostDetail() {
-  return <div id="post-detail">Complete Challenge 13 per README.</div>
+  const postId = 1
+  const {data,isLoading,isError,} = useGetPostByIdQuery(postId, {skip: !postId,})
+
+  if (isLoading) {
+    return (
+      <div data-testid="post-detail-loading">
+        Loading post...
+      </div>
+    )
+  }
+
+  if (isError) {
+    return (
+      <div data-testid="post-detail-error">
+        Error loading post
+      </div>
+    )
+  }
+
+  return (
+    <div data-testid="post-detail">
+      <h2>{data?.title}</h2>
+      <p>{data?.body}</p>
+    </div>
+  )
 }
