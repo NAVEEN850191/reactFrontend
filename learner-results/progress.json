@@ -1,13 +1,13 @@
 {
-  "lastUpdated": "2026-07-11T09:49:48.016Z",
+  "lastUpdated": "2026-07-13T07:56:37.387Z",
   "pathway": {
     "name": "Modern React Engineer",
     "version": "1.0.0",
-    "overallScore": 55.1,
-    "completionPercentage": 58.5,
+    "overallScore": 55.2,
+    "completionPercentage": 67.9,
     "badgeLevel": "none",
     "totalChallenges": 53,
-    "completedChallenges": 31
+    "completedChallenges": 36
   },
   "courses": {
     "01-react-fundamentals": {
@@ -369,11 +369,11 @@
     "02-redux-rtk-query": {
       "courseId": "02-redux-rtk-query",
       "courseName": "Redux & RTK Query",
-      "averageScore": 82.6,
-      "completionPercentage": 61.5,
-      "badgeLevel": "bronze",
+      "averageScore": 82.7,
+      "completionPercentage": 100,
+      "badgeLevel": "silver",
       "totalChallenges": 13,
-      "completedChallenges": 8,
+      "completedChallenges": 13,
       "challenges": {
         "01-store-setup": {
           "challengeId": "01-store-setup",
@@ -485,7 +485,82 @@
           "challengeName": "Caching and Cache Tags",
           "passed": true,
           "score": 82.9,
-          "lastRun": "2026-07-11T09:49:30.452Z",
+          "lastRun": "2026-07-13T07:51:57.695Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 0,
+            "aiReview": 86
+          }
+        },
+        "09-mutations": {
+          "challengeId": "09-mutations",
+          "challengeName": "Mutations with useMutation",
+          "passed": true,
+          "score": 82.9,
+          "lastRun": "2026-07-12T05:21:03.463Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 0,
+            "aiReview": 86
+          }
+        },
+        "10-optimistic-updates": {
+          "challengeId": "10-optimistic-updates",
+          "challengeName": "Optimistic Updates",
+          "passed": true,
+          "score": 82.9,
+          "lastRun": "2026-07-13T06:27:32.950Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 0,
+            "aiReview": 86
+          }
+        },
+        "11-api-local-state": {
+          "challengeId": "11-api-local-state",
+          "challengeName": "API and Local State Together",
+          "passed": true,
+          "score": 82.9,
+          "lastRun": "2026-07-13T05:45:22.464Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 0,
+            "aiReview": 86
+          }
+        },
+        "12-error-loading-ux": {
+          "challengeId": "12-error-loading-ux",
+          "challengeName": "Error and Loading UX",
+          "passed": true,
+          "score": 82.9,
+          "lastRun": "2026-07-13T06:28:03.286Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 0,
+            "aiReview": 86
+          }
+        },
+        "13-query-parameters": {
+          "challengeId": "13-query-parameters",
+          "challengeName": "Query with Parameters and Detail View",
+          "passed": true,
+          "score": 82.9,
+          "lastRun": "2026-07-13T07:56:18.798Z",
           "scores": {
             "functionalTests": 100,
             "codeQuality": 100,

@@ -182,32 +182,6 @@
     }
   },
   {
-    "challengeId": "08-caching-refetch",
-    "challengeName": "Caching and Cache Tags",
-    "aiReview": {
-      "challengeId": "08-caching-refetch",
-      "timestamp": "2026-07-11T09:49:46.633Z",
-      "score": 86,
-      "feedback": [],
-      "strengths": [
-        "The code is well-structured and easy to follow.",
-        "Proper use of TypeScript types and interfaces.",
-        "Correct implementation of RTK Query patterns."
-      ],
-      "improvements": [
-        "File organization: Separate user and post data into different files.",
-        "Type annotations: Add type annotations for function parameters and return types.",
-        "Error handling: Add try-catch blocks to handle potential errors.",
-        "Code duplication: Extract the delay function into a separate function or constant.",
-        "Unused imports: Remove unused imports."
-      ],
-      "readability": 85,
-      "maintainability": 80,
-      "overall": "The code meets most of the functional requirements and implements RTK Query patterns correctly, but there are some areas for improvement.",
-      "requirementCompliance": 90
-    }
-  },
-  {
     "challengeId": "09-mutations",
     "challengeName": "Mutations with useMutation",
     "aiReview": {
@@ -241,32 +215,6 @@
     }
   },
   {
-    "challengeId": "10-optimistic-updates",
-    "challengeName": "Optimistic Updates",
-    "aiReview": {
-      "challengeId": "10-optimistic-updates",
-      "timestamp": "2026-07-12T09:20:01.424Z",
-      "score": 50,
-      "feedback": [],
-      "strengths": [
-        "The code is well-structured and follows a logical organization.",
-        "Proper use of TypeScript types and interfaces.",
-        "Correct implementation of RTK Query endpoints and hooks."
-      ],
-      "improvements": [
-        "readability\": 85,",
-        "maintainability\": 80,",
-        "strengths\": [",
-        "The code is well-structured and follows a logical organization.\",",
-        "Proper use of TypeScript types and interfaces.\","
-      ],
-      "readability": 85,
-      "maintainability": 80,
-      "overall": "## Review\n\n### Readability: 85\n### Maintainability: 80\n### Strengths:\n- The code is well-structured and follows a logical organization.\n- Proper use of TypeScript types and interfaces.\n- Correct implementation of RTK Query endpoints and hooks.\n\n### Improvements:\n- **Improvement 1:** In `src/api/apiSlice.ts`, the `onQueryStarted` function for the `addPost` mutation can be simplified by using a `try-catch` block to handle the `queryFulfilled` promise rejection. This will make the code more concise",
-      "requirementCompliance": 0
-    }
-  },
-  {
     "challengeId": "11-api-local-state",
     "challengeName": "API and Local State Together",
     "aiReview": {
@@ -288,6 +236,121 @@
       "readability": 85,
       "maintainability": 80,
       "overall": "The code meets most functional requirements and demonstrates good RTK Query best practices. However, there are some areas for improvement in error handling and code optimization.",
+      "requirementCompliance": 90
+    }
+  },
+  {
+    "challengeId": "10-optimistic-updates",
+    "challengeName": "Optimistic Updates",
+    "aiReview": {
+      "challengeId": "10-optimistic-updates",
+      "timestamp": "2026-07-13T06:27:44.430Z",
+      "score": 86,
+      "feedback": [],
+      "strengths": [
+        "Correct implementation of optimistic updates using onQueryStarted and queryFulfilled",
+        "Proper usage of createApi, fetchBaseQuery, and endpoints",
+        "Clear and well-structured code"
+      ],
+      "improvements": [
+        {
+          "specific improvement": "Consider adding a check for queryFulfilled rejection to avoid undoing the patch unnecessarily",
+          "file reference": "src/api/apiSlice.ts"
+        },
+        {
+          "specific improvement": "Use a more robust error handling mechanism, such as try-catch blocks, to handle potential errors in the onQueryStarted callback",
+          "file reference": "src/api/apiSlice.ts"
+        },
+        {
+          "specific improvement": "Consider adding a comment to explain the purpose of the onQueryStarted callback and the optimistic update mechanism",
+          "file reference": "src/api/apiSlice.ts"
+        }
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code meets most requirements and demonstrates a good understanding of RTK Query best practices. However, there are some areas for improvement, such as error handling and code comments.",
+      "requirementCompliance": 90
+    }
+  },
+  {
+    "challengeId": "12-error-loading-ux",
+    "challengeName": "Error and Loading UX",
+    "aiReview": {
+      "challengeId": "12-error-loading-ux",
+      "timestamp": "2026-07-13T06:28:19.585Z",
+      "score": 86,
+      "feedback": [],
+      "strengths": [
+        "Proper use of RTK Query hooks and store integration",
+        "Clear and well-structured code",
+        "Correct TypeScript usage and type definitions"
+      ],
+      "improvements": [
+        "In src/components/UsersList.tsx, consider adding a loading indicator for the retry button. This will improve the user experience when retrying after an error.",
+        "In src/components/ErrorDisplay.tsx, consider adding a more user-friendly error message. Currently, it just displays the error object as a string.",
+        "In src/components/PostsWithFilters.tsx, consider adding a loading indicator for the posts list. This will improve the user experience when loading data.",
+        "In src/components/PostsWithFilters.tsx, consider adding a more robust error handling mechanism. Currently, it just displays a generic error message."
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code meets most requirements and demonstrates good RTK Query best practices. However, there are some areas for improvement to enhance the user experience and maintainability.",
+      "requirementCompliance": 90
+    }
+  },
+  {
+    "challengeId": "08-caching-refetch",
+    "challengeName": "Caching and Cache Tags",
+    "aiReview": {
+      "challengeId": "08-caching-refetch",
+      "timestamp": "2026-07-13T07:52:13.549Z",
+      "score": 86,
+      "feedback": [],
+      "strengths": [
+        "Correct implementation of RTK Query's tag system for caching and cache invalidation",
+        "Proper usage of providesTags and invalidatesTags",
+        "Well-structured code with logical separation of concerns"
+      ],
+      "improvements": [
+        {
+          "specific improvement": "Consider using a more robust error handling mechanism, such as a custom error type or a centralized error handling utility.",
+          "file reference": "src/api/apiSlice.ts"
+        },
+        {
+          "specific improvement": "The onQueryStarted hook in the addPost mutation can be simplified by removing the try-catch block and instead using the queryFulfilled promise directly.",
+          "file reference": "src/api/apiSlice.ts"
+        },
+        {
+          "specific improvement": "Consider adding more type guards and interfaces to improve code readability and maintainability.",
+          "file reference": "src/api/mockServer.ts"
+        }
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code meets most of the requirements and demonstrates a good understanding of RTK Query's tag system. However, there are some areas for improvement, such as error handling and code organization.",
+      "requirementCompliance": 90
+    }
+  },
+  {
+    "challengeId": "13-query-parameters",
+    "challengeName": "Query with Parameters and Detail View",
+    "aiReview": {
+      "challengeId": "13-query-parameters",
+      "timestamp": "2026-07-13T07:56:35.517Z",
+      "score": 86,
+      "feedback": [],
+      "strengths": [
+        "Properly implemented parameterized query (getPostById) in API slice.",
+        "Correct usage of skip option in useGetPostByIdQuery hook.",
+        "Well-structured code with clear separation of concerns."
+      ],
+      "improvements": [
+        "In src/api/apiSlice.ts, consider using a more robust error handling mechanism for the getPostById query. Currently, it returns a 404 error with a hardcoded message. Consider using a more dynamic error handling approach.",
+        "In src/components/PostDetail.tsx, consider adding a loading indicator for the post title and body. Currently, the loading state is only displayed for the entire post container.",
+        "In src/components/PostDetail.tsx, consider adding a retry mechanism for the post data fetch. Currently, the component only displays an error message when the fetch fails."
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code meets most of the functional requirements and demonstrates good knowledge of RTK Query. However, there are some areas for improvement in terms of error handling and loading state management.",
       "requirementCompliance": 90
     }
   }

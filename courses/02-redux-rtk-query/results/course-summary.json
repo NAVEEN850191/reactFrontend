@@ -1,11 +1,11 @@
 {
   "courseId": "02-redux-rtk-query",
   "courseName": "Redux & RTK Query",
-  "lastUpdated": "2026-07-13T05:45:40.169Z",
+  "lastUpdated": "2026-07-13T07:56:37.287Z",
   "totalChallenges": 13,
-  "completedChallenges": 10,
-  "averageScore": 82.2,
-  "completionPercentage": 76.9,
+  "completedChallenges": 13,
+  "averageScore": 82.7,
+  "completionPercentage": 100,
   "badgeLevel": "silver",
   "challengeResults": [
     {
@@ -65,12 +65,24 @@
     {
       "challengeId": "10-optimistic-updates",
       "challengeName": "Optimistic Updates",
-      "score": 77.5,
-      "passed": false
+      "score": 82.9,
+      "passed": true
     },
     {
       "challengeId": "11-api-local-state",
       "challengeName": "API and Local State Together",
+      "score": 82.9,
+      "passed": true
+    },
+    {
+      "challengeId": "12-error-loading-ux",
+      "challengeName": "Error and Loading UX",
+      "score": 82.9,
+      "passed": true
+    },
+    {
+      "challengeId": "13-query-parameters",
+      "challengeName": "Query with Parameters and Detail View",
       "score": 82.9,
       "passed": true
     }
@@ -85,7 +97,10 @@
     "Query Endpoints and useQuery Hooks",
     "Caching and Cache Tags",
     "Mutations with useMutation",
-    "API and Local State Together"
+    "Optimistic Updates",
+    "API and Local State Together",
+    "Error and Loading UX",
+    "Query with Parameters and Detail View"
   ],
   "improvementAreas": []
 }
