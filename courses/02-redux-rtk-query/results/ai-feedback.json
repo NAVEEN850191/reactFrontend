@@ -206,5 +206,89 @@
       "overall": "The code meets most of the functional requirements and implements RTK Query patterns correctly, but there are some areas for improvement.",
       "requirementCompliance": 90
     }
+  },
+  {
+    "challengeId": "09-mutations",
+    "challengeName": "Mutations with useMutation",
+    "aiReview": {
+      "challengeId": "09-mutations",
+      "timestamp": "2026-07-12T05:21:21.365Z",
+      "score": 86,
+      "feedback": [],
+      "strengths": [
+        "Proper use of RTK Query and TypeScript",
+        "Clear separation of concerns between API slice and form component",
+        "Good use of data-testid attributes for accessibility"
+      ],
+      "improvements": [
+        {
+          "specific improvement": "Consider using a more robust validation mechanism for form data",
+          "file reference": "src/components/AddPostForm.tsx"
+        },
+        {
+          "specific improvement": "Use a more descriptive variable name instead of 'body' for the textarea value",
+          "file reference": "src/components/AddPostForm.tsx"
+        },
+        {
+          "specific improvement": "Add a loading state for the form submit button to prevent multiple submissions",
+          "file reference": "src/components/AddPostForm.tsx"
+        }
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code meets most requirements and demonstrates good understanding of RTK Query and TypeScript. However, there are some areas for improvement to enhance maintainability and user experience.",
+      "requirementCompliance": 90
+    }
+  },
+  {
+    "challengeId": "10-optimistic-updates",
+    "challengeName": "Optimistic Updates",
+    "aiReview": {
+      "challengeId": "10-optimistic-updates",
+      "timestamp": "2026-07-12T09:20:01.424Z",
+      "score": 50,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a logical organization.",
+        "Proper use of TypeScript types and interfaces.",
+        "Correct implementation of RTK Query endpoints and hooks."
+      ],
+      "improvements": [
+        "readability\": 85,",
+        "maintainability\": 80,",
+        "strengths\": [",
+        "The code is well-structured and follows a logical organization.\",",
+        "Proper use of TypeScript types and interfaces.\","
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "## Review\n\n### Readability: 85\n### Maintainability: 80\n### Strengths:\n- The code is well-structured and follows a logical organization.\n- Proper use of TypeScript types and interfaces.\n- Correct implementation of RTK Query endpoints and hooks.\n\n### Improvements:\n- **Improvement 1:** In `src/api/apiSlice.ts`, the `onQueryStarted` function for the `addPost` mutation can be simplified by using a `try-catch` block to handle the `queryFulfilled` promise rejection. This will make the code more concise",
+      "requirementCompliance": 0
+    }
+  },
+  {
+    "challengeId": "11-api-local-state",
+    "challengeName": "API and Local State Together",
+    "aiReview": {
+      "challengeId": "11-api-local-state",
+      "timestamp": "2026-07-13T05:45:38.238Z",
+      "score": 86,
+      "feedback": [],
+      "strengths": [
+        "Proper use of RTK Query hooks (useGetPostsQuery, useAppSelector)",
+        "Correct integration of Redux slice and RTK Query store",
+        "Well-structured code with clear separation of concerns"
+      ],
+      "improvements": [
+        "Consider adding more robust error handling for API requests (e.g., error messages, retries)",
+        "In `PostsWithFilters.tsx`, consider using a more efficient sorting algorithm for large lists",
+        "In `filtersSlice.ts`, consider adding a `resetFilters` action to reset the filter state",
+        "In `store.ts`, consider adding a `middleware` configuration for error handling and caching"
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code meets most functional requirements and demonstrates good RTK Query best practices. However, there are some areas for improvement in error handling and code optimization.",
+      "requirementCompliance": 90
+    }
   }
 ]

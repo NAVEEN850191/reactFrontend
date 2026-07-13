@@ -1,8 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
 import counterReducer from './slices/counterSlice'
 import uiReducer from './slices/uiSlice'
-import usersReducer from "./slices/usersSlice";
+import usersReducer from "./slices/usersSlice"
 import { apiSlice } from '../api/apiSlice'
+import filtersReducer from './slices/filtersSlice'
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
    ui:uiReducer,
    users: usersReducer,
    [apiSlice.reducerPath]:apiSlice.reducer,
+   filters:filtersReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware(),

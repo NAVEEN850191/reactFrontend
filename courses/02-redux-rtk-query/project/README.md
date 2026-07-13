@@ -57,12 +57,12 @@ npm run review -- --challenge=01-store-setup
 
 ## 📊 Progress Evidence
 
-*Auto-updated when you run review. Last run: 12/7/2026, 10:51:23 am*
+*Auto-updated when you run review. Last run: 13/7/2026, 11:15:40 am*
 
 | Metric | Value |
 |--------|-------|
-| Challenges completed | 9 / 13 (69.2%) |
-| Average score | 82.7% |
+| Challenges completed | 10 / 13 (76.9%) |
+| Average score | 82.2% |
 
 | Challenge | Skills covered | Status |
 |-----------|----------------|--------|
@@ -75,8 +75,8 @@ npm run review -- --challenge=01-store-setup
 | Query Endpoints and useQuery Hooks | RTK Query, useGetUsersQuery, loading, error, data | Passed |
 | Caching and Cache Tags | RTK Query, providesTags, invalidatesTags, cache invalidation | Passed |
 | Mutations with useMutation | RTK Query, builder.mutation, useMutation, POST/PUT/DELETE | Passed |
-| Optimistic Updates | RTK Query, optimistic updates, onQueryStarted, rollback | — |
-| API and Local State Together | Redux, RTK Query, slice + API in one store, filtering/sorting | — |
+| Optimistic Updates | RTK Query, optimistic updates, onQueryStarted, rollback | Not passed |
+| API and Local State Together | Redux, RTK Query, slice + API in one store, filtering/sorting | Passed |
 | Error and Loading UX | RTK Query, loading state, error state, retry, UX | — |
 | Query with Parameters and Detail View | RTK Query, parameterized query, getPostById, useGetPostByIdQuery, skip option, detail view | — |
 

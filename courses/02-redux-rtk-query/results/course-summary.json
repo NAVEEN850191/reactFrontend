@@ -1,12 +1,12 @@
 {
   "courseId": "02-redux-rtk-query",
   "courseName": "Redux & RTK Query",
-  "lastUpdated": "2026-07-11T09:49:47.889Z",
+  "lastUpdated": "2026-07-13T05:45:40.169Z",
   "totalChallenges": 13,
-  "completedChallenges": 8,
-  "averageScore": 82.6,
-  "completionPercentage": 61.5,
-  "badgeLevel": "bronze",
+  "completedChallenges": 10,
+  "averageScore": 82.2,
+  "completionPercentage": 76.9,
+  "badgeLevel": "silver",
   "challengeResults": [
     {
       "challengeId": "01-store-setup",
@@ -55,6 +55,24 @@
       "challengeName": "Caching and Cache Tags",
       "score": 82.9,
       "passed": true
+    },
+    {
+      "challengeId": "09-mutations",
+      "challengeName": "Mutations with useMutation",
+      "score": 82.9,
+      "passed": true
+    },
+    {
+      "challengeId": "10-optimistic-updates",
+      "challengeName": "Optimistic Updates",
+      "score": 77.5,
+      "passed": false
+    },
+    {
+      "challengeId": "11-api-local-state",
+      "challengeName": "API and Local State Together",
+      "score": 82.9,
+      "passed": true
     }
   ],
   "skillStrengths": [
@@ -65,7 +83,9 @@
     "Async Logic with createAsyncThunk",
     "RTK Query Setup and API Slice",
     "Query Endpoints and useQuery Hooks",
-    "Caching and Cache Tags"
+    "Caching and Cache Tags",
+    "Mutations with useMutation",
+    "API and Local State Together"
   ],
   "improvementAreas": []
 }
