@@ -14,7 +14,7 @@ export const store = configureStore({
    filters:filtersReducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware(),
+    getDefaultMiddleware().concat(apiSlice.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>
