@@ -1,10 +1,10 @@
 import Link from "next/link";
 //serverComponent, fileBasedRouting, appDirectory
-export default function HomePage() {
+export default function AboutPage() {
   return (
     <main>
-      <h1>Home</h1>
-      <Link href="/about">About</Link>
+      <h1>About</h1>
+      <Link href="/">Home</Link>
     </main>
   );
 }
