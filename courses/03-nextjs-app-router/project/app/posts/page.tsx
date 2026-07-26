@@ -1,6 +1,10 @@
+
 // asyncServerComponent
 // asyncData
 // fetch
+// loadingTsx
+// Suspense
+
 type Post = {
   id: number;
   title: string;
