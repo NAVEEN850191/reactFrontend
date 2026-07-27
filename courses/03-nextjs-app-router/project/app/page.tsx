@@ -1,7 +1,9 @@
 import Link from "next/link";
+export const dynamic = "force-static";
 import Counter from "./components/Counter";
 //serverComponent, fileBasedRouting, appDirectory
 // useState,useClient
+//dynamicExport, forceStaticOrDynamic
 export default function HomePage() {
   return (
     <main>

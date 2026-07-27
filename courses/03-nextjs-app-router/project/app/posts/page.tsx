@@ -1,9 +1,11 @@
 import { Suspense } from "react";
+export const dynamic = "force-dynamic";
 // asyncServerComponent
 // asyncData
 // fetch
 // loadingTsx
 // Suspense
+//dynamicExport, forceStaticOrDynamic
 
 type Post = {
   id: number;
