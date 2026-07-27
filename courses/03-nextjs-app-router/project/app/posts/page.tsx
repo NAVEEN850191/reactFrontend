@@ -1,4 +1,4 @@
-
+import { Suspense } from "react";
 // asyncServerComponent
 // asyncData
 // fetch
@@ -11,7 +11,7 @@ type Post = {
   body: string;
 };
 
-export default async function PostsPage() {
+ async function PostsList() {
   try {
     const response = await fetch(
       "https://jsonplaceholder.typicode.com/posts",
@@ -48,4 +48,16 @@ export default async function PostsPage() {
       </main>
     );
   }
+}
+
+export default function PostsPage() {
+  return (
+    <main>
+      <h1>Posts</h1>
+
+      <Suspense fallback={<p>Loading posts...</p>}>
+        <PostsList />
+      </Suspense>
+    </main>
+  );
 }
