@@ -1,6 +1,8 @@
 // dynamicRoute
 // params
 // dynamicSegment
+//  errorTsx
+import { notFound } from 'next/navigation';
 
 type Post = {
   id: number;
@@ -8,41 +10,33 @@ type Post = {
   body: string;
 };
 
-type PostPageProps = {
+type Props = {
   params: {
     id: string;
   };
 };
 
-export async function generateStaticParams() {
-  return [
-    { id: "1" },
-    { id: "2" },
-    { id: "3" },
-  ];
-}
-
 export default async function PostPage({
   params,
-}: PostPageProps) {
+}: Props) {
   const response = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${params.id}`,
-    {
-      cache: "no-store",
-    }
+    `https://jsonplaceholder.typicode.com/posts/${params.id}`
   );
 
   if (!response.ok) {
-    return <p>Post not found.</p>;
+    notFound();
   }
 
   const post: Post = await response.json();
+
+  if (!post?.id) {
+    notFound();
+  }
 
   return (
     <main>
       <h1>{post.title}</h1>
       <p>{post.body}</p>
-      <p>Post ID: {params.id}</p>
     </main>
   );
 }
