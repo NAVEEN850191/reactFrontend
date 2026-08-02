@@ -2,6 +2,7 @@
 // params
 // dynamicSegment
 //  errorTsx
+//metadata, generateMetadata
 import { notFound } from 'next/navigation';
 
 type Post = {

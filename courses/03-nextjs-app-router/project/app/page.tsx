@@ -4,6 +4,7 @@ import Counter from "./components/Counter";
 //serverComponent, fileBasedRouting, appDirectory
 // useState,useClient
 //dynamicExport, forceStaticOrDynamic
+// metadata, generateMetadata
 export default function HomePage() {
   return (
     <main>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import './globals.css'
 //serverComponent, fileBasedRouting, appDirectory
 // useState,useClient
+// generateMetadata
 export const metadata: Metadata = {
   title: 'Next.js App Router Project',
   description: 'Complete challenges to build your Next.js skills',

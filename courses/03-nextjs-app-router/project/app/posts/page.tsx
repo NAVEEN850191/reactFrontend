@@ -7,6 +7,7 @@
 // forceDynamic, cacheNoStore
 // useServer, revalidatePath, revalidateTag
 //  fetchCache
+ // metadata, generateMetadata
 
 import { Suspense } from "react";
 import AddPostForm from "../components/AddPostForm";
