@@ -6,6 +6,7 @@
 //dynamicExport, forceStaticOrDynamic
 // forceDynamic, cacheNoStore
 // useServer, revalidatePath, revalidateTag
+//  fetchCache
 
 import { Suspense } from "react";
 import AddPostForm from "../components/AddPostForm";
@@ -19,45 +20,34 @@ type Post = {
 };
 
 async function PostsList() {
-  try {
-    const response = await fetch(
-      "https://jsonplaceholder.typicode.com/posts",
-      {
-        cache: "no-store",
-      }
-    );
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch posts");
+  const response = await fetch(
+    "https://jsonplaceholder.typicode.com/posts",
+    {
+      next: {
+        revalidate: 60,
+      },
     }
+  );
 
-    const posts: Post[] = await response.json();
+  const posts: Post[] = await response.json();
 
-    return (
-      <ul>
-        {posts.slice(0, 10).map((post) => (
-          <li key={post.id}>
-            <h2>{post.title}</h2>
-            <p>{post.body}</p>
-          </li>
-        ))}
-      </ul>
-    );
-  } catch {
-    return <p>Unable to load posts.</p>;
-  }
+  return (
+    <ul>
+      {posts.slice(0, 10).map((post) => (
+        <li key={post.id}>
+          <h2>{post.title}</h2>
+          <p>{post.body}</p>
+        </li>
+      ))}
+    </ul>
+  );
 }
 
-export default function PostsPage() {
+export default async function PostsPage() {
   return (
     <main>
       <h1>Posts</h1>
-
-      <AddPostForm />
-
-      <Suspense fallback={<p>Loading posts...</p>}>
-        <PostsList />
-      </Suspense>
+      <PostsList />
     </main>
   );
 }

@@ -1,5 +1,6 @@
 'use server'
 // useServer, revalidateTag
+//  fetchCache
 import { revalidatePath } from 'next/cache'
 
 export async function addPost(formData: FormData) {
