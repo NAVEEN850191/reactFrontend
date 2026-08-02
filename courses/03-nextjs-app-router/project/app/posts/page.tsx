@@ -6,6 +6,7 @@ export const dynamic = "force-dynamic";
 // loadingTsx
 // Suspense
 //dynamicExport, forceStaticOrDynamic
+// forceDynamic, cacheNoStore
 
 type Post = {
   id: number;
