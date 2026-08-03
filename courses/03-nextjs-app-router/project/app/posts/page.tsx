@@ -12,7 +12,7 @@
 import Link from 'next/link'
 import { Suspense } from "react";
 import AddPostForm from "../components/AddPostForm";
-
+import PostsList from '../components/PostsList'
 type Post = {
   id: number
   title: string
@@ -60,7 +60,7 @@ export default async function PostsPage({
   return (
     <main>
       <h1>Posts</h1>
-
+      <PostsList />
       <ul>
         {paginatedPosts.map((post) => (
           <li key={post.id}>
