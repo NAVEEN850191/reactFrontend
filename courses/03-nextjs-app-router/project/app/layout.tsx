@@ -2,10 +2,12 @@ import type { Metadata } from 'next'
 import Link from "next/link";
 import './globals.css'
 import { Inter } from 'next/font/google'
+import StoreProvider from './providers/StoreProvider';
 //serverComponent, fileBasedRouting, appDirectory
 // useState,useClient
 // generateMetadata
 // nextImage, nextFont
+// configureStore, useSelector, useDispatch
 const inter = Inter({
   subsets: ['latin'],
 })
@@ -23,12 +25,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav>
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-        </nav>
+        <StoreProvider>
+          <nav>
+            <Link href="/">Home</Link>
+            <Link href="/about">About</Link>
+          </nav>
 
-        {children}
+          {children}
+        </StoreProvider>
       </body>
     </html>
   )
