@@ -7,48 +7,72 @@
 // forceDynamic, cacheNoStore
 // useServer, revalidatePath, revalidateTag
 //  fetchCache
- // metadata, generateMetadata
-
+// metadata, generateMetadata
+// pagination
+import Link from 'next/link'
 import { Suspense } from "react";
 import AddPostForm from "../components/AddPostForm";
 
-export const dynamic = "force-dynamic";
-
 type Post = {
-  id: number;
-  title: string;
-  body: string;
-};
+  id: number
+  title: string
+  body: string
+}
 
-async function PostsList() {
+type PostsPageProps = {
+  searchParams: {
+    q?: string
+    page?: string
+  }
+}
+
+export default async function PostsPage({
+  searchParams,
+}: PostsPageProps) {
   const response = await fetch(
-    "https://jsonplaceholder.typicode.com/posts",
+    'https://jsonplaceholder.typicode.com/posts',
     {
       next: {
         revalidate: 60,
       },
     }
-  );
+  )
 
-  const posts: Post[] = await response.json();
+  const posts: Post[] = await response.json()
 
-  return (
-    <ul>
-      {posts.slice(0, 10).map((post) => (
-        <li key={post.id}>
-          <h2>{post.title}</h2>
-          <p>{post.body}</p>
-        </li>
-      ))}
-    </ul>
-  );
-}
+  const query = searchParams.q?.toLowerCase() ?? ''
 
-export default async function PostsPage() {
+  const page = Number(searchParams.page) || 1
+
+  const postsPerPage = 10
+
+  const filteredPosts = posts.filter((post) =>
+    post.title.toLowerCase().includes(query)
+  )
+
+  const startIndex = (page - 1) * postsPerPage
+
+  const paginatedPosts = filteredPosts.slice(
+    startIndex,
+    startIndex + postsPerPage
+  )
+
   return (
     <main>
       <h1>Posts</h1>
-      <PostsList />
+
+      <ul>
+        {paginatedPosts.map((post) => (
+          <li key={post.id}>
+            <h2>{post.title}</h2>
+            <p>{post.body}</p>
+          </li>
+        ))}
+      </ul>
+
+      <Link href={`/posts?q=${query}&page=${page + 1}`}>
+        Next Page
+      </Link>
     </main>
-  );
+  )
 }
