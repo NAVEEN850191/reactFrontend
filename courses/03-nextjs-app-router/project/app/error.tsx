@@ -1,9 +1,13 @@
 'use client';
 //  errorTsx, notFound
+//  dynamicSegment, useClient, notFound, metadata
+
 type ErrorProps = {
-  error: Error & { digest?: string };
-  reset: () => void;
-};
+  error: Error & {
+    digest?: string
+  }
+  reset: () => void
+}
 
 export default function Error({
   error,
@@ -15,9 +19,9 @@ export default function Error({
 
       <p>{error.message}</p>
 
-      <button onClick={() => reset()}>
+      <button onClick={reset}>
         Try Again
       </button>
     </div>
-  );
+  )
 }

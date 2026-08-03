@@ -1,4 +1,5 @@
 // errorTsx, notFound
+//  dynamicSegment, useClient, notFound, metadata
 export default function NotFound() {
   return (
     <div>
